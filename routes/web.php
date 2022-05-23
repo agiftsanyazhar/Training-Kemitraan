@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/sign-in', [SignInController::class, 'index']);
+Route::get('/sign-up', [SignUpController::class, 'index']);

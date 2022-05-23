@@ -12,9 +12,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/upgrade-to-pro.html" />
+	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms" />
 
-	<title>Upgrade to Pro | AdminKit Demo</title>
+	<title>Forms | AdminKit Demo</title>
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="/">
           <span class="align-middle">AdminKit</span>
         </a>
 
@@ -34,97 +34,51 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
+						<a class="sidebar-link" href="/">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+						<a class="sidebar-link" href="profile">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-in.html">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-up.html">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-            </a>
-					</li>
+					
 
 					<li class="sidebar-header">
 						Tools & Components
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-buttons.html">
-              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
-            </a>
-					</li>
+					
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="forms">
               <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-cards.html">
-              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-typography.html">
-              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="icons-feather.html">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-            </a>
-					</li>
+					
 
 					<li class="sidebar-header">
 						Plugins & Addons
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
+						<a class="sidebar-link" href="charts">
               <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google.html">
+						<a class="sidebar-link" href="maps-google">
               <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
             </a>
 					</li>
 				</ul>
 
-				<div class="sidebar-cta">
-					<div class="sidebar-cta-content">
-						<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-						<div class="mb-3 text-sm">
-							Are you looking for more components? Check out our premium version.
-						</div>
-						<div class="d-grid">
-							<a href="upgrade-to-pro.html" class="btn btn-primary">Upgrade to Pro</a>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</nav>
 
@@ -277,10 +231,10 @@
                 <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="profile"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Log out</a>
@@ -293,117 +247,180 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3">Upgrade to Pro</h1>
-
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Forms</h1>
+						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro">
+      Get more form examples
+  </a>
+					</div>
 					<div class="row">
-						<div class="col-12 col-md-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto">
+						<div class="col-12 col-lg-6">
 							<div class="card">
-								<img class="card-img-top" src="https://assets.adminkit.io/banners/adminkit-bootstrap-5-admin-template-social-preview.png" alt="AdminKit - Free & Premium Bootstrap 5 Admin Template">
 								<div class="card-header">
-									<h5 class="card-title">AdminKit PRO</h5>
-									<h6 class="card-subtitle text-muted">Looking for more components and customizations? Check out our premium version. </h6>
+									<h5 class="card-title mb-0">Input</h5>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive table-upgrade">
-										<table class="table">
-											<thead>
-												<tr>
-													<th></th>
-													<th class="text-center">Basic</th>
-													<th class="text-center">Pro</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="text-center"></td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/" class="btn btn-light">Download</a>
-													</td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/pricing" class="btn btn-primary">Upgrade to Pro</a>
-													</td>
-												</tr>
-												<tr>
-													<td>Demo Pages</td>
-													<td class="text-center">15</td>
-													<td class="text-center"><strong>45+</strong></td>
-												</tr>
-												<tr>
-													<td>Plugins</td>
-													<td class="text-center">1</td>
-													<td class="text-center"><strong>10+</strong></td>
-												</tr>
-												<tr>
-													<td>Color Schemes</td>
-													<td class="text-center">1</td>
-													<td class="text-center"><strong>3</strong></td>
-												</tr>
-												<tr>
-													<td>All Bootstrap 5 Components</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Dark Mode 🌙</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Compact Sidebar</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Calendar</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Advanced Forms</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Drag and Drop</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Toast Notifications</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>WYSIWYG Editors</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Premium Support</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td></td>
-													<td class="text-center">Free</td>
-													<td class="text-center">Starting from $59</td>
-												</tr>
-												<tr>
-													<td class="text-center"></td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/" class="btn btn-light">Download</a>
-													</td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/pricing" class="btn btn-primary">Upgrade to Pro</a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
+									<input type="text" class="form-control" placeholder="Input">
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Textarea</h5>
+								</div>
+								<div class="card-body">
+									<textarea class="form-control" rows="2" placeholder="Textarea"></textarea>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Checkboxes</h5>
+								</div>
+								<div class="card-body">
+									<div>
+										<label class="form-check">
+            <input class="form-check-input" type="checkbox" value="">
+            <span class="form-check-label">
+              Option one is this and that&mdash;be sure to include why it's great
+            </span>
+          </label>
+										<label class="form-check">
+            <input class="form-check-input" type="checkbox" value="" disabled>
+            <span class="form-check-label">
+              Option two is disabled
+            </span>
+          </label>
 									</div>
+									<div>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="option1">
+            <span class="form-check-label">
+              1
+            </span>
+          </label>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="option2">
+            <span class="form-check-label">
+              2
+            </span>
+          </label>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="option3" disabled>
+            <span class="form-check-label">
+              3
+            </span>
+          </label>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Read only</h5>
+								</div>
+								<div class="card-body">
+									<input class="form-control" type="text" placeholder="Readonly input" readonly>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-lg-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Radios</h5>
+								</div>
+								<div class="card-body">
+									<div>
+										<label class="form-check">
+            <input class="form-check-input" type="radio" value="option1" name="radios-example" checked>
+            <span class="form-check-label">
+              Option one is this and that&mdash;be sure to include why it's great
+            </span>
+          </label>
+										<label class="form-check">
+            <input class="form-check-input" type="radio" value="option2" name="radios-example">
+            <span class="form-check-label">
+              Option two can be something else and selecting it will deselect option one
+            </span>
+          </label>
+										<label class="form-check">
+            <input class="form-check-input" type="radio" value="option3" name="radios-example" disabled>
+            <span class="form-check-label">
+              Option three is disabled
+            </span>
+          </label>
+									</div>
+									<div>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inline-radios-example" value="option1">
+            <span class="form-check-label">
+              1
+            </span>
+          </label>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inline-radios-example" value="option2">
+            <span class="form-check-label">
+              2
+            </span>
+          </label>
+										<label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inline-radios-example" value="option3" disabled>
+            <span class="form-check-label">
+              3
+            </span>
+          </label>
+									</div>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Selects</h5>
+								</div>
+								<div class="card-body">
+									<select class="form-select mb-3">
+          <option selected>Open this select menu</option>
+          <option>One</option>
+          <option>Two</option>
+          <option>Three</option>
+        </select>
+
+									<select multiple class="form-control">
+          <option>One</option>
+          <option>Two</option>
+          <option>Three</option>
+          <option>Four</option>
+        </select>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Disabled</h5>
+								</div>
+								<div class="card-body">
+									<div class="mb-3">
+										<label class="form-label">Disabled input</label>
+										<input type="text" class="form-control" placeholder="Disabled input" disabled>
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Disabled select menu</label>
+										<select class="form-control" disabled>
+            <option>Disabled select</option>
+          </select>
+									</div>
+									<label class="form-check">
+          <input class="form-check-input" type="checkbox" value="" disabled>
+          <span class="form-check-label">
+            Can't check this
+          </span>
+        </label>
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</main>
 

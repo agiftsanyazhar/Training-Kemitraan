@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profile;
-use App\Http\Requests\StoreProfileRequest;
-use App\Http\Requests\UpdateProfileRequest;
+use App\Models\SignUp;
+use App\Http\Requests\StoreSignUpRequest;
+use App\Http\Requests\UpdateSignUpRequest;
 
-class ProfileController extends Controller
+class SignUpController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class ProfileController extends Controller
     public function index()
     {
         {
-            return view('profile', [
-                "title" => "Profile"
+            return view('sign-up', [
+                "title" => "Sign Up"
             ]);
         }
     }
@@ -35,10 +35,10 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProfileRequest  $request
+     * @param  \App\Http\Requests\StoreSignUpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProfileRequest $request)
+    public function store(StoreSignUpRequest $request)
     {
         //
     }
@@ -46,10 +46,10 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Profile  $profile
+     * @param  \App\Models\SignUp  $signUp
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(SignUp $signUp)
     {
         //
     }
@@ -57,10 +57,10 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Profile  $profile
+     * @param  \App\Models\SignUp  $signUp
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(SignUp $signUp)
     {
         //
     }
@@ -68,11 +68,11 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProfileRequest  $request
-     * @param  \App\Models\Profile  $profile
+     * @param  \App\Http\Requests\UpdateSignUpRequest  $request
+     * @param  \App\Models\SignUp  $signUp
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfileRequest $request, Profile $profile)
+    public function update(UpdateSignUpRequest $request, SignUp $signUp)
     {
         //
     }
@@ -80,10 +80,10 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Profile  $profile
+     * @param  \App\Models\SignUp  $signUp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(SignUp $signUp)
     {
         //
     }
