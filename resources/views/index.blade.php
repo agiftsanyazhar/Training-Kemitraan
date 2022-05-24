@@ -26,86 +26,94 @@
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="/">
           <span class="align-middle">Sellerkit</span>
+
+		  {{--  <div class="sidebar-user mb-4">
+			<div class="d-flex justify-content-center">
+				<div class="flex-shrink-0">
+					<img src="https://dashboard.sellerkit.id/assets/img/avatars/SK_AVATAR_DBurfp4G.jpg" class="avatar img-fluid rounded me-1" alt="galang buana 2">
+				</div>
+				<div class="flex-grow-1 ps-2">
+					<div class="sidebar-user-title text-capitalize">
+						galang buana 2                            </div>
+
+					<div class="sidebar-user-subtitle">Superadmin</div>
+				</div>
+			</div>
+		</div>  --}}
+
         </a>
+
+		
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
-						Daftar Mitra
+						Hubungan Kemitraan
 					</li>
 
 					<li class="sidebar-item active">
 						<a class="sidebar-link" href="/">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Daftar Mitra</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="profile">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Data Statistik</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="profile">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Status</span>
             </a>
 					</li>
 
 					
 
 					<li class="sidebar-header">
-						Data Statistik
+						Management
 					</li>
 
 					
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="forms">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pesanan</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="forms">
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Stock Real</span>
             </a>
 					</li>
 
 					
 
 					<li class="sidebar-header">
-						Status
+						Program
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="charts">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Point Reward</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
-					<li class="sidebar-header">
-						Pesanan
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Hadiah 3 Bulan</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
-					<li class="sidebar-header">
-						Stock Real
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Shareable Content</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
+					
+
 				</ul>
 
 				
