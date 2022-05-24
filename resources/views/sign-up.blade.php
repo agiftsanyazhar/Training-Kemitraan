@@ -12,7 +12,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-up.html" />
+	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-up" />
 
 	<title>Sign Up | AdminKit Demo</title>
 
@@ -54,8 +54,12 @@
 											<label class="form-label">Password</label>
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter password" />
 										</div>
+										<small>
+											Already have an account? <a href="sign-in">Login!</a>
+										</small>
+										
 										<div class="text-center mt-3">
-											<a href="index.html" class="btn btn-lg btn-primary">Sign up</a>
+											<a href="/" class="btn btn-lg btn-primary">Sign up</a>
 											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
 										</div>
 									</form>
