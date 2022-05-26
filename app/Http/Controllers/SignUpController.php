@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\SignUp;
 use App\Http\Requests\StoreSignUpRequest;
 use App\Http\Requests\UpdateSignUpRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class SignUpController extends Controller
 {
@@ -38,9 +41,20 @@ class SignUpController extends Controller
      * @param  \App\Http\Requests\StoreSignUpRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSignUpRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_lengkap'  => 'required|min:3|max:50',
+            'username'      => 'required|min:3|max:50',
+            'email'         => 'required|email:dns|unique:users',
+            'password'      => 'required||min:8|max:32',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        User::create($validatedData);
+
+        return redirect('/sign-in');
     }
 
     /**

@@ -19,5 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
+
+//===================Sign in==============
 Route::get('/sign-in', [SignInController::class, 'index']);
+Route::post('/proses-sign-in', [SignInController::class, 'authenticate']);
+
+//===================Sign up==============
 Route::get('/sign-up', [SignUpController::class, 'index']);
+Route::post('/proses-sign-up', [SignUpController::class, 'store']);
