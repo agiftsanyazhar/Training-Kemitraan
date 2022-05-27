@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->middleware('auth');
 Route::get('/profile', [ProfileController::class, 'index']);
 
 //===================Sign in==============
-Route::get('/sign-in', [SignInController::class, 'index']);
+Route::get('/sign-in', [SignInController::class, 'index'])->name('login');
 Route::post('/proses-sign-in', [SignInController::class, 'authenticate']);
 
 //===================Sign up==============
