@@ -58,14 +58,13 @@
 										</div>
 										<div>
 											<label class="form-check">
-            <input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
-            <span class="form-check-label">
-              Remember me next time
-            </span>
-          </label>
+												<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
+												<span class="form-check-label">
+													Remember me next time
+												</span>
+											</label>
 										</div>
 										<div class="text-center mt-3">
-											{{-- <a href="/" class="btn btn-lg btn-primary">Sign in</a> --}}
 											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
 										</div>
 									</form>

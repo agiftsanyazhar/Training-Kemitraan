@@ -34,7 +34,7 @@ class SignInController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         };
         
         return back()->with('loginError', 'Login Gagal!');
@@ -48,7 +48,7 @@ class SignInController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/sign-in');
     }
 
 

@@ -60,7 +60,6 @@
 										</small>
 										
 										<div class="text-center mt-3">
-											{{-- <a class="btn btn-lg btn-primary" type="submit">Sign up</a> --}}
 											<button type="submit" class="btn btn-lg btn-primary">Sign up</button>
 										</div>
 									</form>
