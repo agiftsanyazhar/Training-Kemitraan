@@ -36,7 +36,7 @@
 					<div class="sidebar-user-title text-capitalize">
 						galang buana 2                            </div>
 
-					<div class="sidebar-user-subtitle">Superadmin</div>
+					<div class="sidebar-user-subtitle">SuperAdmin</div>
 				</div>
 			</div>
 		</div>  --}}
