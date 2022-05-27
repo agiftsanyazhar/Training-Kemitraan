@@ -13,7 +13,7 @@
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/maps-google" />
-
+	
 	<title>Google Maps | AdminKit Demo</title>
 
 	<link href="css/app.css" rel="stylesheet">
