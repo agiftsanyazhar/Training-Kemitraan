@@ -13,6 +13,7 @@
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
 
@@ -24,23 +25,25 @@
 <body>
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="/">
-          <span class="align-middle">Sellerkit</span>
+		<div class="sidebar-content js-simplebar">
+			<a class="sidebar-brand" href="/">
+			<span class="align-middle">Sellerkit</span>
 
-		  {{--  <div class="sidebar-user mb-4">
+		   <div class="sidebar-user mb-4">
 			<div class="d-flex justify-content-center">
-				<div class="flex-shrink-0">
+				{{-- <div class="flex-shrink-0">
 					<img src="https://dashboard.sellerkit.id/assets/img/avatars/SK_AVATAR_DBurfp4G.jpg" class="avatar img-fluid rounded me-1" alt="galang buana 2">
 				</div>
 				<div class="flex-grow-1 ps-2">
 					<div class="sidebar-user-title text-capitalize">
-						galang buana 2                            </div>
-
+						<h5 class="card-title text-capitalize">Card title</h5>
+					</div>
 					<div class="sidebar-user-subtitle">SuperAdmin</div>
-				</div>
+					
+					<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+				</div> --}}
 			</div>
-		</div>  --}}
+		</div>
 
         </a>
 
@@ -150,7 +153,7 @@
 								<div class="dropdown-divider"></div>
 								<form action="/logout" method="post">
 									@csrf
-									<li><button class="dropdown-item" type="submit">Logout</button></li>
+									<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
 								</form>
 							</div>
 						</li>
