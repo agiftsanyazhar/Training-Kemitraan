@@ -18,6 +18,7 @@
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -46,26 +47,27 @@
 		
 
 				<ul class="sidebar-nav">
+
 					<li class="sidebar-header">
 						Hubungan Kemitraan
 					</li>
 
 					<li class="sidebar-item {{ ($title === "Daftar Mitra") ? 'active' : '' }}">
 						<a class="sidebar-link" href="/">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Daftar Mitra</span>
-            </a>
+							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Daftar Mitra</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item {{ ($title === "Data Statistik") ? 'active' : '' }}">
 						<a class="sidebar-link" href="profile">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Data Statistik</span>
-            </a>
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Data Statistik</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item {{ ($title === "Status") ? 'active' : '' }}">
 						<a class="sidebar-link" href="profile">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Status</span>
-            </a>
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Status</span>
+						</a>
 					</li>
 
 					
@@ -78,14 +80,14 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="forms">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pesanan</span>
-            </a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pesanan</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="forms">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Stock Real</span>
-            </a>
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Stock Real</span>
+						</a>
 					</li>
 
 					
@@ -96,20 +98,20 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="charts">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Point Reward</span>
-            </a>
+							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Point Reward</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Hadiah 3 Bulan</span>
-            </a>
+							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Hadiah 3 Bulan</span>
+						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Shareable Content</span>
-            </a>
+							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Shareable Content</span>
+						</a>
 					</li>
 
 					
