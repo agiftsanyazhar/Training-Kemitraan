@@ -6,6 +6,7 @@ use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', [IndexController::class, 'index'])->middleware('auth');
 
 Route::get('/dashboard', [IndexController::class, 'index'])->middleware('auth');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');

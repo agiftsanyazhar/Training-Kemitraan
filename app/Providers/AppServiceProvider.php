@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+// use App\Providers\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,23 +24,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Gate::define('Admin', function(User $user){         
-            return $user->role === 'Admin';
-        });
-        Gate::define('Principal', function(User $user){         
-            return $user->role === 'Principal';
-        });
-        Gate::define('Distributor', function(User $user){         
-            return $user->role === 'Distributor';
-        });
-        Gate::define('Agen', function(User $user){         
-            return $user->role === 'Agen';
-        });
-        Gate::define('Reseller', function(User $user){         
-            return $user->role === 'Reseller';
-        });
-        Gate::define('Dropshipper', function(User $user){         
-            return $user->role === 'Dropshipper';
-        });
+        // Gate::define('Admin', function(User $user){         
+        //     return $user->Role === 'Admin';
+        // });
+        // Gate::define('Principal', function(User $user){         
+        //     return $user->Role === 'Principal';
+        // });
+        // Gate::define('Distributor', function(User $user){         
+        //     return $user->Role === 'Distributor';
+        // });
+        // Gate::define('Agen', function(User $user){         
+        //     return $user->Role === 'Agen';
+        // });
+        // Gate::define('Reseller', function(User $user){         
+        //     return $user->Role === 'Reseller';
+        // });
+        // Gate::define('Dropshipper', function(User $user){         
+        //     return $user->Role === 'Dropshipper';
+        // });
     }
 }

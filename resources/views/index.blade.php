@@ -132,20 +132,24 @@
 						</tr>
 					</thead>
 					<tbody>
+						@can('Admin')
 						<tr>
-							<td>Project Apollo</td>
+							<td>Project Admin</td>
 							<td class="d-none d-xl-table-cell">01/01/2021</td>
 							<td class="d-none d-xl-table-cell">31/06/2021</td>
 							<td><span class="badge bg-success">Done</span></td>
 							<td class="d-none d-md-table-cell">Vanessa Tucker</td>
 						</tr>
+						@endcan
+						@can('Agen')
 						<tr>
-							<td>Project Fireball</td>
+							<td>Project Agen</td>
 							<td class="d-none d-xl-table-cell">01/01/2021</td>
 							<td class="d-none d-xl-table-cell">31/06/2021</td>
 							<td><span class="badge bg-danger">Cancelled</span></td>
 							<td class="d-none d-md-table-cell">William Harris</td>
 						</tr>
+						@endcan
 						<tr>
 							<td>Project Hades</td>
 							<td class="d-none d-xl-table-cell">01/01/2021</td>
