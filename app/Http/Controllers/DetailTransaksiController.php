@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\barang;
+use App\Models\Detail_transaksi;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorebarangRequest;
-use App\Http\Requests\UpdatebarangRequest;
+use App\Http\Requests\StoreDetail_transaksiRequest;
+use App\Http\Requests\UpdateDetail_transaksiRequest;
 
-class BarangController extends Controller
+class DetailTransaksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -32,10 +32,10 @@ class BarangController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorebarangRequest  $request
+     * @param  \App\Http\Requests\StoreDetail_transaksiRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorebarangRequest $request)
+    public function store(StoreDetail_transaksiRequest $request)
     {
         //
     }
@@ -43,10 +43,10 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\barang  $barang
+     * @param  \App\Models\Detail_transaksi  $detail_transaksi
      * @return \Illuminate\Http\Response
      */
-    public function show(barang $barang)
+    public function show(Detail_transaksi $detail_transaksi)
     {
         //
     }
@@ -54,10 +54,10 @@ class BarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\barang  $barang
+     * @param  \App\Models\Detail_transaksi  $detail_transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(barang $barang)
+    public function edit(Detail_transaksi $detail_transaksi)
     {
         //
     }
@@ -65,11 +65,11 @@ class BarangController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatebarangRequest  $request
-     * @param  \App\Models\barang  $barang
+     * @param  \App\Http\Requests\UpdateDetail_transaksiRequest  $request
+     * @param  \App\Models\Detail_transaksi  $detail_transaksi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatebarangRequest $request, barang $barang)
+    public function update(UpdateDetail_transaksiRequest $request, Detail_transaksi $detail_transaksi)
     {
         //
     }
@@ -77,10 +77,10 @@ class BarangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\barang  $barang
+     * @param  \App\Models\Detail_transaksi  $detail_transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(barang $barang)
+    public function destroy(Detail_transaksi $detail_transaksi)
     {
         //
     }

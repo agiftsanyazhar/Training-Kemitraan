@@ -42,4 +42,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role()
+    {
+        return $this->hasOne(Role::class,'id_role','id');
+    }
+
+    public function kategori_barang()
+    {
+        return $this->hasMany(Kategori_Barang::class,'id_kategori','id');
+    }
+
+    public function keranjang()
+    {
+        return $this->hasMany(Keranjang::class,'id_keranjang','id');
+    }
 }

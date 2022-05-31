@@ -11,27 +11,33 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('roles')->insert([
-            'Role' => 'Admin'
+            'Role' => 'Admin',
+            'Higher_Role' => 'Null'
         ]);
 
         DB::table('roles')->insert([
-            'Role' => 'Principal'
+            'Role' => 'Principal',
+            'Higher_Role' => 'Admin'
         ]);
         
         DB::table('roles')->insert([
-            'Role' => 'Distributor'
+            'Role' => 'Distributor',
+            'Higher_Role' => 'Principal'
         ]);
         
         DB::table('roles')->insert([
-            'Role' => 'Agen'
+            'Role' => 'Agen',
+            'Higher_Role' => 'Distributor'
         ]);
         
         DB::table('roles')->insert([
-            'Role' => 'Reseller'
+            'Role' => 'Reseller',
+            'Higher_Role' => 'Agen'
         ]);
         
         DB::table('roles')->insert([
-            'Role' => 'Dropshipper'
+            'Role' => 'Dropshipper',
+            'Higher_Role' => 'Reseller'
         ]);
 
         DB::table('users')->insert([
@@ -39,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'email' => 'adminkemitraanpkl@gmail.com',
             'id_role' => '1',
-            'password' => 'admin123'
+            'password' => bcrypt('admin123')
         ]);
     }
 }
