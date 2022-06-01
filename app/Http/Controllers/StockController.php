@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keranjang;
+use App\Models\Stock;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreKeranjangRequest;
-use App\Http\Requests\UpdateKeranjangRequest;
+use App\Http\Requests\StoreStockRequest;
+use App\Http\Requests\UpdateStockRequest;
 
-class KeranjangController extends Controller
+class StockController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class KeranjangController extends Controller
      */
     public function index()
     {
-        return view('charts', [
-            "title" => "charts"
+        return view('stock', [
+            "title" => "stock"
         ]);
     }
 
@@ -34,10 +34,10 @@ class KeranjangController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreKeranjangRequest  $request
+     * @param  \App\Http\Requests\StoreStockRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreKeranjangRequest $request)
+    public function store(StoreStockRequest $request)
     {
         //
     }
@@ -45,10 +45,10 @@ class KeranjangController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Keranjang  $keranjang
+     * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function show(Keranjang $keranjang)
+    public function show(Stock $stock)
     {
         //
     }
@@ -56,10 +56,10 @@ class KeranjangController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Keranjang  $keranjang
+     * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function edit(Keranjang $keranjang)
+    public function edit(Stock $stock)
     {
         //
     }
@@ -67,11 +67,11 @@ class KeranjangController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateKeranjangRequest  $request
-     * @param  \App\Models\Keranjang  $keranjang
+     * @param  \App\Http\Requests\UpdateStockRequest  $request
+     * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKeranjangRequest $request, Keranjang $keranjang)
+    public function update(UpdateStockRequest $request, Stock $stock)
     {
         //
     }
@@ -79,10 +79,10 @@ class KeranjangController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Keranjang  $keranjang
+     * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Keranjang $keranjang)
+    public function destroy(Stock $stock)
     {
         //
     }
