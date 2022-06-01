@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profil', [ProfileController::class, 'index']);
 Route::get('/sign-in', [SignInController::class, 'index']);
 Route::get('/sign-up', [SignUpController::class, 'index']);
