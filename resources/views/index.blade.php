@@ -120,74 +120,121 @@
 					<div class="card flex-fill">
 						<div class="card-header">
 
+							<h5 class="card-title mb-3">Top Product</h5>
+
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col mt-0">
+													<span class="badge bg-success">1</span>
+												</div>
+											</div>
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col mt-0">
+													<span class="badge bg-success">2</span>
+												</div>
+											</div>
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="card">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-auto">
+													<span class="badge bg-success">3</span>
+												</div>
+											</div>
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="btn-group me-2" role="group" aria-label="First group">
+								<button type="button" class="btn btn-secondary">1</button>
+								<button type="button" class="btn btn-secondary">2</button>
+								<button type="button" class="btn btn-secondary">3</button>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
+					<div class="card flex-fill">
+						<div class="card-header">
+
 							<h5 class="card-title mb-0">Daftar Mitra</h5>
 						</div>
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
 									<th>Nama Mitra</th>
-									<th class="d-none d-xl-table-cell">Start Date</th>
-									<th class="d-none d-xl-table-cell">End Date</th>
-									<th>Status</th>
-									<th class="d-none d-md-table-cell">Assignee</th>
+									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
+									<th class="d-none d-xl-table-cell">Alamat</th>
+									<th class="d-none d-xl-table-cell">Status</th>
+									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>Project Apollo</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-success">Done</span></td>
-									<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Distributor</td>
+									<td><button type="button" class="btn btn-success">Detil</button></td>
 								</tr>
 								<tr>
-									<td>Project Fireball</td>
+									<td>Project Apollo</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-danger">Cancelled</span></td>
-									<td class="d-none d-md-table-cell">William Harris</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Reseller</td>
+									<td><button type="button" class="btn btn-success">Detil</button></td>
 								</tr>
 								<tr>
-									<td>Project Hades</td>
+									<td>Project Apollo</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-success">Done</span></td>
-									<td class="d-none d-md-table-cell">Sharon Lessman</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Dropshipper</td>
+									<td><button type="button" class="btn btn-success">Detil</button></td>
 								</tr>
 								<tr>
-									<td>Project Nitro</td>
+									<td>Project Apollo</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-warning">In progress</span></td>
-									<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Distributor</td>
+									<td><button type="button" class="btn btn-success">Detil</button></td>
 								</tr>
 								<tr>
-									<td>Project Phoenix</td>
+									<td>Project Apollo</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-success">Done</span></td>
-									<td class="d-none d-md-table-cell">William Harris</td>
-								</tr>
-								<tr>
-									<td>Project X</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-success">Done</span></td>
-									<td class="d-none d-md-table-cell">Sharon Lessman</td>
-								</tr>
-								<tr>
-									<td>Project Romeo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-success">Done</span></td>
-									<td class="d-none d-md-table-cell">Christina Mason</td>
-								</tr>
-								<tr>
-									<td>Project Wombat</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">31/06/2021</td>
-									<td><span class="badge bg-warning">In progress</span></td>
-									<td class="d-none d-md-table-cell">William Harris</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Reseller</td>
+									<td><button type="button" class="btn btn-success">Detil</button></td>
 								</tr>
 							</tbody>
 						</table>
