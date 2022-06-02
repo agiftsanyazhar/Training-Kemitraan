@@ -37,14 +37,15 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="m-sm-4">
-									<form>
+									<form action="proses-sign-up" method="POST">
+										@csrf
 										<div class="mb-3">
 											<label class="form-label">Name</label>
-											<input class="form-control form-control-lg" type="text" name="name" placeholder="Enter your name" />
+											<input class="form-control form-control-lg" type="text" name="nama_lengkap" placeholder="Enter your name" />
 										</div>
 										<div class="mb-3">
-											<label class="form-label">Company</label>
-											<input class="form-control form-control-lg" type="text" name="company" placeholder="Enter your company name" />
+											<label class="form-label">Username</label>
+											<input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your username" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Email</label>
@@ -59,8 +60,7 @@
 										</small>
 										
 										<div class="text-center mt-3">
-											<a href="/" class="btn btn-lg btn-primary">Sign up</a>
-											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+											<button type="submit" class="btn btn-lg btn-primary">Sign up</button>
 										</div>
 									</form>
 								</div>

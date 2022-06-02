@@ -17,7 +17,7 @@ class IndexController extends Controller
     {
         {
             return view('index', [
-                "title" => "Dashboard"
+                "title" => "Daftar Mitra"
             ]);
         }
     }

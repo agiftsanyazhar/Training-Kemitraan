@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\SignIn;
 use App\Http\Requests\StoreSignInRequest;
 use App\Http\Requests\UpdateSignInRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class SignInController extends Controller
 {
@@ -21,6 +23,34 @@ class SignInController extends Controller
             ]);
         }
     }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request -> validate([
+            'username'      => 'required',
+            'password'      => 'required',
+        ]);
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard');
+        };
+        
+        return back()->with('loginError', 'Login Gagal!');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/sign-in');
+    }
+
 
     /**
      * Show the form for creating a new resource.

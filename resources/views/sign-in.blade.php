@@ -11,7 +11,7 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in" />
 
 	<title>Sign In | AdminKit Demo</title>
@@ -28,7 +28,7 @@
 					<div class="d-table-cell align-middle">
 
 						<div class="text-center mt-4">
-							<h1 class="h2">Welcome back, Charles</h1>
+							<img src="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-logo.png" width="45%">
 							<p class="lead">
 								Sign in to your account to continue
 							</p>
@@ -37,36 +37,61 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="m-sm-4">
+{{-- 									
 									<div class="text-center">
 										<img src="img/avatars/avatar.jpg" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
-									</div>
-									<form>
-										<div class="mb-3">
-											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
-										</div>
-										<div class="mb-3">
-											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
-											{{-- <small>
-												<a href="/">Forgot password?</a>
-											</small> --}}
-											<small>
-												Don't have an account yet? <a href="sign-up">Sign Up!</a>
-											</small>
-										</div>
+									</div> --}}
+
+									<form action="proses-sign-in" method="POST">
+										@csrf
+										
+										@if (session()->has('loginError'))
+											<div class="alert alert-danger alert-dismissible fade show" role="alert">
+												<strong>Username atau Password Salah</strong>
+												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+											</div>
+											<div class="mb-3">
+												<label for="validationServer03" class="form-label">Username</label>
+												<input type="text" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="username" placeholder="Enter your username" required>
+											</div>
+											<div class="mb-3">
+												<label for="validationServer03" class="form-label">Password</label>
+												<input type="password" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="password" placeholder="Enter your password" required>
+												{{-- <small>
+													<a href="/">Forgot password?</a>
+												</small> --}}
+												<small>
+													Don't have an account yet? <a href="sign-up">Sign Up!</a>
+												</small>
+											</div>
+										@else
+											<div class="mb-3">
+												<label class="form-label">Username</label>
+												<input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your username" />
+											</div>
+											<div class="mb-3">
+												<label class="form-label">Password</label>
+												<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
+												{{-- <small>
+													<a href="/">Forgot password?</a>
+												</small> --}}
+												
+											</div>
+										@endif
 										<div>
 											<label class="form-check">
-            <input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
-            <span class="form-check-label">
-              Remember me next time
-            </span>
-          </label>
+												<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
+												<span class="form-check-label">
+													Remember me next time
+												</span>
+											</label>
 										</div>
-										<div class="text-center mt-3">
-											<a href="/" class="btn btn-lg btn-primary">Sign in</a>
-											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+										<div class="text-center d-grid gap-2 mt-2 mb-3">
+											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
 										</div>
+										<span>
+											Don't have an account yet? <a href="sign-up">Sign Up!</a>
+										</span>
 									</form>
 								</div>
 							</div>
