@@ -69,7 +69,7 @@
 
 					<li class="sidebar-item {{ ($title === "Status") ? 'active' : '' }}">
 						<a class="sidebar-link" href="profile">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Status</span>
+							<i class="align-middle" data-feather="info"></i> <span class="align-middle">Status</span>
 						</a>
 					</li>
 
@@ -81,15 +81,15 @@
 
 					
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="forms">
+					<li class="sidebar-item {{ ($title === "charts") ? 'active' : '' }}" >
+						<a class="sidebar-link" href="charts">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Pesanan</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="forms">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Stock Real</span>
+					<li class="sidebar-item {{ ($title === "stock") ? 'active' : '' }}" >
+						<a class="sidebar-link" href="stock">
+							<i class="align-middle" data-feather="package"></i> <span class="align-middle">Stock Real</span>
 						</a>
 					</li>
 

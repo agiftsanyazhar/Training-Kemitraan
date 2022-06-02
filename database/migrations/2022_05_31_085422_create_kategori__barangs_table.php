@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('kategori__barangs', function (Blueprint $table) {
             $table->id();
-            $table->string('Role');
-            $table->string('Higher_role');
+            $table->string('nama_kategori');
+            $table->foreignId('id_user');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('kategori__barangs');
     }
 };
