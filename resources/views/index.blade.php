@@ -124,74 +124,21 @@
 				<table class="table table-hover my-0">
 					<thead>
 						<tr>
-							<th>Nama Mitra</th>
-							<th class="d-none d-xl-table-cell">Start Date</th>
-							<th class="d-none d-xl-table-cell">End Date</th>
-							<th>Status</th>
-							<th class="d-none d-md-table-cell">Assignee</th>
+							<th>Nama Barang</th>
+							<th class="d-none d-xl-table-cell">harga</th>
+							<th class="d-none d-xl-table-cell">Stok</th>
+							<th>Kategori</th>
 						</tr>
 					</thead>
 					<tbody>
-						@can('Admin')
+						@foreach($barang as $data)
 						<tr>
-							<td>Project Admin</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-success">Done</span></td>
-							<td class="d-none d-md-table-cell">Vanessa Tucker</td>
+							<td>{{ $data->nama_barang }}</td>
+							<td class="d-none d-xl-table-cell">{{ $data->harga_barang }}</td>
+							<td class="d-none d-xl-table-cell">{{ $data->stok_barang }}</td>
+							<td><span class="badge bg-success">{{ $data->kategori_barang->nama_kategori }}</span></td>
 						</tr>
-						@endcan
-						@can('Agen')
-						<tr>
-							<td>Project Agen</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-danger">Cancelled</span></td>
-							<td class="d-none d-md-table-cell">William Harris</td>
-						</tr>
-						@endcan
-						<tr>
-							<td>Project Hades</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-success">Done</span></td>
-							<td class="d-none d-md-table-cell">Sharon Lessman</td>
-						</tr>
-						<tr>
-							<td>Project Nitro</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-warning">In progress</span></td>
-							<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-						</tr>
-						<tr>
-							<td>Project Phoenix</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-success">Done</span></td>
-							<td class="d-none d-md-table-cell">William Harris</td>
-						</tr>
-						<tr>
-							<td>Project X</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-success">Done</span></td>
-							<td class="d-none d-md-table-cell">Sharon Lessman</td>
-						</tr>
-						<tr>
-							<td>Project Romeo</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-success">Done</span></td>
-							<td class="d-none d-md-table-cell">Christina Mason</td>
-						</tr>
-						<tr>
-							<td>Project Wombat</td>
-							<td class="d-none d-xl-table-cell">01/01/2021</td>
-							<td class="d-none d-xl-table-cell">31/06/2021</td>
-							<td><span class="badge bg-warning">In progress</span></td>
-							<td class="d-none d-md-table-cell">William Harris</td>
-						</tr>
+						@endforeach
 					</tbody>
 				</table>
 			</div>

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Index;
 use App\Http\Requests\StoreIndexRequest;
 use App\Http\Requests\UpdateIndexRequest;
+use App\Models\barang;
+use App\Models\Kategori_Barang;
+use App\Models\User;
+use App\Models\Role;
 
 class IndexController extends Controller
 {
@@ -15,9 +19,16 @@ class IndexController extends Controller
      */
     public function index()
     {
+
+        $role = Role::where('Role', '=' , 'Admin')->pluck('id');
+        $user = User::where('id_role', $role)->pluck('id');
+        $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
+        $barang = barang::where('id_kategori',$id_kategori);
+        
         {
             return view('index', [
-                "title" => "Daftar Mitra"
+                "title" => "Daftar Mitra",
+                '$barang' => $barang
             ]);
         }
     }
