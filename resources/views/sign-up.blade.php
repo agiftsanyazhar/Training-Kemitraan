@@ -28,9 +28,9 @@
 					<div class="d-table-cell align-middle">
 
 						<div class="text-center mt-4">
-							<h1 class="h2">Get started</h1>
+							<img src="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-logo.png" width="45%">
 							<p class="lead">
-								Start creating the best possible user experience for you customers.
+								Sign up untuk mengakses semua fitur
 							</p>
 						</div>
 
@@ -40,23 +40,42 @@
 									<form action="proses-sign-up" method="POST">
 										@csrf
 										<div class="mb-3">
-											<label class="form-label">Name</label>
-											<input class="form-control form-control-lg" type="text" name="nama_lengkap" placeholder="Enter your name" />
+											<label class="form-label">Nama Lengkap</label>
+											<input class="form-control form-control-lg" type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Username</label>
-											<input class="form-control form-control-lg" type="text" name="username" placeholder="Enter your username" />
+											<input class="form-control form-control-lg" type="text" name="username" placeholder="Masukkan username" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
+											<input class="form-control form-control-lg" type="email" name="email" placeholder="Masukkan email" />
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Alamat</label>
+											<input class="form-control form-control-lg" type="email" name="alamat" placeholder="Masukkan alamat" />
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Role</label>
+											<select class="form-control @error('role') is-invalid @enderror" name="role" required>
+												<option value="" disabled selected hidden>Pilih Role</option>
+												<option value="distributor">Distributor</option>
+												<option value="agen">Agen</option>
+												<option value="reseller">Reseller</option>
+												<option value="dropshipper">Dropshipper</option>
+											</select>
+											@error('role')
+												<div class="invalid-feedback">
+												{{ $message }}
+											</div>
+											@enderror
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter password" />
+											<input class="form-control form-control-lg" type="password" name="password" placeholder="Masukkan password" />
 										</div>
 										<small>
-											Already have an account? <a href="sign-in">Login!</a>
+											Sudah punya akun? <a href="sign-in">Login!</a>
 										</small>
 										
 										<div class="text-center mt-3">

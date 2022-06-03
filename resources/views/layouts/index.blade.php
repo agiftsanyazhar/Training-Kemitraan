@@ -107,7 +107,10 @@
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> Pengaturan</a>
 								
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
+								<form action="/logout" method="post">
+									@csrf
+									<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
+								</form>
 							</div>
 						</li>
 					</ul>

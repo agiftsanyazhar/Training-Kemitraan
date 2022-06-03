@@ -206,35 +206,11 @@
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
 									<td class="d-none d-xl-table-cell">Surabaya</td>
 									<td class="d-none d-xl-table-cell">Distributor</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Reseller</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Dropshipper</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Distributor</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Reseller</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
+									<td>
+										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+									</td>
 								</tr>
 							</tbody>
 						</table>
