@@ -206,40 +206,39 @@
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
 									<td class="d-none d-xl-table-cell">Surabaya</td>
 									<td class="d-none d-xl-table-cell">Distributor</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Reseller</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Dropshipper</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Distributor</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
-								</tr>
-								<tr>
-									<td>Project Apollo</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Reseller</td>
-									<td><button type="button" class="btn btn-success">Detil</button></td>
+									<td>
+										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
+<<<<<<< Updated upstream
+=======
+				<table class="table table-hover my-0">
+					<thead>
+						<tr>
+							<th>Nama Barang</th>
+							<th class="d-none d-xl-table-cell">harga</th>
+							<th class="d-none d-xl-table-cell">Stok</th>
+							<th>Kategori</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($barang as $data)
+						<tr>
+							<td>{{ $data->nama_barang }}</td>
+							<td class="d-none d-xl-table-cell">{{ $data->harga_barang }}</td>
+							<td class="d-none d-xl-table-cell">{{ $data->stok_barang }}</td>
+							<td><span class="badge bg-success">{{ $data->kategori_barang->nama_kategori }}</span></td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+>>>>>>> Stashed changes
 			</div>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">

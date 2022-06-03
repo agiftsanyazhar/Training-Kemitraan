@@ -30,7 +30,7 @@
 						<div class="text-center mt-4">
 							<img src="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-logo.png" width="45%">
 							<p class="lead">
-								Sign in to your account to continue
+								Masuk ke akun Anda untuk melanjutkan
 							</p>
 						</div>
 
@@ -52,11 +52,11 @@
 											</div>
 											<div class="mb-3">
 												<label for="validationServer03" class="form-label">Username</label>
-												<input type="text" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="username" placeholder="Enter your username" required>
+												<input type="text" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="username" placeholder="Masukkan username atau email Anda" required>
 											</div>
 											<div class="mb-3">
 												<label for="validationServer03" class="form-label">Password</label>
-												<input type="password" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="password" placeholder="Enter your password" required>
+												<input type="password" class="form-control form-control-lg is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" name="password" placeholder="Masukkan kata sandi Anda" required>
 												{{-- <small>
 													<a href="/">Forgot password?</a>
 												</small> --}}

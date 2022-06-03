@@ -16,7 +16,7 @@
 							<h5 class="card-title mb-0">Christina Mason</h5>
 							<div class="text-muted mb-2">Distributor</div>
 							<div class="text-muted mb-2">Reseller</div>
-							<div class="text-muted mb-2">Dropshiper</div>
+							<div class="text-muted mb-2">Dropshipper</div>
 							<span data-feather="map-pin" class="feather-sm me-1"></span> Surabaya – 60286
 
 							
