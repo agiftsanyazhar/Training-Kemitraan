@@ -19,7 +19,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        
+        // $log = auth()->user()->role()->higher_role;
         $role = Role::where('Role', '=' , 'Admin')->pluck('id');
         $user = User::where('id_role', $role)->pluck('id');
         $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
@@ -28,7 +28,7 @@ class IndexController extends Controller
         {
             return view('index', [
                 "title" => "Daftar Mitra",
-                '$barang' => $barang
+                'barang' => $barang
             ]);
         }
     }
