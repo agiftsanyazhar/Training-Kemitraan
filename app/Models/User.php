@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->hasOne(Role::class,'id_role','id');
+        return $this->belongsTo(Role::class,'id_role','id');
     }
 
     public function kategori_barang()

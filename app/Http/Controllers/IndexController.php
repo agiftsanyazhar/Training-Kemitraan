@@ -23,7 +23,7 @@ class IndexController extends Controller
         $role = Role::where('Role', '=' , 'Admin')->pluck('id');
         $user = User::where('id_role', $role)->pluck('id');
         $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
-        $barang = barang::where('id_kategori',$id_kategori);
+        $barang = barang::where('id_kategori',$id_kategori)->get();
         
         {
             return view('index', [
