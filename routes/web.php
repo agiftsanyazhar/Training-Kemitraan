@@ -34,10 +34,5 @@ Route::post('/proses-sign-up', [SignUpController::class, 'store']);
 //===================Sign Out=============
 Route::post('/logout', [SignInController::class, 'logout']);
 
-<<<<<<< Updated upstream
 //===================User=================
 Route::get('/user', [UserController::class, 'index']);
-=======
-//===================Add User=============
-Route::get('/user', [UserCon])
->>>>>>> Stashed changes
