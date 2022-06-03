@@ -77,6 +77,18 @@
             </a>
 					</li>
 
+					<li class="sidebar-header">
+						Management
+					</li>
+
+					
+
+					<li class="sidebar-item  {{ ($title === "Daftar User") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/user') }}">
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">User</span>
+            </a>
+					</li>
+
 				
 			</div>
 		</nav>
