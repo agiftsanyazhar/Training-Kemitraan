@@ -37,7 +37,7 @@ class SignInController extends Controller
             return redirect()->intended('/dashboard');
         };
         
-        return back()->with('loginError', 'Login Gagal!');
+        return back()->with('signinError', 'Sign in gagal!');
     }
 
     public function logout(Request $request)

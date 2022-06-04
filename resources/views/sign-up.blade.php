@@ -27,11 +27,8 @@
 				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
 					<div class="d-table-cell align-middle">
 
-						<div class="text-center mt-4">
+						<div class="text-center mt-4 mb-4">
 							<img src="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-logo.png" width="45%">
-							<p class="lead">
-								Sign up untuk mengakses semua fitur
-							</p>
 						</div>
 
 						<div class="card">
@@ -41,20 +38,38 @@
 										@csrf
 										<div class="mb-3">
 											<label class="form-label">Nama Lengkap</label>
-											<input class="form-control form-control-lg" type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" />
+											<input class="form-control form-control-lg @error('nama_lengkap') is-invalid @enderror" type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" value="{{ old('nama_lengkap') }}" minlength="3" maxlength="50" required/>
+											@error('nama_lengkap')
+												<div class="invalid-feedback">
+													{{ $message }}
+												</div>
+											@enderror
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Username</label>
-											<input class="form-control form-control-lg" type="text" name="username" placeholder="Masukkan username" />
+											<input class="form-control form-control-lg @error('username') is-invalid @enderror" type="text" name="username" placeholder="Masukkan username" value="{{ old('username') }}" minlength="3" maxlength="50" required/>
+											@error('username')
+												<div class="invalid-feedback">
+													{{ $message }}
+												</div>
+											@enderror
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Masukkan email" />
-										</div>
+											<input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" name="email" placeholder="Masukkan email" value="{{ old('email') }}" required/>
+											@error('email')
+												<div class="invalid-feedback">
+													{{ $message }}
+												</div>
+											@enderror										</div>
 										<div class="mb-3">
 											<label class="form-label">Alamat</label>
-											<input class="form-control form-control-lg" type="email" name="alamat" placeholder="Masukkan alamat" />
-										</div>
+											<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat" placeholder="Masukkan alamat" value="{{ old('alamat') }}" maxlength="100" required/>
+											@error('alamat')
+												<div class="invalid-feedback">
+													{{ $message }}
+												</div>
+											@enderror											</div>
 										<div class="mb-3">
 											<label class="form-label">Role</label>
 											<select class="form-control @error('role') is-invalid @enderror" name="role" required>
@@ -72,15 +87,14 @@
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Masukkan password" />
+											<input class="form-control form-control-lg" type="password" name="password" placeholder="Masukkan password" minlength="8" maxlength="32" required/>
 										</div>
-										<small>
-											Sudah punya akun? <a href="sign-in">Login!</a>
-										</small>
-										
-										<div class="text-center mt-3">
+										<div class="text-center d-grid gap-2 mt-2 mb-3">
 											<button type="submit" class="btn btn-lg btn-primary">Sign up</button>
 										</div>
+										<small>
+											Sudah punya akun? <a href="{{ url ('/sign-in') }}">Sign in!</a>
+										</small>
 									</form>
 								</div>
 							</div>
