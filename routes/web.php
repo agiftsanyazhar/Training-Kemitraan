@@ -4,6 +4,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,3 +33,6 @@ Route::post('/proses-sign-up', [SignUpController::class, 'store']);
 
 //===================Sign Out=============
 Route::post('/logout', [SignInController::class, 'logout']);
+
+//===================User=================
+Route::get('/user', [UserController::class, 'index']);

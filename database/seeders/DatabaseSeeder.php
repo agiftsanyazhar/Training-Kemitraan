@@ -12,32 +12,36 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('roles')->insert([
             'Role' => 'Admin',
-            'Higher_Role' => 'Null'
+            'Lower_role' => '2'
         ]);
 
         DB::table('roles')->insert([
             'Role' => 'Principal',
-            'Higher_Role' => 'Admin'
+            'Higher_role' => '1',
+            'Lower_role' => '3'
         ]);
         
         DB::table('roles')->insert([
             'Role' => 'Distributor',
-            'Higher_Role' => 'Principal'
+            'Higher_role' => '2',
+            'Lower_role' => '4'
         ]);
         
         DB::table('roles')->insert([
             'Role' => 'Agen',
-            'Higher_Role' => 'Distributor'
+            'Higher_role' => '3',
+            'Lower_role' => '5'
         ]);
         
         DB::table('roles')->insert([
             'Role' => 'Reseller',
-            'Higher_Role' => 'Agen'
+            'Higher_role' => '4',
+            'Lower_role' => '6'
         ]);
         
         DB::table('roles')->insert([
             'Role' => 'Dropshipper',
-            'Higher_Role' => 'Reseller'
+            'Higher_role' => '5'
         ]);
 
         DB::table('users')->insert([
@@ -45,7 +49,16 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'email' => 'adminkemitraanpkl@gmail.com',
             'id_role' => '1',
-            'password' => bcrypt('admin123')
+            'password' => bcrypt('admin123'),
+        ]);
+
+        DB::table('users')->insert([
+            'nama_lengkap' => 'testing',
+            'username' => 'testing',
+            'email' => 'testingkemitraanpkl@gmail.com',
+            'id_role' => '2',
+            'password' => bcrypt('testing123'),
+            'registered_by' => '1'
         ]);
     }
 }
