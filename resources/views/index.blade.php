@@ -193,7 +193,7 @@
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
-									<th>No.</th>
+									<th>No</th>
 									<th class="d-none d-xl-table-cell">Nama Lengkap</th>
 									<th class="d-none d-xl-table-cell">Username</th>
 									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
@@ -213,37 +213,9 @@
 									<td class="d-none d-xl-table-cell">Surabaya</td>
 									<td class="d-none d-xl-table-cell">Distributor <span class="badge bg-success">Aktif</span></td>
 									<td>
-										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
-									</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td class="d-none d-xl-table-cell">Apollo 2</td>
-									<td class="d-none d-xl-table-cell">apollo2</td>
-									<td class="d-none d-xl-table-cell">02/01/2021</td>
-									<td class="d-none d-xl-table-cell">apollo2@gmail.com</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Reseller <span class="badge bg-warning">Pending</span></td>
-									<td>
-										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
-									</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td class="d-none d-xl-table-cell">Apollo 3</td>
-									<td class="d-none d-xl-table-cell">apollo3</td>
-									<td class="d-none d-xl-table-cell">03/01/2021</td>
-									<td class="d-none d-xl-table-cell">apollo3@gmail.com</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Dropshipper <span class="badge bg-danger">Nonaktif</span></td>
-									<td>
-										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
+										<a href="{{ url ('/form-edit-mitra-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
+										<a href="{{ url ('/delete-mitra-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
 									</td>
 								</tr>
 							</tbody>
@@ -261,7 +233,7 @@
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
-									<th>No.</th>
+									<th>No</th>
 									<th class="d-none d-xl-table-cell">ID</th>
 									<th class="d-none d-xl-table-cell">Nama Barang</th>
 									<th class="d-none d-xl-table-cell">Harga</th>
@@ -279,9 +251,9 @@
 									<td class="d-none d-xl-table-cell">49</td>
 									<td class="d-none d-xl-table-cell">Face Wash</td>
 									<td>
-										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
+										<a href="{{ url ('/form-edit-barang-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
+										<a href="{{ url ('/delete-barang-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
 									</td>
 								</tr>
 							</tbody>

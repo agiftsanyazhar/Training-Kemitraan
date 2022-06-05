@@ -60,17 +60,17 @@
 						Produk
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item {{ ($title === "Brand" | $title === "Tambah Brand" | $title === "Edit Brand") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/brand') }}">
               <i class="align-middle" data-feather="tag"></i> <span class="align-middle">Brand</span>
             </a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item {{ ($title === "Gudang" | $title === "Tambah Gudang" | $title === "Edit Gudang") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/gudang') }}">
               <i class="align-middle" data-feather="home"></i> <span class="align-middle">Gudang</span>
             </a>
 					</li>
-					<li class="sidebar-item">
+					<li class="sidebar-item {{ ($title === "Kategori" | $title === "Tambah Kategori" | $title === "Edit Kategori") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/kategori') }}">
               <i class="align-middle" data-feather="layers"></i> <span class="align-middle">Kategori</span>
             </a>

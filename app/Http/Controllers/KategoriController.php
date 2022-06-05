@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBrandRequest;
-use App\Http\Requests\UpdateBrandRequest;
+use App\Models\kategori;
+use App\Http\Requests\StorekategoriRequest;
+use App\Http\Requests\UpdatekategoriRequest;
 
-class BrandController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class BrandController extends Controller
     public function index()
     {
         {
-            return view('brand', [
-                "title" => "Brand",
+            return view('kategori', [
+                "title" => "Kategori",
                 'counter' => 1
             ]);
         }
@@ -31,18 +30,18 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('create.brand', [
-            "title" => "Tambah Brand"
+        return view('create.kategori', [
+            "title" => "Tambah Kategori"
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBrandRequest  $request
+     * @param  \App\Http\Requests\StorekategoriRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBrandRequest $request)
+    public function store(StorekategoriRequest $request)
     {
         //
     }
@@ -50,10 +49,10 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show(kategori $kategori)
     {
         //
     }
@@ -61,24 +60,24 @@ class BrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(kategori $kategori)
     {
-        return view('edit.brand', [
-            "title" => "Edit Brand"
+        return view('edit.kategori', [
+            "title" => "Edit Kategori"
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBrandRequest  $request
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Http\Requests\UpdatekategoriRequest  $request
+     * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBrandRequest $request, Brand $brand)
+    public function update(UpdatekategoriRequest $request, kategori $kategori)
     {
         //
     }
@@ -86,10 +85,10 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(kategori $kategori)
     {
         //
     }

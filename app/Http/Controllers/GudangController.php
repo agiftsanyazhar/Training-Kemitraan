@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBrandRequest;
-use App\Http\Requests\UpdateBrandRequest;
+use App\Models\gudang;
+use App\Http\Requests\StoregudangRequest;
+use App\Http\Requests\UpdategudangRequest;
 
-class BrandController extends Controller
+class GudangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class BrandController extends Controller
     public function index()
     {
         {
-            return view('brand', [
-                "title" => "Brand",
+            return view('gudang', [
+                "title" => "Gudang",
                 'counter' => 1
             ]);
         }
@@ -31,18 +30,18 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('create.brand', [
-            "title" => "Tambah Brand"
+        return view('create.gudang', [
+            "title" => "Tambah Gudang"
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBrandRequest  $request
+     * @param  \App\Http\Requests\StoregudangRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBrandRequest $request)
+    public function store(StoregudangRequest $request)
     {
         //
     }
@@ -50,10 +49,10 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show(gudang $gudang)
     {
         //
     }
@@ -61,24 +60,24 @@ class BrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(gudang $gudang)
     {
-        return view('edit.brand', [
-            "title" => "Edit Brand"
+        return view('edit.gudang', [
+            "title" => "Edit Gudang"
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBrandRequest  $request
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Http\Requests\UpdategudangRequest  $request
+     * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBrandRequest $request, Brand $brand)
+    public function update(UpdategudangRequest $request, gudang $gudang)
     {
         //
     }
@@ -86,10 +85,10 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(gudang $gudang)
     {
         //
     }
