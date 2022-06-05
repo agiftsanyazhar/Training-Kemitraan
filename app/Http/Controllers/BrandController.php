@@ -16,10 +16,11 @@ class BrandController extends Controller
      */
     public function index()
     {
+        $brand = Brand::all();
         {
             return view('brand', [
                 "title" => "Brand",
-                'counter' => 1
+                'brand' => $brand
             ]);
         }
     }
@@ -89,8 +90,10 @@ class BrandController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy($id)
     {
-        //
+        $data = brand::find($id);
+        $data->delete();
+        return redirect('/brand');
     }
 }

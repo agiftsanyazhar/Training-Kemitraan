@@ -39,15 +39,24 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($brand as $data)
 								<tr>
-									<td>1</td>
-									<td class="d-none d-xl-table-cell">Garnier</td>
+									<td>{{ $data->id }}</td>
+									<td class="d-none d-xl-table-cell">{{ $data->nama_brand }}</td>
 									<td>
-										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
-										<a href="{{ url ('/form-edit-brand-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
-										<a href="{{ url ('/delete-brand-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
+										<a href="{{ url ('/') }}">
+											<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										</a>
+										<a href="{{ url ('/form-edit-brand-') }}">
+											<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										</a>
+										<a href="{{ url ('/delete-brand-') }}">
+											<button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>
+											</button>
+										</a>
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>

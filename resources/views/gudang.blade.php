@@ -32,6 +32,7 @@
 						</div>
 						<table class="table table-hover my-0">
 							<thead>
+								@foreach($gudang as $data)
 								<tr>
 									<th>No</th>
 									<th class="d-none d-xl-table-cell">Nama Gudang</th>
@@ -41,15 +42,16 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td class="d-none d-xl-table-cell">Gudang Garam</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td>{{ $data->id }}</td>
+									<td class="d-none d-xl-table-cell">{{ $data->nama_gudang }}</td>
+									<td class="d-none d-xl-table-cell">{{ $data->lokasi_gudang }}</td>
 									<td>
 										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
 										<a href="{{ url ('/form-edit-gudang-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
 										<a href="{{ url ('/delete-gudang-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>

@@ -56,11 +56,15 @@ Route::post('/logout', [SignInController::class, 'logout']);
 // Brand
 Route::get('/create-brand', [BrandController::class, 'create'])->name('login');
 Route::get('/form-edit-brand-', [BrandController::class, 'edit'])->name('login');
+Route::get('/delete-brand-', [BrandController::class, 'destroy'])->name('login');
 
 // Gudang
 Route::get('/create-gudang', [GudangController::class, 'create'])->name('login');
 Route::get('/form-edit-gudang-', [GudangController::class, 'edit'])->name('login');
+Route::get('/delete-gudang-', [GudangController::class, 'destroy'])->name('login');
+
 
 // Kategori
 Route::get('/create-kategori', [KategoriController::class, 'create'])->name('login');
 Route::get('/form-edit-kategori-', [KategoriController::class, 'edit'])->name('login');
+Route::get('/delete-kategori-', [KategoriController::class, 'destroy'])->name('login');

@@ -15,10 +15,13 @@ class KategoriController extends Controller
      */
     public function index()
     {
+            $kategori = kategori::all();
         {
+
             return view('kategori', [
                 "title" => "Kategori",
-                'counter' => 1
+                'counter' => 1,
+                'kategori' => $kategori
             ]);
         }
     }

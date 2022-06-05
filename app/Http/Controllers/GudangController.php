@@ -15,10 +15,13 @@ class GudangController extends Controller
      */
     public function index()
     {
+        $gudang = gudang::all();
+
         {
             return view('gudang', [
                 "title" => "Gudang",
-                'counter' => 1
+                'counter' => 1,
+                'gudang' => $gudang
             ]);
         }
     }
