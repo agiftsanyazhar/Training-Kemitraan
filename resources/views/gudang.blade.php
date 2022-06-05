@@ -32,7 +32,6 @@
 						</div>
 						<table class="table table-hover my-0">
 							<thead>
-								@foreach($gudang as $data)
 								<tr>
 									<th>No</th>
 									<th class="d-none d-xl-table-cell">Nama Gudang</th>
@@ -41,6 +40,7 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($gudang as $data)
 								<tr>
 									<td>{{ $data->id }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->nama_gudang }}</td>
