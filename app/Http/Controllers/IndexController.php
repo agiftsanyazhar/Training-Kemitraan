@@ -20,17 +20,25 @@ class IndexController extends Controller
     public function index()
     {
         $counter = '1';
-        // $log = auth()->user()->role()->higher_role;
-        $role = Role::where('Role', '=' , 'Admin')->pluck('id');
-        $user = User::where('id_role', $role)->pluck('id');
-        $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
-        $barang = barang::where('id_kategori',$id_kategori)->get();
+        // // $log = auth()->user()->role()->higher_role;
+        // $role = Role::where('Role', '=' , 'Admin')->pluck('id');
+        // $user = User::where('id_role', $role)->pluck('id');
+        // $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
+        // $barang = barang::where('id_kategori',$id_kategori)->get();
         
         {
             return view('index', [
                 "title" => "Daftar Mitra",
-                'barang' => $barang,
+                // 'barang' => $barang,
                 'counter' => $counter
+            ]);
+        }
+    }
+    public function pengaturan()
+    {
+        {
+            return view('pengaturan', [
+                "title" => "Pengaturan"
             ]);
         }
     }

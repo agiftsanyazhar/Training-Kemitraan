@@ -35,16 +35,22 @@
 							<div class="card-body">
 								<div class="m-sm-4">
 
+									@if (session()->has('success'))
+										<div class="alert alert-success alert-dismissible fade show" role="alert">
+										{{ session('success') }}
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+									</div>
+									@endif
+
+									@if (session()->has('signinError'))
+										<div class="alert alert-danger alert-dismissible fade show" role="alert">
+											{{ session('signinError') }}
+											<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										</div>
+									@endif
+
 									<form action="proses-sign-in" method="POST">
 										@csrf
-
-										@if (session()->has('signinError'))
-											<div class="alert alert-danger alert-dismissible fade show" role="alert">
-												{{ session('signinError') }}
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-										@endif
-										
 										<div class="mb-3">
 											<label class="form-label">Username</label>
 											<input class="form-control form-control-lg" type="text" name="username" placeholder="Masukkan username" minlength="3" maxlength="50" required/>

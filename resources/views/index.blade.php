@@ -188,13 +188,16 @@
 					<div class="card flex-fill">
 						<div class="card-header">
 
-							<h5 class="card-title mb-0">Daftar Mitra</h5>
+							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
-									<th>Nama Mitra</th>
+									<th>No.</th>
+									<th class="d-none d-xl-table-cell">Nama Lengkap</th>
+									<th class="d-none d-xl-table-cell">Username</th>
 									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
+									<th class="d-none d-xl-table-cell">Email</th>
 									<th class="d-none d-xl-table-cell">Alamat</th>
 									<th class="d-none d-xl-table-cell">Status</th>
 									<th>Aksi</th>
@@ -202,10 +205,41 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>Project Apollo</td>
+									<td>1</td>
+									<td class="d-none d-xl-table-cell">Apollo 1</td>
+									<td class="d-none d-xl-table-cell">apollo1</td>
 									<td class="d-none d-xl-table-cell">01/01/2021</td>
+									<td class="d-none d-xl-table-cell">apollo1@gmail.com</td>
 									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Distributor</td>
+									<td class="d-none d-xl-table-cell">Distributor <span class="badge bg-success">Aktif</span></td>
+									<td>
+										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="d-none d-xl-table-cell">Apollo 2</td>
+									<td class="d-none d-xl-table-cell">apollo2</td>
+									<td class="d-none d-xl-table-cell">02/01/2021</td>
+									<td class="d-none d-xl-table-cell">apollo2@gmail.com</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Reseller <span class="badge bg-warning">Pending</span></td>
+									<td>
+										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="d-none d-xl-table-cell">Apollo 3</td>
+									<td class="d-none d-xl-table-cell">apollo3</td>
+									<td class="d-none d-xl-table-cell">03/01/2021</td>
+									<td class="d-none d-xl-table-cell">apollo3@gmail.com</td>
+									<td class="d-none d-xl-table-cell">Surabaya</td>
+									<td class="d-none d-xl-table-cell">Dropshipper <span class="badge bg-danger">Nonaktif</span></td>
 									<td>
 										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
 										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
@@ -216,29 +250,6 @@
 						</table>
 					</div>
 				</div>
-<<<<<<< Updated upstream
-=======
-				<table class="table table-hover my-0">
-					<thead>
-						<tr>
-							<th>Nama Barang</th>
-							<th class="d-none d-xl-table-cell">harga</th>
-							<th class="d-none d-xl-table-cell">Stok</th>
-							<th>Kategori</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach($barang as $data)
-						<tr>
-							<td>{{ $data->nama_barang }}</td>
-							<td class="d-none d-xl-table-cell">{{ $data->harga_barang }}</td>
-							<td class="d-none d-xl-table-cell">{{ $data->stok_barang }}</td>
-							<td><span class="badge bg-success">{{ $data->kategori_barang->nama_kategori }}</span></td>
-						</tr>
-						@endforeach
-					</tbody>
-				</table>
->>>>>>> Stashed changes
 			</div>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
@@ -250,23 +261,29 @@
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
-									<th>ID</th>
+									<th>No.</th>
+									<th class="d-none d-xl-table-cell">ID</th>
 									<th class="d-none d-xl-table-cell">Nama Barang</th>
 									<th class="d-none d-xl-table-cell">Harga</th>
 									<th class="d-none d-xl-table-cell">Stok</th>
 									<th class="d-none d-xl-table-cell">Kategori</th>
+									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($barang as $data)
 								<tr>
-									<td>{{ $data->id }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->nama_barang }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->harga_barang }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->stok_barang }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->kategori_barang->nama_kategori }}</td>
+									<td>1</td>
+									<td class="d-none d-xl-table-cell">K8721</td>
+									<td class="d-none d-xl-table-cell">Garnier Men</td>
+									<td class="d-none d-xl-table-cell">Rp50.000</td>
+									<td class="d-none d-xl-table-cell">49</td>
+									<td class="d-none d-xl-table-cell">Face Wash</td>
+									<td>
+										<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
+										<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
+										<button type="button" class="btn btn-danger"><i class="align-middle" data-feather="trash"></i></button>
+									</td>
 								</tr>
-								@endforeach
 							</tbody>
 						</table>
 					</div>

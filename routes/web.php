@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->middleware('auth');
+Route::get('/pengaturan', [IndexController::class, 'pengaturan'])->middleware('auth');
 Route::get('/dashboard', [IndexController::class, 'index'])->middleware('auth');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 

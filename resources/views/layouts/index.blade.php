@@ -43,16 +43,11 @@
 						<a class="sidebar-link" href="{{ url ('/profile') }}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
             </a>
-					</li>
-
-					
+					</li>					
 
 					<li class="sidebar-header">
 						Data Statistik
 					</li>
-
-					
-
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="{{ url ('/forms') }}">
               <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
@@ -62,30 +57,36 @@
 					
 
 					<li class="sidebar-header">
-						Status
+						Produk
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url ('/charts') }}">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+						<a class="sidebar-link" href="{{ url ('/brand') }}">
+              <i class="align-middle" data-feather="tag"></i> <span class="align-middle">Brand</span>
+            </a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ url ('/gudang') }}">
+              <i class="align-middle" data-feather="home"></i> <span class="align-middle">Gudang</span>
+            </a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ url ('/kategori') }}">
+              <i class="align-middle" data-feather="layers"></i> <span class="align-middle">Kategori</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google">
-              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-            </a>
-					</li>
+					
 
 					<li class="sidebar-header">
-						Management
+						Manajemen
 					</li>
 
 					
 
 					<li class="sidebar-item  {{ ($title === "Daftar User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">User</span>
+              <i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
             </a>
 					</li>
 
@@ -112,11 +113,10 @@
                 <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="{{ url ('/profile-user') }}"><i class="align-middle me-1" data-feather="user"></i> Profil</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="bell"></i> Notifikasi</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analitik</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> Pengaturan</a>
+								<a class="dropdown-item" href="{{ url ('/pengaturan') }}"><i class="align-middle me-1" data-feather="settings"></i> Pengaturan</a>
 								
 								<div class="dropdown-divider"></div>
 								<form action="/logout" method="post">
@@ -136,24 +136,8 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><img src="img/sellerkit-logo.png" width="80 px"></a>
+								<a class="text-muted" href="{{ url('/') }}"><img src="img/sellerkit-logo.png" width="80 px"></a>
 							</p>
-						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
 						</div>
 					</div>
 				</div>

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('daftarUser', [
+        return view('daftar-user', [
             'title' => 'Daftar User',
             'user' => User::where('registered_by', auth()->user()->id )->get()
         ]);

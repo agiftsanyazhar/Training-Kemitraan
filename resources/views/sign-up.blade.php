@@ -72,7 +72,7 @@
 											@enderror											</div>
 										<div class="mb-3">
 											<label class="form-label">Role</label>
-											<select class="form-control @error('role') is-invalid @enderror" name="role" required>
+											<select class="form-select mb-3 @error('role') is-invalid @enderror" name="role" required>
 												<option value="" disabled selected hidden>Pilih Role</option>
 												<option value="distributor">Distributor</option>
 												<option value="agen">Agen</option>

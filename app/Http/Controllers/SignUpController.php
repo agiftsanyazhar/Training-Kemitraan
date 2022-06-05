@@ -54,6 +54,8 @@ class SignUpController extends Controller
 
         User::create($validatedData);
 
+        $request->session()->flash('success','Sign up berhasil! Silakan sign in');
+
         return redirect('/sign-in');
     }
 
