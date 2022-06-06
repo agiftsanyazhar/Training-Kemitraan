@@ -22,7 +22,7 @@
                 </div>
             @endif
 
-			<a href="{{ url ('/create-brand') }}"><button type="button" class="btn btn-success mb-3"><i class="align-middle" data-feather="plus"></i> Tambah</button></a>
+			<a href="{{ url ('/form-create-role') }}"><button type="button" class="btn btn-success mb-3"><i class="align-middle" data-feather="plus"></i> Tambah</button></a>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
@@ -34,24 +34,24 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th class="d-none d-xl-table-cell">Nama Brand</th>
+									<th class="d-none d-xl-table-cell">Nama Role</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($brand as $data)
+								@foreach($role as $data)
 								<tr>
-									<td>{{ $data->id }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->nama_brand }}</td>
+									<td>{{ $counter++ }}</td>
+									<td class="d-none d-xl-table-cell">{{ $data->Role }}</td>
 									<td>
 										<div class="d-inline">
 											<a href="{{ url ('/') }}">
 												<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
 											</a>
-											<a href="{{ url ('/form-edit-brand-') }}">
+											<a href="{{ url ('/form-edit-role-') }}">
 												<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
 											</a>
-											<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="POST" class="d-inline">
+											<form action="{{ url('/delete-role-') }}{{ $data->id }}" method="POST" class="d-inline">
 												@method('delete')
 												@csrf
 												<button type="submit" class="btn btn-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>

@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $dates = [
+        'join_date'
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *

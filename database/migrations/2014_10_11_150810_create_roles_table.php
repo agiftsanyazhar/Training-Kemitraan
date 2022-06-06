@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('Role');
-            $table->foreignId('Higher_role')->nullable();
-            $table->foreignId('Lower_role')->nullable();
+            // $table->foreignId('Higher_role')->nullable();
+            // $table->foreignId('Lower_role')->nullable();
+            $table->integer('level');
             $table->timestamps();
         });
     }

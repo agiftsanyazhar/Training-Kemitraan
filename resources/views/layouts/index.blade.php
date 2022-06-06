@@ -82,12 +82,16 @@
 						Manajemen
 					</li>
 
-					
-
-					<li class="sidebar-item  {{ ($title === "Daftar User") ? 'active' : '' }}">
+					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">
-              <i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
-            </a>
+              				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
+            			</a>
+					</li>
+
+					<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/role') }}">
+              				<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
+            			</a>
 					</li>
 
 				
@@ -110,7 +114,7 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">{{ auth()->user()->nama_lengkap }}</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="bell"></i> Notifikasi</a>

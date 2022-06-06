@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
@@ -16,7 +19,11 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return view('role', [
+            'title' => 'Role',
+            'role' => Role::orderBy('level')->get(),
+            'counter' => 1
+        ]);
     }
 
     /**
@@ -26,7 +33,12 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $jmlh_Role = Role::all()->last()->id;
+        return view('create.role', [
+            'title' => 'Tambah Role',
+            'role'  => $jmlh_Role
+        ]);
+        
     }
 
     /**
@@ -35,9 +47,31 @@ class RoleController extends Controller
      * @param  \App\Http\Requests\StoreRoleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoleRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'Role'          => 'required|max:50',
+            'level'         => 'required',
+        ]);
+
+        DB::table('roles')->insert([
+            'Role'          =>$validatedData['Role'],
+            'level'         =>$validatedData['level']
+        ]);
+
+        $new_role = Role::all()->last()->id;
+        $new_level = Role::all()->last()->level;
+
+        for($i=$new_role-1;$i>=$new_level;$i--)
+        {
+            DB::table('roles')->where('level',$i)->limit(1)->update([
+                'level'         =>$i+1
+            ]);
+        }
+
+        $request->session()->flash('successRole','Role Berhasil Ditambah!');
+
+        return redirect('/role');
     }
 
     /**
