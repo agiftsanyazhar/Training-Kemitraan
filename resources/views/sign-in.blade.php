@@ -53,13 +53,13 @@
 										@csrf
 										<div class="mb-3">
 											<label class="form-label">Username</label>
-											<input class="form-control form-control-lg" type="text" name="username" placeholder="Masukkan username" minlength="3" maxlength="50" required/>
+											<input class="form-control form-control-lg" type="text" name="username" placeholder="Type username" minlength="3" maxlength="50" required/>
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Masukkan password" minlength="8" maxlength="32" required/>
+											<input class="form-control form-control-lg" type="password" name="password" placeholder="Type password" minlength="8" maxlength="32" required/>
 											<small>
-												<a href="{{ url ('/lupa-password') }}">Lupa password?</a>
+												<a href="{{ url ('/lupa-password') }}">Forgot password?</a>
 											</small>
 										</div>
 										
@@ -67,7 +67,7 @@
 											<label class="form-check">
 												<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
 												<span class="form-check-label">
-												Ingat saya
+												remember me
 												</span>
 											</label>
 										</div>
@@ -75,7 +75,7 @@
 											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
 										</div>
 										<small>
-											Belum punya akun? <a href="{{ url ('/sign-up') }}">Sign up!</a>
+											New User ? <a href="{{ url ('/sign-up') }}">Sign up!</a>
 										</small>
 									</form>
 								</div>
