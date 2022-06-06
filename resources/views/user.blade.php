@@ -54,9 +54,14 @@
 									<td class="d-none d-xl-table-cell">{{ $data->alamat }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span></td>
 									<td>
-										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
-										<a href="{{ url ('/form-edit-daftar-user-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
-										<a href="{{ url ('/delete-daftar-user-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
+										<div class="d-inline">
+											<a href="{{ url ('/form-edit-user-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+												@method('delete')
+												@csrf
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+											</form>
+										</div>
 									</td>
 								</tr>
 								@endforeach

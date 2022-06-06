@@ -27,7 +27,6 @@
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
-
 							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
 						<table class="table table-hover my-0">
@@ -35,6 +34,7 @@
 								<tr>
 									<th>No</th>
 									<th class="d-none d-xl-table-cell">Nama Role</th>
+                                    <th class="d-none d-xl-table-cell">Level Role</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
@@ -43,19 +43,14 @@
 								<tr>
 									<td>{{ $counter++ }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->Role }}</td>
+                                    <td class="d-none d-xl-table-cell">Level {{ $data->level }}</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/') }}">
-												<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-											</a>
-											<a href="{{ url ('/form-edit-role-') }}">
-												<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-											</a>
-											<form action="{{ url('/delete-role-') }}{{ $data->id }}" method="POST" class="d-inline">
+											<a href="{{ url ('/form-edit-role-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<form action="{{ url('/delete-role-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
-												<button type="submit" class="btn btn-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>
-												</button>
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
 											</form>
 										</div>
 									</td>

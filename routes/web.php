@@ -80,3 +80,4 @@ Route::get('/delete-role-{id}', [RoleController::class, 'destroy'])->middleware(
 //Role
 Route::get('/form-create-user', [UserController::class, 'create'])->middleware('auth');
 Route::post('/create-user', [UserController::class, 'store'])->middleware('auth');
+Route::delete('/delete-user-{id}', [UserController::class, 'destroy'])->middleware('auth');

@@ -26844,3 +26844,17 @@ body[data-theme="colored"] .simplebar-scrollbar:before {
 .btn-orange:hover{
     color: white;
 }
+
+.button-solid {
+    border: none;
+	background-color: Transparent;
+}
+.button-solid:focus {
+    border: none;
+    outline: none;
+	background-color: Transparent;
+}
+
+.no-padding{
+	padding:0!important;
+}

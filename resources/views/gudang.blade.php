@@ -46,9 +46,14 @@
 									<td class="d-none d-xl-table-cell">{{ $data->nama_gudang }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->lokasi_gudang }}</td>
 									<td>
-										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
-										<a href="{{ url ('/form-edit-gudang-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
-										<a href="{{ url ('/delete-gudang-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
+										<div class="d-inline">
+											<a href="{{ url ('/form-edit-gudang-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<form action="{{ url('/delete-gudang-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+												@method('delete')
+												@csrf
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+											</form>
+										</div>
 									</td>
 								</tr>
 								@endforeach
