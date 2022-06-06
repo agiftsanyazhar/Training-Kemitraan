@@ -21,15 +21,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-
-			<a href="{{ url ('/create-gudang') }}"><button type="button" class="btn btn-success mb-3"><i class="align-middle" data-feather="plus"></i> Tambah</button></a>
+			<div class="d-flex align-items-center justify-content-between mb-3">
+				<h3>{{ $title }}</h3>
+				<a href="{{ url ('/form-create-gudang') }}" class="btn btn-light"><i class="align-middle" data-feather="plus"></i> Tambah {{ $title }}</a>
+			</div>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
-						<div class="card-header">
-
-							<h5 class="card-title mb-0">{{ $title }}</h5>
-						</div>
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>

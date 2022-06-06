@@ -60,7 +60,7 @@
                                     <input class="form-control form-control-lg" type="password" name="password" placeholder="Masukkan password" minlength="8" maxlength="32" required/>
                                 </div>
                                 <div class="text-center d-grid gap-2 mt-2 mb-3">
-                                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
                                 </div>
                             </form>
                         </div>
