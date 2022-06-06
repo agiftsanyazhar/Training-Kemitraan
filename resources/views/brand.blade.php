@@ -44,16 +44,21 @@
 									<td>{{ $data->id }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->nama_brand }}</td>
 									<td>
+										<div class="d-inline">
 										<a href="{{ url ('/') }}">
 											<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
 										</a>
 										<a href="{{ url ('/form-edit-brand-') }}">
 											<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
 										</a>
-										<a href="{{ url ('/delete-brand-') }}">
-											<button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>
+										<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="post">
+										@method('delete')
+										@csrf
+											<button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>
 											</button>
-										</a>
+										
+										</form>
+										</div>
 									</td>
 								</tr>
 								@endforeach

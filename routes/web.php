@@ -53,18 +53,18 @@ Route::post('/logout', [SignInController::class, 'logout']);
 // ================================================
 // ==================== CRUD ======================
 // ================================================
+
 // Brand
-Route::get('/create-brand', [BrandController::class, 'create'])->name('login');
-Route::get('/form-edit-brand-', [BrandController::class, 'edit'])->name('login');
-Route::get('/delete-brand-', [BrandController::class, 'destroy'])->name('login');
+Route::get('/create-brand', [BrandController::class, 'create'])->middleware('auth');
+Route::get('/form-edit-brand-', [BrandController::class, 'edit'])->middleware('auth');
+Route::get('/delete-brand-{$id}', [BrandController::class, 'destroy'])->middleware('auth');
 
 // Gudang
-Route::get('/create-gudang', [GudangController::class, 'create'])->name('login');
-Route::get('/form-edit-gudang-', [GudangController::class, 'edit'])->name('login');
-Route::get('/delete-gudang-', [GudangController::class, 'destroy'])->name('login');
+Route::get('/create-gudang', [GudangController::class, 'create'])->middleware('auth');
+Route::get('/form-edit-gudang-', [GudangController::class, 'edit'])->middleware('auth');
+Route::get('/delete-gudang-', [GudangController::class, 'destroy'])->middleware('auth');
 
 
 // Kategori
-Route::get('/create-kategori', [KategoriController::class, 'create'])->name('login');
-Route::get('/form-edit-kategori-', [KategoriController::class, 'edit'])->name('login');
-Route::get('/delete-kategori-', [KategoriController::class, 'destroy'])->name('login');
+Route::get('/create-kategori', [KategoriController::class, 'create'])->middleware('auth');
+Route::get('/form-edit-kategori-', [KategoriController::class, 'edit'])->middleware('auth');
