@@ -54,7 +54,7 @@
 									<td class="d-none d-xl-table-cell">{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span></td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-user-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
 											<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf

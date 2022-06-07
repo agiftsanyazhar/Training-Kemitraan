@@ -57,27 +57,37 @@ Route::post('/logout', [SignInController::class, 'logout']);
 // ================================================
 
 // Brand
-Route::get('/create-brand', [BrandController::class, 'create'])->middleware('auth');
-Route::get('/form-edit-brand-', [BrandController::class, 'edit'])->middleware('auth');
+Route::get('/form-create-brand', [BrandController::class, 'create'])->middleware('auth');
+Route::post('/create-brand', [BrandController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-brand-{id}', [BrandController::class, 'edit'])->middleware('auth');
+Route::put('/update-brand-{id}', [BrandController::class, 'update'])->middleware('auth');
 Route::delete('/delete-brand-{id}', [BrandController::class, 'destroy'])->middleware('auth');
 
 // Gudang
-Route::get('/create-gudang', [GudangController::class, 'create'])->middleware('auth');
-Route::get('/form-edit-gudang-', [GudangController::class, 'edit'])->middleware('auth');
+Route::get('/form-create-gudang', [GudangController::class, 'create'])->middleware('auth');
+Route::post('/create-gudang', [GudangController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-gudang-{id}', [GudangController::class, 'edit'])->middleware('auth');
+Route::put('/update-gudang-{id}', [GudangController::class, 'update'])->middleware('auth');
 Route::get('/delete-gudang-{id}', [GudangController::class, 'destroy'])->middleware('auth');
 
 
 // Kategori
-Route::get('/create-kategori', [KategoriController::class, 'create'])->middleware('auth');
-Route::get('/form-edit-kategori-', [KategoriController::class, 'edit'])->middleware('auth');
+Route::get('/form-create-kategori', [KategoriController::class, 'create'])->middleware('auth');
+Route::post('/create-kategori', [KategoriController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-kategori-{id}', [KategoriController::class, 'edit'])->middleware('auth');
+Route::put('/update-edit-{id}', [KategoriController::class, 'update'])->middleware('auth');
+Route::delete('/delete-kategori-{id}', [KategoriController::class, 'destroy'])->middleware('auth');
 
 // Role
 Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('auth');
 Route::post('/create-role', [RoleController::class, 'store'])->middleware('auth');
-Route::get('/form-edit-role-', [RoleController::class, 'edit'])->middleware('auth');
+Route::get('/form-edit-role-{id}', [RoleController::class, 'edit'])->middleware('auth');
+Route::put('/update-role-{id}', [RoleController::class, 'update'])->middleware('auth');
 Route::get('/delete-role-{id}', [RoleController::class, 'destroy'])->middleware('auth');
 
-//Role
+//User
 Route::get('/form-create-user', [UserController::class, 'create'])->middleware('auth');
 Route::post('/create-user', [UserController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-user-{id}', [UserController::class, 'edit'])->middleware('auth');
+Route::put('/update-user-{id}',[UserController::class, 'update'])->middleware('auth');
 Route::delete('/delete-user-{id}', [UserController::class, 'destroy'])->middleware('auth');

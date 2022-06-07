@@ -62,6 +62,29 @@ class UserController extends Controller
         return redirect('/user');
     }
 
+    public function edit($id)
+    {
+        return view('edit.user',[
+            'user'  => User::find($id),
+            'title' => 'Edit User',
+            'roleid'=> Role::find($id)->id,
+            'role'  => Role::find($id)->Role  
+        ]);
+    }
+
+    public function update(Request $request) 
+    {
+        DB::table('users')->where('id', $request['id'])->update([
+            'nama_lengkap'  => $request['nama_lengkap'],
+            'username'      => $request['username'],
+            'email'         => $request['email'],
+            'alamat'        => $request['alamat'],
+            'status'        => $request['status']
+        ]);
+
+        return redirect('/user');
+    }
+
     public function destroy($id)
     {
         User::find($id)->delete();
