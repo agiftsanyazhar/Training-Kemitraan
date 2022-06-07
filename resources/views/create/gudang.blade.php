@@ -12,7 +12,7 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="create-brand" method="POST">
+							<form action="create-gudang" method="POST">
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Gudang</label>
@@ -25,7 +25,7 @@
 								</div>
 								<div class="mb-3">
 									<label class="form-label">Alamat</label>
-									<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat" placeholder="Masukkan alamat" value="{{ old('alamat') }}" required/>
+									<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat_gudang" placeholder="Masukkan alamat" value="{{ old('alamat') }}" required/>
 									@error('alamat')
 										<div class="invalid-feedback">
 											{{ $message }}

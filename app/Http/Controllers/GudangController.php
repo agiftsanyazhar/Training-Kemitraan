@@ -46,7 +46,15 @@ class GudangController extends Controller
      */
     public function store(StoregudangRequest $request)
     {
-        //
+        $data = $request->input();//insert into
+        
+        $gudang = new Gudang;// table
+        //value
+        $gudang->nama_gudang   = $data['nama_gudang'];
+        $gudang->lokasi_gudang      = $data['alamat_gudang'];
+        $gudang->save();//tombol run sqlyog
+
+        return redirect('gudang');
     }
 
     /**
@@ -91,8 +99,10 @@ class GudangController extends Controller
      * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(gudang $gudang)
+    public function destroy($id)
     {
-        //
+        gudang::find($id)->delete();
+
+        return redirect('/gudang');
     }
 }

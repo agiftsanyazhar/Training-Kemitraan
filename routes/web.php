@@ -68,7 +68,7 @@ Route::get('/form-create-gudang', [GudangController::class, 'create'])->middlewa
 Route::post('/create-gudang', [GudangController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-gudang-{id}', [GudangController::class, 'edit'])->middleware('auth');
 Route::put('/update-gudang-{id}', [GudangController::class, 'update'])->middleware('auth');
-Route::get('/delete-gudang-{id}', [GudangController::class, 'destroy'])->middleware('auth');
+Route::delete('/delete-gudang-{id}', [GudangController::class, 'destroy'])->middleware('auth');
 
 
 // Kategori
@@ -83,7 +83,7 @@ Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('
 Route::post('/create-role', [RoleController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-role-{id}', [RoleController::class, 'edit'])->middleware('auth');
 Route::put('/update-role-{id}', [RoleController::class, 'update'])->middleware('auth');
-Route::get('/delete-role-{id}', [RoleController::class, 'destroy'])->middleware('auth');
+Route::delete('/delete-role-{id}', [RoleController::class, 'destroy'])->middleware('auth');
 
 //User
 Route::get('/form-create-user', [UserController::class, 'create'])->middleware('auth');
