@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
@@ -33,9 +34,9 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('create.brand', [
-            "title" => "Tambah Brand"
-        ]);
+            return view('create.brand', [
+                "title" => "Tambah Brand"
+            ]);
     }
 
     /**
@@ -46,7 +47,16 @@ class BrandController extends Controller
      */
     public function store(StoreBrandRequest $request)
     {
-        //
+        $data = $request->input();//insert into
+        
+        $brand = new Brand;// table
+        $user = auth()->user()->id;
+        //value
+        $brand->nama_brand   = $data['nama_brand'];
+        $brand->id_user      = $user;
+        $brand->save();//tombol run sqlyog
+
+        return redirect('brand');
     }
 
     /**
