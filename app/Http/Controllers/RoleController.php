@@ -133,8 +133,9 @@ class RoleController extends Controller
 
         else{
             $level_old = $old->level;
+            $level_new = $new->level;
 
-            for($i=$new['level'];$i>$level_old;$i--)
+            for($i=$level_old+1;$i<=$level_new;$i++)
             {
                 DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
                     'level'     =>$i-1
