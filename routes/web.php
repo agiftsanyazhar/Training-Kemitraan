@@ -33,7 +33,7 @@ Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/gudang', [GudangController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
-Route::get('/role', [RoleController::class, 'index']);
+Route::get('/role', [RoleController::class, 'index'])->name('role');
 
 // ===================================================
 // ==================== Sign up ======================
