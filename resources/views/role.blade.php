@@ -45,7 +45,7 @@
                                     <td class="d-none d-xl-table-cell">Level {{ $data->level }}</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-role-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-role-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
 											<form action="{{ url('/delete-role-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf

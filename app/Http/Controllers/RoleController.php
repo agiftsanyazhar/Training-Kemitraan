@@ -91,9 +91,14 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
+    public function edit($id)
     {
-        //
+        $jmlh_Role = Role::all()->last()->id;
+        return view('edit.role', [
+            'title' => 'Edit Role',
+            'data'  => Role::find($id),
+            'role'  => $jmlh_Role
+        ]);
     }
 
     /**
@@ -103,9 +108,41 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(Request $request)
     {
-        //
+        $old = Role::find($request['id']);
+
+        DB::table('roles')->where('id', $request['id'])->update([
+            'level'         => $request['level'],
+            'Role'          => $request['Role']
+        ]);
+
+        $new = Role::find($request['id']);
+
+        if($old['level']>$new['level']){
+            $level_old = $old->level;
+            $level_edit= $level_old-1;
+
+            for($i=$level_edit;$i>=$new['level'];$i--)
+            {
+                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
+                    'level'     =>$i+1
+                ]);
+            }
+        }
+
+        else{
+            $level_old = $old->level;
+
+            for($i=$new['level'];$i>$level_old;$i--)
+            {
+                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
+                    'level'     =>$i-1
+                ]);
+            }
+        }
+
+    return redirect('/role');
     }
 
     /**
