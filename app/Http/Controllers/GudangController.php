@@ -90,16 +90,13 @@ class GudangController extends Controller
      * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdategudangRequest $request, gudang $gudang)
+    public function update(Request $request, $id)
     {
-        $item = modelbarang::find($id);
+        $data = gudang::find($id);
         
-        $item->nama_bar         = $request->input('nama_bar');
-        $item->stock_barang     = $request->input('stock_barang');
-        $item->harga_beli_bar   = $request->input('harga_beli_bar');
-        $item->harga_jual_bar   = $request->input('harga_jual_bar');
-        $item->id_jb            = $request->input('id_jb');
-        $item->save();
+        $data->nama_bar         = $request->input('nama_gudang');
+        $data->stock_barang     = $request->input('alamat_gudang');
+        $data->save();
         
         return redirect('/Home');
     }
