@@ -16,7 +16,15 @@ class KategoriBarangController extends Controller
      */
     public function index()
     {
-        //
+            $kategori = Kategori_Barang::all();
+        {
+
+            return view('kategori', [
+                "title" => "Kategori",
+                'counter' => 1,
+                'kategori' => $kategori
+            ]);
+        }
     }
 
     /**
@@ -26,7 +34,9 @@ class KategoriBarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.kategori', [
+            "title" => "Tambah Kategori"
+        ]);
     }
 
     /**
@@ -37,7 +47,14 @@ class KategoriBarangController extends Controller
      */
     public function store(StoreKategori_BarangRequest $request)
     {
-        //
+        $data = $request->input();//insert into
+        
+        $kategori = new Kategori_Barang;// table
+        //value
+        $kategori->nama_kategori   = $data['nama_kategori'];
+        $kategori->save();//tombol run sqlyog
+
+        return redirect('kategori');
     }
 
     /**
@@ -80,8 +97,10 @@ class KategoriBarangController extends Controller
      * @param  \App\Models\Kategori_Barang  $kategori_Barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori_Barang $kategori_Barang)
+    public function destroy($id)
     {
-        //
+        Kategori_Barang::find($id)->delete();
+
+        return redirect('/kategori');
     }
 }

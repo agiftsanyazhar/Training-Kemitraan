@@ -48,9 +48,11 @@
 										<a href="{{ url ('/form-edit-kategori-') }}">
 											<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
 										</a>
-										<a href="{{ url ('/delete-kategori-') }}">
-											<button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button>
-										</a>
+										<form action="{{ url('/delete-kategori-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+												@method('delete')
+												@csrf
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+											</form>
 									</td>
 								</tr>
 								@endforeach
