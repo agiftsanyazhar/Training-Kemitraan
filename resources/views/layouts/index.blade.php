@@ -18,6 +18,7 @@
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	
 </head>
 
 <body>
@@ -87,12 +88,13 @@
               				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
             			</a>
 					</li>
-
+					@can('Admin')
 					<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/role') }}">
               				<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
             			</a>
 					</li>
+					@endcan
 
 				
 			</div>

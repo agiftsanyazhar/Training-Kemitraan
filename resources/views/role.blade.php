@@ -3,21 +3,21 @@
 @section('container')
 	<main class="content">
 		<div class="container-fluid p-0">
-			@if (session()->has('successBrand'))
+			@if (session()->has('successRole'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('successBrand') }}
+                    {{ session('successRole') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-			@if (session()->has('updateBrand'))
+			@if (session()->has('updateRole'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('updateBrand') }}
+                    {{ session('updateRole') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-			@if (session()->has('deletesBrand'))
+			@if (session()->has('deletesRole'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('deletesBrand') }}
+                    {{ session('deletesRole') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

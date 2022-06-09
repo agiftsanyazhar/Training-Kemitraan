@@ -33,7 +33,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $jmlh_Role = Role::all()->last()->id;
+        $jmlh_Role = Role::orderBy('level', 'desc')->first();
+        $jmlh_Role = $jmlh_Role->level;
         return view('create.role', [
             'title' => 'Tambah Role',
             'role'  => $jmlh_Role
@@ -61,17 +62,19 @@ class RoleController extends Controller
 
         $new_role = Role::all()->last()->id;
         $new_level = Role::all()->last()->level;
-
-        for($i=$new_role-1;$i>=$new_level;$i--)
-        {
-            DB::table('roles')->where('level',$i)->limit(1)->update([
-                'level'         =>$i+1
-            ]);
+        $new = Role::find($request['id']);
+        
+        if($new_role!=$new_level){
+            for($i=$new_role-1;$i>=$new_level;$i--)
+            {
+                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
+                    'level'         =>$i+1
+                ]);
+            }
         }
+        
 
-        $request->session()->flash('successRole','Role Berhasil Ditambah!');
-
-        return redirect('/role');
+        return redirect()->route('role')->with('successRole','Data Telah Berhasi Ditambahkan');
     }
 
     /**
@@ -93,7 +96,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $jmlh_Role = Role::all()->last()->id;
+        $jmlh_Role = Role::orderBy('level', 'desc')->first();
+        $jmlh_Role = $jmlh_Role->level;
         return view('edit.role', [
             'title' => 'Edit Role',
             'data'  => Role::find($id),
@@ -143,7 +147,7 @@ class RoleController extends Controller
             }
         }
 
-    return redirect('/role');
+        return redirect()->route('role')->with('updateRole','Data Telah Berhasi Diubah');
     }
 
     /**
@@ -152,8 +156,10 @@ class RoleController extends Controller
      * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        //
+        Role::find($id)->delete();
+
+        return redirect()->route('role')->with('deletesRole','Data Telah Berhasi Dihapus');
     }
 }
