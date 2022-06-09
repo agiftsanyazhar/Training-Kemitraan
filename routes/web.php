@@ -3,7 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SignInController;
@@ -31,7 +31,7 @@ Route::get('/pengaturan', [IndexController::class, 'pengaturan'])->middleware('a
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/gudang', [GudangController::class, 'index']);
-Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/kategori', [KategoriBarangController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index']);
 
@@ -72,11 +72,11 @@ Route::delete('/delete-gudang-{id}', [GudangController::class, 'destroy'])->midd
 
 
 // Kategori
-Route::get('/form-create-kategori', [KategoriController::class, 'create'])->middleware('auth');
-Route::post('/create-kategori', [KategoriController::class, 'store'])->middleware('auth');
-Route::get('/form-edit-kategori-{id}', [KategoriController::class, 'edit'])->middleware('auth');
-Route::put('/update-edit-{id}', [KategoriController::class, 'update'])->middleware('auth');
-Route::delete('/delete-kategori-{id}', [KategoriController::class, 'destroy'])->middleware('auth');
+Route::get('/form-create-kategori', [KategoriBarangController::class, 'create'])->middleware('auth');
+Route::post('/create-kategori', [KategoriBarangController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-kategori-{id}', [KategoriBarangController::class, 'edit'])->middleware('auth');
+Route::put('/update-edit-{id}', [KategoriBarangController::class, 'update'])->middleware('auth');
+Route::delete('/delete-kategori-{id}', [KategoriBarangController::class, 'destroy'])->middleware('auth');
 
 // Role
 Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('auth');

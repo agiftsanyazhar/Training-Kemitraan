@@ -49,9 +49,11 @@ class GudangController extends Controller
         $data = $request->input();//insert into
         
         $gudang = new Gudang;// table
+        $user = auth()->user()->id;
         //value
         $gudang->nama_gudang   = $data['nama_gudang'];
         $gudang->lokasi_gudang      = $data['alamat_gudang'];
+        $gudang->id_user = $user;
         $gudang->save();//tombol run sqlyog
 
         return redirect('gudang');
@@ -90,7 +92,16 @@ class GudangController extends Controller
      */
     public function update(UpdategudangRequest $request, gudang $gudang)
     {
-        //
+        $item = modelbarang::find($id);
+        
+        $item->nama_bar         = $request->input('nama_bar');
+        $item->stock_barang     = $request->input('stock_barang');
+        $item->harga_beli_bar   = $request->input('harga_beli_bar');
+        $item->harga_jual_bar   = $request->input('harga_jual_bar');
+        $item->id_jb            = $request->input('id_jb');
+        $item->save();
+        
+        return redirect('/Home');
     }
 
     /**
