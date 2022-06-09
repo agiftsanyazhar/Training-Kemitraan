@@ -12,7 +12,7 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="create-brand" method="POST">
+							<form action="create-kategori" method="POST">
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Kategori</label>

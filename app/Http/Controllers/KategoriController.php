@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategori;
+use App\Models\Kategori_Barang;
 use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatekategoriRequest;
 
@@ -15,7 +15,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-            $kategori = kategori::all();
+            $kategori = Kategori_Barang::all();
         {
 
             return view('kategori', [
@@ -46,7 +46,16 @@ class KategoriController extends Controller
      */
     public function store(StorekategoriRequest $request)
     {
-        //
+        $data = $request->input();//insert into
+        
+        $kategori = new Kategori_Barang;// table
+        $user = auth()->user()->id;
+        //value
+        $kategori->nama_brand   = $data['nama_brand'];
+        $kategori->id_user      = $user;
+        $kategori->save();//tombol run sqlyog
+
+        return redirect('brand');
     }
 
     /**

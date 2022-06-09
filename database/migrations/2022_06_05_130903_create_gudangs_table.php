@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_gudang');
             $table->string('lokasi_gudang');
+            $table->foreignId('id_user');
             $table->timestamps();
         });
     }
