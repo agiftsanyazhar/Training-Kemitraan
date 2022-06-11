@@ -57,9 +57,7 @@ class UserController extends Controller
             'registered_by' => auth()->user()->id
         ]);
         
-        // $request->session()->('success','Registrasi Berhasil! Silakan Login');
-
-        return redirect('/user');
+        return redirect('/user')->with('successUser','Data User Telah Berhasi Dihapus');
     }
 
     public function edit($id)
@@ -82,13 +80,13 @@ class UserController extends Controller
             'status'        => $request['status']
         ]);
 
-        return redirect('/user');
+        return redirect('/user')->with('updateUser','Data User Telah Berhasi Diubah');
     }
 
     public function destroy($id)
     {
         User::find($id)->delete();
 
-        return redirect('/user');
+        return redirect('/user')->with('deletesUser','Data User Telah Berhasi Dihapus');
     }
 }

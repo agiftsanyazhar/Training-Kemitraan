@@ -54,7 +54,7 @@ class KategoriBarangController extends Controller
         $kategori->nama_kategori   = $data['nama_kategori'];
         $kategori->save();//tombol run sqlyog
 
-        return redirect('kategori');
+        return redirect('/user')->with('successKategori','Data Telah Berhasi DiTambahkan');
     }
 
     /**
@@ -101,6 +101,6 @@ class KategoriBarangController extends Controller
     {
         Kategori_Barang::find($id)->delete();
 
-        return redirect('/kategori');
+        return redirect('/kategori')->with('deletesKategori','Data User Telah Berhasi Dihapus');
     }
 }
