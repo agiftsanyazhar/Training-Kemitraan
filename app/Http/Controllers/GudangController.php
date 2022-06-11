@@ -96,6 +96,8 @@ class GudangController extends Controller
     {
         echo $request->nama_gudang;
         echo $request->alamat;
+        dd($request->all()); 
+        //code bawah e wes work, tinggal request e gk gelem ke panggil seng isian e form
         // gudang::where("id", $id)->update(
         //     [
         //         "nama_gudang" => $request->nama_gudang, 
