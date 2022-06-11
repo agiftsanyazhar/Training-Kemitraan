@@ -19,7 +19,7 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/@adminkit/core@latest/dist/css/app.css">
 </head>
 
 <body>
@@ -38,18 +38,12 @@
 								<div class="card">
 									<div class="card-body">
 										<div class="m-sm-4">
-		
-											@if (session()->has('success'))
-												<div class="alert alert-success alert-dismissible fade show" role="alert">
-												{{ session('success') }}
-												<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-											</div>
-											@endif
-		
 											@if (session()->has('signinError'))
 												<div class="alert alert-danger alert-dismissible fade show" role="alert">
-													{{ session('signinError') }}
-													<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+													<div class="alert-message">
+														{{ session('signinError') }}
+														<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+													</div>
 												</div>
 											@endif
 		
@@ -326,9 +320,6 @@
 			});
 		});
 	</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

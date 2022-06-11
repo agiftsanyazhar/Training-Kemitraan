@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
 use Illuminate\Http\Request;
+use SebastianBergmann\LinesOfCode\Counter;
 
 class BrandController extends Controller
 {
@@ -21,8 +22,9 @@ class BrandController extends Controller
         $brand = Brand::all();
         {
             return view('brand', [
-                "title" => "Brand",
-                'brand' => $brand
+                "title"     => "Brand",
+                'brand'     => $brand,
+                'counter'   => 1
             ]);
         }
     }
@@ -56,7 +58,7 @@ class BrandController extends Controller
         $brand->id_user      = $user;
         $brand->save();//tombol run sqlyog
 
-        return redirect('brand');
+        return redirect('/brand')->with('successBrand','Data berhasil ditambah!');
     }
 
     /**
@@ -92,7 +94,7 @@ class BrandController extends Controller
      */
     public function update(UpdateBrandRequest $request, Brand $brand)
     {
-        //
+        return redirect('/brand')->with('updateBrand','Data berhasil diubah!');
     }
 
     /**
@@ -105,6 +107,6 @@ class BrandController extends Controller
     {
         Brand::find($id)->delete();
 
-        return redirect('/brand');
+        return redirect('/brand')->with('deleteBrand','Data berhasil dihapus!');
     }
 }

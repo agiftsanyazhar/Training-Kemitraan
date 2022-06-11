@@ -19,7 +19,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $counter = '1';
+        // $counter = '1';
         // // $log = auth()->user()->role()->higher_role;
         // $role = Role::where('Role', '=' , 'Admin')->pluck('id');
         // $user = User::where('id_role', $role)->pluck('id');
@@ -28,9 +28,10 @@ class IndexController extends Controller
         
         {
             return view('index', [
-                "title" => "Daftar Mitra",
+                "title"         => "Daftar Mitra",
                 // 'barang' => $barang,
-                'counter' => $counter
+                'counter1'       => 1,
+                'counter2'       => 1
             ]);
         }
     }

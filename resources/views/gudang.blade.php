@@ -4,21 +4,27 @@
 	<main class="content">
 		<div class="container-fluid p-0">
 			@if (session()->has('successGudang'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('successGudang') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('successGudang') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			@if (session()->has('updateGudang'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('updateGudang') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('updateGudang') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
-			@if (session()->has('deletesGudang'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('deletesGudang') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			@if (session()->has('deleteGudang'))
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('deleteGudang') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			<div class="d-flex align-items-center justify-content-between mb-3">
@@ -40,18 +46,12 @@
 							<tbody>
 								@foreach($gudang as $data)
 								<tr>
-									<td>{{ $data->id }}</td>
+									<td>{{ $counter++ }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->nama_gudang }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->lokasi_gudang }}</td>
 									<td>
 										<div class="d-inline">
-											<form action="{{ url ('/form-edit-gudang-') }}{{ $data->id }}" method="post" class="text-dark">
-												@csrf
-												<input type="hidden" name="id" value="{{ $data->id }}">
-												<input type="hidden" name="nama_gudang" value="{{ $data->nama_gudang }}">
-												<input type="hidden" name="alamat_gudang" value="{{ $data->lokasi_gudang }}">
-												<button type="submit" class="button-solid btn-link text-primary no-padding"><i data-feather="edit"></i></button>
-											</form>
+											<a href="{{ url ('/form-edit-gudang-') }}" class="text-dark"><i data-feather="edit"></i></a>
 											<form action="{{ url('/delete-gudang-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf

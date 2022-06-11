@@ -56,7 +56,7 @@ class GudangController extends Controller
         $gudang->id_user = $user;
         $gudang->save();//tombol run sqlyog
 
-        return redirect('/gudang')->with('successGudang','Data Telah Berhasi Ditambahkan');
+        return redirect('/gudang')->with('successGudang','Data berhasil ditambah!');
     }
 
     /**
@@ -100,7 +100,7 @@ class GudangController extends Controller
         $data->lokasi_gudang       = $request->input('alamat_gudang');
         $data->save();
         
-        return redirect('/gudang')->with('updateGudang','Data Telah Berhasi Diubah');
+        return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
     }
 
     /**
@@ -113,6 +113,6 @@ class GudangController extends Controller
     {
         gudang::find($id)->delete();
 
-        return redirect('/gudang')->with('deletesGudang','Data Telah Berhasi Dihapus');
+        return redirect('/gudang')->with('deleteGudang','Data berhasi dihapus!');
     }
 }

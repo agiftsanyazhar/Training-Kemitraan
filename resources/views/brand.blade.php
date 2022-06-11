@@ -4,7 +4,7 @@
 	<main class="content">
 		<div class="container-fluid p-0">
 			@if (session()->has('successBrand'))
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<div class="alert-message">
                     	{{ session('successBrand') }}
                     	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -12,15 +12,19 @@
                 </div>
             @endif
 			@if (session()->has('updateBrand'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('updateBrand') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('updateBrand') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
-			@if (session()->has('deletesBrand'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('deletesBrand') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			@if (session()->has('deleteBrand'))
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('deleteBrand') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			<div class="d-flex align-items-center justify-content-between mb-3">
@@ -41,7 +45,7 @@
 							<tbody>
 								@foreach($brand as $data)
 								<tr>
-									<td>{{ $data->id }}</td>
+									<td>{{ $counter++ }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->nama_brand }}</td>
 									<td>
 										<div class="d-inline">

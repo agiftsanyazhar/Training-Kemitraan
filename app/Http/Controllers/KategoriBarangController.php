@@ -20,9 +20,9 @@ class KategoriBarangController extends Controller
         {
 
             return view('kategori', [
-                "title" => "Kategori",
-                'counter' => 1,
-                'kategori' => $kategori
+                "title"     => "Kategori",
+                'counter'   => 1,
+                'kategori'  => $kategori
             ]);
         }
     }
@@ -54,7 +54,7 @@ class KategoriBarangController extends Controller
         $kategori->nama_kategori   = $data['nama_kategori'];
         $kategori->save();//tombol run sqlyog
 
-        return redirect('/user')->with('successKategori','Data Telah Berhasi DiTambahkan');
+        return redirect('/kategori')->with('successKategori','Data berhasil ditambah!');
     }
 
     /**
@@ -76,7 +76,9 @@ class KategoriBarangController extends Controller
      */
     public function edit(Kategori_Barang $kategori_Barang)
     {
-        //
+        return view('edit.kategori', [
+            "title" => "Edit Kategori",
+        ]);
     }
 
     /**
@@ -88,7 +90,7 @@ class KategoriBarangController extends Controller
      */
     public function update(UpdateKategori_BarangRequest $request, Kategori_Barang $kategori_Barang)
     {
-        //
+        return redirect('/kategori')->with('updateKategori','Data berhasil diubah!');
     }
 
     /**
@@ -101,6 +103,6 @@ class KategoriBarangController extends Controller
     {
         Kategori_Barang::find($id)->delete();
 
-        return redirect('/kategori')->with('deletesKategori','Data User Telah Berhasi Dihapus');
+        return redirect('/kategori')->with('deleteKategori','Data berhasil dihapus!');
     }
 }
