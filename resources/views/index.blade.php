@@ -253,6 +253,26 @@
 
 							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
+
+						<div class="card-body">
+							<div class="row gx-2 gy-3">
+								<div class="col-12 col-md-11">
+									<input type="search" name="product_name" id="product_name" placeholder="Cari berdasarkan nama lengkap" class="form-control" value="">
+								</div>
+								<div class="col-12 col-md-1">
+									<button type="submit" class="btn btn-secondary">Cari</button>
+								</div>
+			
+								<div class="col-12">
+									<span class="mr-3">Nama produk:
+										<a href="" class="btn btn-secondary btn-sm">handuk&nbsp;&nbsp;<i data-feather="x-circle"></i></a>
+										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i data-feather="refresh-cw"></i></a>
+									</span>
+								</div>
+			
+							</div>
+						</div>
+
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
