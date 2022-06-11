@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Status</label>
-                                    <select class="form-select" aria-label="Default select example" name="status">
+                                    <select class="form-select" aria-label="Default select example" name="status" required>
                                         @if (old('status', $user->status) == "1")
                                         <option value="1" selected>Aktif</option>
                                         <option value="0">Tidak Aktif</option>

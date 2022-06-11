@@ -17,7 +17,7 @@
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Gudang</label>
-									<input class="form-control form-control-lg @error('nama_gudang') is-invalid @enderror" type="text" name="nama_gudang" value="{{ old('nama_gudang',$data->nama_gudang) }}" >
+									<input class="form-control form-control-lg @error('nama_gudang') is-invalid @enderror" type="text" name="nama_gudang" value="{{ old('nama_gudang',$data->nama_gudang) }}" required>
 									@error('nama_gudang')
 										<div class="invalid-feedback">
 											{{ $message }}

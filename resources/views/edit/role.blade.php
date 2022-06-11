@@ -30,7 +30,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Level Role</label>
 
-									<select name="level" class="form-control form-control-lg" id="">
+									<select name="level" class="form-control form-control-lg" id="" required>
                                         <option value="" disabled selected hidden>Pilih Level Role</option>
                                         @for($i=1;$i<=$role;$i++)
                                         {
