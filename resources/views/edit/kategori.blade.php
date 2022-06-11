@@ -25,7 +25,7 @@
 									@enderror
 								</div>
 								<div class="text-center d-grid gap-2 mt-2 mb-3">
-									<button type="submit" class="btn btn-lg btn-primary">Edit</button>
+									<button type="submit" class="btn btn-lg btn-primary">Simpan</button>
 								</div>
 							</form>
 						</div>
