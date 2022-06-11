@@ -45,7 +45,13 @@
 									<td class="d-none d-xl-table-cell">{{ $data->lokasi_gudang }}</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-gudang-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<form action="{{ url ('/form-edit-gudang-') }}{{ $data->id }}" method="post" class="text-dark">
+												@csrf
+												<input type="hidden" name="id" value="{{ $data->id }}">
+												<input type="hidden" name="nama_gudang" value="{{ $data->nama_gudang }}">
+												<input type="hidden" name="alamat_gudang" value="{{ $data->lokasi_gudang }}">
+												<button type="submit" class="button-solid btn-link text-primary no-padding"><i data-feather="edit"></i></button>
+											</form>
 											<form action="{{ url('/delete-gudang-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
