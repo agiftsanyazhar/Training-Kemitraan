@@ -57,17 +57,17 @@
 
 					<li class="sidebar-item {{ ($title === "Brand" | $title === "Tambah Brand" | $title === "Edit Brand") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/brand') }}">
-              <i class="align-middle" data-feather="tag"></i> <span class="align-middle">Brand</span>
+              <i class="align-middle" data-feather="disc"></i> <span class="align-middle">Brand</span>
             </a>
 					</li>
 					<li class="sidebar-item {{ ($title === "Gudang" | $title === "Tambah Gudang" | $title === "Edit Gudang") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/gudang') }}">
-              <i class="align-middle" data-feather="home"></i> <span class="align-middle">Gudang</span>
+              <i class="align-middle" data-feather="database"></i> <span class="align-middle">Gudang</span>
             </a>
 					</li>
 					<li class="sidebar-item {{ ($title === "Kategori" | $title === "Tambah Kategori" | $title === "Edit Kategori") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/kategori') }}">
-              <i class="align-middle" data-feather="layers"></i> <span class="align-middle">Kategori</span>
+              <i class="align-middle" data-feather="hash"></i> <span class="align-middle">Kategori</span>
             </a>
 					</li>
 
@@ -76,6 +76,16 @@
 					<li class="sidebar-header">
 						Manajemen
 					</li>
+					<li class="sidebar-item  {{ ($title === "Hadiah" | $title === "Tambah Hadiah" | $title === "Edit Hadiah") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/hadiah') }}">
+							<i class="align-middle" data-feather="gift"></i> <span class="align-middle">Hadiah</span>
+						</a>
+					</li>
+					<li class="sidebar-item  {{ ($title === "Produk" | $title === "Tambah Produk" | $title === "Edit Produk") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/produk') }}">
+							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Produk</span>
+						</a>
+					</li>
 					@can('Admin')
 						<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
 							<a class="sidebar-link" href="{{ url ('/role') }}">
@@ -83,6 +93,11 @@
 							</a>
 						</li>
 					@endcan
+					<li class="sidebar-item  {{ ($title === "Stok" | $title === "Tambah Stok" | $title === "Edit Stok") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/stok') }}">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
+						</a>
+					</li>
 					@can('exceptLastRole')
 					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">

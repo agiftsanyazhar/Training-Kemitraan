@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\GudangController;
+use App\Http\Controllers\HadiahController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\ProfileController;
@@ -32,6 +33,7 @@ Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/gudang', [GudangController::class, 'index']);
 Route::get('/kategori', [KategoriBarangController::class, 'index']);
+Route::get('/hadiah', [HadiahController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index'])->name('role');
 Route::get('/user', [UserController::class, 'index']);
 
