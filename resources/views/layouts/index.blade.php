@@ -19,6 +19,7 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	
+	<link rel="stylesheet" href="https://unpkg.com/@adminkit/core@latest/dist/css/app.css">
 </head>
 
 <body>
@@ -49,13 +50,6 @@
 					<li class="sidebar-header">
 						Data Statistik
 					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url ('/forms') }}">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
-            </a>
-					</li>
-
-					
 
 					<li class="sidebar-header">
 						Produk
@@ -82,19 +76,19 @@
 					<li class="sidebar-header">
 						Manajemen
 					</li>
-
+					@can('Admin')
+						<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
+							<a class="sidebar-link" href="{{ url ('/role') }}">
+								<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
+							</a>
+						</li>
+					@endcan
 					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">
               				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
             			</a>
 					</li>
-					@can('Admin')
-					<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ url ('/role') }}">
-              				<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
-            			</a>
-					</li>
-					@endcan
+					
 
 				
 			</div>
@@ -375,6 +369,7 @@
 		});
 	</script>
 
+	<script src="https://unpkg.com/@adminkit/core@latest/dist/js/app.js"></script>
 </body>
 
 </html>

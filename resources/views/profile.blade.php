@@ -130,14 +130,9 @@
 							<h5 class="card-title mb-3">Top Product</h5>
 
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col mt-0">
-													<span class="badge bg-success">1</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -146,14 +141,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col mt-0">
-													<span class="badge bg-success">2</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -162,14 +152,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col-auto">
-													<span class="badge bg-success">3</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -178,11 +163,83 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="btn-group me-2" role="group" aria-label="First group">
-								<button type="button" class="btn btn-secondary">1</button>
-								<button type="button" class="btn btn-secondary">2</button>
-								<button type="button" class="btn btn-secondary">3</button>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="card-body h-100">

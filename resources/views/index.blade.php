@@ -123,14 +123,9 @@
 							<h5 class="card-title mb-3">Top Product</h5>
 
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col mt-0">
-													<span class="badge bg-success">1</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -139,14 +134,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col mt-0">
-													<span class="badge bg-success">2</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -155,14 +145,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<div class="row">
-												<div class="col-auto">
-													<span class="badge bg-success">3</span>
-												</div>
-											</div>
 											<h1 class="mt-1 mb-3">Gambar</h1>
 											<span class="text-muted">Nama Barang</span>
 											<div class="mb-0">
@@ -171,17 +156,87 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="btn-group me-2" role="group" aria-label="First group">
-								<button type="button" class="btn btn-secondary">1</button>
-								<button type="button" class="btn btn-secondary">2</button>
-								<button type="button" class="btn btn-secondary">3</button>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="card">
+										<div class="card-body">
+											<h1 class="mt-1 mb-3">Gambar</h1>
+											<span class="text-muted">Nama Barang</span>
+											<div class="mb-0">
+												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
-				
 			</div>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
@@ -199,7 +254,7 @@
 									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
 									<th class="d-none d-xl-table-cell">Email</th>
 									<th class="d-none d-xl-table-cell">Alamat</th>
-									<th class="d-none d-xl-table-cell">Status</th>
+									<th class="d-none d-xl-table-cell">Role/Status</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
@@ -213,9 +268,13 @@
 									<td class="d-none d-xl-table-cell">Surabaya</td>
 									<td class="d-none d-xl-table-cell">Distributor <span class="badge bg-success">Aktif</span></td>
 									<td>
-										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
-										<a href="{{ url ('/form-edit-mitra-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
-										<a href="{{ url ('/delete-mitra-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
+										<a href="{{ url ('/') }}" class="text-info"><i data-feather="eye"></i></a>
+										<a href="{{ url ('/form-edit-mitra-') }}" class="text-dark"><i data-feather="edit"></i></a>
+										<form action="{{ url ('/delete-mitra-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+											@method('delete')
+											@csrf
+											<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+										</form>
 									</td>
 								</tr>
 							</tbody>
@@ -251,9 +310,13 @@
 									<td class="d-none d-xl-table-cell">49</td>
 									<td class="d-none d-xl-table-cell">Face Wash</td>
 									<td>
-										<a href="{{ url ('/') }}"><button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button></a>
-										<a href="{{ url ('/form-edit-barang-') }}"><button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button></a>
-										<a href="{{ url ('/delete-barang-') }}"><button type="button" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i></button></a>
+										<a href="{{ url ('/') }}" class="text-info"><i data-feather="eye"></i></a>
+										<a href="{{ url ('/form-edit-barang-') }}" class="text-dark"><i data-feather="edit"></i></a>
+										<form action="{{ url ('/delete-barang-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+											@method('delete')
+											@csrf
+											<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+										</form>
 									</td>
 								</tr>
 							</tbody>

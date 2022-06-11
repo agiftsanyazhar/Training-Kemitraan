@@ -4,9 +4,11 @@
 	<main class="content">
 		<div class="container-fluid p-0">
 			@if (session()->has('successBrand'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('successBrand') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('successBrand') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			@if (session()->has('updateBrand'))
@@ -43,17 +45,11 @@
 									<td class="d-none d-xl-table-cell">{{ $data->nama_brand }}</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/') }}">
-												<button type="button" class="btn btn-info "><i class="align-middle" data-feather="eye"></i></button>
-											</a>
-											<a href="{{ url ('/form-edit-brand-') }}">
-												<button type="button" class="btn btn-warning"><i class="align-middle" data-feather="edit"></i></button>
-											</a>
-											<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="POST" class="d-inline">
+											<a href="{{ url ('/form-edit-brand-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="POST" class="d-inline" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
-												<button type="submit" class="btn btn-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="align-middle" data-feather="trash"></i>
-												</button>
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
 											</form>
 										</div>
 									</td>
