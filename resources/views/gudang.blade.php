@@ -51,7 +51,7 @@
 									<td class="d-none d-xl-table-cell">{{ $data->lokasi_gudang }}</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-gudang-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-gudang-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
 											<form action="{{ url('/delete-gudang-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf

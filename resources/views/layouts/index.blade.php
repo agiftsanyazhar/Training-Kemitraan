@@ -83,11 +83,13 @@
 							</a>
 						</li>
 					@endcan
+					@can('exceptLastRole')
 					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">
               				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
             			</a>
 					</li>
+					@endcan
 					
 
 				

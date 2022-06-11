@@ -67,7 +67,7 @@ Route::delete('/delete-brand-{id}', [BrandController::class, 'destroy'])->middle
 Route::get('/form-create-gudang', [GudangController::class, 'create'])->middleware('auth');
 Route::post('/create-gudang', [GudangController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-gudang-{id}', [GudangController::class, 'edit'])->middleware('auth');
-Route::post('/update-gudang-{id}', [GudangController::class, 'update'])->middleware('auth');
+Route::put('/update-gudang-{id}', [GudangController::class, 'update'])->middleware('auth');
 Route::delete('/delete-gudang-{id}', [GudangController::class, 'destroy'])->middleware('auth');
 
 // Kategori

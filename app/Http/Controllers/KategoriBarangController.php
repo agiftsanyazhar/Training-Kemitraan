@@ -6,6 +6,9 @@ use App\Models\Kategori_Barang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKategori_BarangRequest;
 use App\Http\Requests\UpdateKategori_BarangRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
 
 class KategoriBarangController extends Controller
 {
@@ -74,10 +77,11 @@ class KategoriBarangController extends Controller
      * @param  \App\Models\Kategori_Barang  $kategori_Barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori_Barang $kategori_Barang)
+    public function edit($id)
     {
         return view('edit.kategori', [
             "title" => "Edit Kategori",
+            "data" => Kategori_Barang::find($id)
         ]);
     }
 
@@ -88,8 +92,12 @@ class KategoriBarangController extends Controller
      * @param  \App\Models\Kategori_Barang  $kategori_Barang
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKategori_BarangRequest $request, Kategori_Barang $kategori_Barang)
+    public function update(Request $request)
     {
+        DB::table('kategori__barangs')->where('id', $request['id'])->update([
+            'nama_kategori'   => $request['nama_kategori']
+        ]);
+
         return redirect('/kategori')->with('updateKategori','Data berhasil diubah!');
     }
 

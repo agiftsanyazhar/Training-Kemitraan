@@ -12,11 +12,12 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="create-brand" method="POST">
+							<form action="update-kategori-{{ $data->id }}" method="POST">
+								@method('put')
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Kategori</label>
-									<input class="form-control form-control-lg @error('nama_kategori') is-invalid @enderror" type="text" name="nama_kategori" placeholder="Masukkan nama kategori" value="{{ old('nama_kategori') }}" required/>
+									<input class="form-control form-control-lg @error('nama_kategori') is-invalid @enderror" type="text" name="nama_kategori" placeholder="Masukkan nama kategori" value="{{ old('nama_kategori',$data->nama_kategori) }}" required/>
 									@error('nama_kategori')
 										<div class="invalid-feedback">
 											{{ $message }}

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
+use App\Models\Role;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('Admin', function(User $user){         
             return $user->id_role === 1;
         });
+
+        // Gate::defind('exceptLastRole', function(User $user){
+        //     $role = Role::orderBy('level', 'desc')->first();
+        //     return $user->id_role !== $role['level'];
+        // });
         // Gate::define('Principal', function(User $user){         
         //     return $user->Role === 'Principal';
         // });

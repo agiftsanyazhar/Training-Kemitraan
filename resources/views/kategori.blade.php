@@ -39,7 +39,6 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th class="d-none d-xl-table-cell">ID</th>
 									<th class="d-none d-xl-table-cell">Nama Kategori</th>
 									<th>Aksi</th>
 								</tr>
@@ -48,10 +47,9 @@
 								@foreach($kategori as $data)
 								<tr>
 									<td>{{ $counter++ }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->id }}</td>
 									<td class="d-none d-xl-table-cell">{{ $data->nama_kategori }}</td>
 									<td>
-										<a href="{{ url ('/form-edit-kategori-') }}" class="text-dark"><i data-feather="edit"></i></a>
+										<a href="{{ url ('/form-edit-kategori-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
 										<form action="{{ url('/delete-kategori-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf

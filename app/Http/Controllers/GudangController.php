@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\gudang;
 use App\Http\Requests\StoregudangRequest;
 use App\Http\Requests\UpdategudangRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class GudangController extends Controller
 {
@@ -81,7 +83,7 @@ class GudangController extends Controller
         $data = gudang::find($id);
         return view('edit.gudang', [
             "title" => "Edit Gudang",
-            'data' => $data
+            'data' => Gudang::find($id)
         ]);
     }
 
@@ -92,20 +94,14 @@ class GudangController extends Controller
      * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function update(gudang $request, $id)
+    public function update(Request $request)
     {
-        echo $request->nama_gudang;
-        echo $request->alamat;
-        dd($request->all()); 
-        //code bawah e wes work, tinggal request e gk gelem ke panggil seng isian e form
-        // gudang::where("id", $id)->update(
-        //     [
-        //         "nama_gudang" => $request->nama_gudang, 
-        //         "lokasi_gudang" => $request->alamat
-        //     ]
-        // );
+        DB::table('gudangs')->where('id', $request['id'])->update([
+            'nama_gudang'   => $request['nama_gudang'],
+            'lokasi_gudang' => $request['alamat']
+        ]);
         
-        // return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
+        return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
     }
 
     /**

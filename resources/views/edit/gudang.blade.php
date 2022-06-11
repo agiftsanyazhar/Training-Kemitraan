@@ -12,11 +12,12 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="update-gudang-{{ $data->id }}" method="POST">
+							<form action="update-gudang-{{ $data->id }}" method="post">
+								@method('put')
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Gudang</label>
-									<input class="form-control form-control-lg @error('nama_gudang') is-invalid @enderror" type="text" name="nama_gudang" placeholder="{{ $data->nama_gudang }}" value="{{ old('nama_gudang') }}" >
+									<input class="form-control form-control-lg @error('nama_gudang') is-invalid @enderror" type="text" name="nama_gudang" value="{{ old('nama_gudang',$data->nama_gudang) }}" >
 									@error('nama_gudang')
 										<div class="invalid-feedback">
 											{{ $message }}
@@ -25,7 +26,7 @@
 								</div>
 								<div class="mb-3">
 									<label class="form-label">Alamat</label>
-									<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat" placeholder="{{ $data->lokasi_gudang }}" value="{{ old('alamat') }}" required/>
+									<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat" value="{{ old('alamat',$data->lokasi_gudang) }}" required/>
 									@error('alamat')
 										<div class="invalid-feedback">
 											{{ $message }}
@@ -33,7 +34,7 @@
 									@enderror
 								</div>
 								<div class="text-center d-grid gap-2 mt-2 mb-3">
-									<button type="submit" class="btn btn-lg btn-primary">Edit</button>
+									<button type="submit" class="btn btn-lg btn-primary">Simpan</button>
 								</div>
 							</form>
 						</div>

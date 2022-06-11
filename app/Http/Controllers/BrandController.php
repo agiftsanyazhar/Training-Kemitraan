@@ -7,8 +7,9 @@ use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
-use Illuminate\Http\Request;
 use SebastianBergmann\LinesOfCode\Counter;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
@@ -78,10 +79,11 @@ class BrandController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit($id)
     {
         return view('edit.brand', [
-            "title" => "Edit Brand"
+            "title" => "Edit Brand",
+            "data"  => Brand::find($id)
         ]);
     }
 
@@ -92,8 +94,11 @@ class BrandController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBrandRequest $request, Brand $brand)
+    public function update(Request $request)
     {
+        DB::table('brands')->where('id', $request['id'])->update([
+            'nama_brand'   => $request['nama_brand'],
+        ]);
         return redirect('/brand')->with('updateBrand','Data berhasil diubah!');
     }
 

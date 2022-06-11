@@ -12,11 +12,12 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="create-brand" method="POST">
+							<form action="update-brand-{{ $data->id }}" method="POST">
+								@method('put')
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Brand</label>
-									<input class="form-control form-control-lg @error('nama_brand') is-invalid @enderror" type="text" name="nama_brand" placeholder="Masukkan nama brand" value="{{ old('nama_brand') }}" required/>
+									<input class="form-control form-control-lg @error('nama_brand') is-invalid @enderror" type="text" name="nama_brand" placeholder="Masukkan nama brand" value="{{ old('nama_brand',$data->nama_brand) }}" required/>
 									@error('nama_brand')
 										<div class="invalid-feedback">
 											{{ $message }}
@@ -24,7 +25,7 @@
 									@enderror
 								</div>
 								<div class="text-center d-grid gap-2 mt-2 mb-3">
-									<button type="submit" class="btn btn-lg btn-primary">Edit</button>
+									<button type="submit" class="btn btn-lg btn-primary">Simpan</button>
 								</div>
 							</form>
 						</div>
