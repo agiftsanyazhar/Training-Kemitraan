@@ -94,14 +94,16 @@ class GudangController extends Controller
      */
     public function update(gudang $request, $id)
     {
-        gudang::where("id", $id)->update(
-            [
-                "nama_gudang" => "Updated title", 
-                "lokasi_gudang" => "Updated title"
-            ]
-        );
+        echo $request->nama_gudang;
+        echo $request->alamat;
+        // gudang::where("id", $id)->update(
+        //     [
+        //         "nama_gudang" => $request->nama_gudang, 
+        //         "lokasi_gudang" => $request->alamat
+        //     ]
+        // );
         
-        return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
+        // return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
     }
 
     /**
