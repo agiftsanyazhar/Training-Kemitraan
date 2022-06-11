@@ -3,6 +3,14 @@
 @section('container')
 	<main class="content">
 		<div class="container-fluid p-0">
+			@if (session()->has('successSignin'))
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('successSignin') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+                </div>
+            @endif
 
 			<h1 class="h3 mb-3"><strong>Analisis</strong> Dashboard</h1>
 

@@ -32,8 +32,8 @@ Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth');
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/gudang', [GudangController::class, 'index']);
 Route::get('/kategori', [KategoriBarangController::class, 'index']);
-Route::get('/user', [UserController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index'])->name('role');
+Route::get('/user', [UserController::class, 'index']);
 
 // ===================================================
 // ==================== Sign up ======================
@@ -66,16 +66,15 @@ Route::delete('/delete-brand-{id}', [BrandController::class, 'destroy'])->middle
 // Gudang
 Route::get('/form-create-gudang', [GudangController::class, 'create'])->middleware('auth');
 Route::post('/create-gudang', [GudangController::class, 'store'])->middleware('auth');
-Route::post('/form-edit-gudang-{id}', [GudangController::class, 'edit'])->middleware('auth');
+Route::get('/form-edit-gudang-{id}', [GudangController::class, 'edit'])->middleware('auth');
 Route::post('/update-gudang-{id}', [GudangController::class, 'update'])->middleware('auth');
 Route::delete('/delete-gudang-{id}', [GudangController::class, 'destroy'])->middleware('auth');
-
 
 // Kategori
 Route::get('/form-create-kategori', [KategoriBarangController::class, 'create'])->middleware('auth');
 Route::post('/create-kategori', [KategoriBarangController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-kategori-{id}', [KategoriBarangController::class, 'edit'])->middleware('auth');
-Route::put('/update-edit-{id}', [KategoriBarangController::class, 'update'])->middleware('auth');
+Route::put('/update-kategori-{id}', [KategoriBarangController::class, 'update'])->middleware('auth');
 Route::delete('/delete-kategori-{id}', [KategoriBarangController::class, 'destroy'])->middleware('auth');
 
 // Role
@@ -85,7 +84,7 @@ Route::get('/form-edit-role-{id}', [RoleController::class, 'edit'])->middleware(
 Route::put('/update-role-{id}', [RoleController::class, 'update'])->middleware('auth');
 Route::delete('/delete-role-{id}', [RoleController::class, 'destroy'])->middleware('auth');
 
-//User
+// User
 Route::get('/form-create-user', [UserController::class, 'create'])->middleware('auth');
 Route::post('/create-user', [UserController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-user-{id}', [UserController::class, 'edit'])->middleware('auth');
