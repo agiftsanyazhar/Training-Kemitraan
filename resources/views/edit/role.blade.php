@@ -12,12 +12,13 @@
 						</div>
 						
 						<div class="m-sm-4">
-							<form action="create-role" method="POST">
+							<form action="update-role-{{ $data->id }}" method="POST">
+								@method('put')
 								@csrf
 								<div class="mb-3">
 									<label class="form-label">Nama Role</label>
                                     
-									<input class="form-control form-control-lg @error('Role') is-invalid @enderror" type="text" name="Role" placeholder="Masukkan nama role" value="{{ old('Role') }}" required/>
+									<input class="form-control form-control-lg @error('Role') is-invalid @enderror" type="text" name="Role" placeholder="Masukkan Nama Role" value="{{ old('Role',$data->Role) }}" required/>
 									@error('Role')
 										<div class="invalid-feedback">
 											{{ $message }}
@@ -28,18 +29,24 @@
 								</div>
                                 <div class="mb-3">
                                     <label class="form-label">Level Role</label>
-									<select class="form-select mb-3" required>
-										<option value="" disabled selected hidden>Pilih level role</option>
-                                        @for($i=0;$i<=$role;$i++)
-											{
-												<option value="{{ $i+1 }}">Level {{ $i+1 }}</option>
-											}
+
+									<select name="level" class="form-control form-control-lg" id="">
+                                        <option value="" disabled selected hidden>Pilih Level Role</option>
+                                        @for($i=1;$i<=$role;$i++)
+                                        {
+											@if ($data->level == $i)
+											<option value="{{ $i }}" selected>Level {{ $i }}</option>
+											@else
+											<option value="{{ $i }}">Level {{ $i }}</option>
+											@endif
+                                            
+                                        }
                                         @endfor
-									  </select>
+                                    </select>
 								</div>
                                 
 								<div class="text-center d-grid gap-2 mt-2 mb-3">
-									<button type="submit" class="btn btn-lg btn-primary">Tambah</button>
+									<button type="submit" class="btn btn-lg btn-primary">Simpan</button>
 								</div>
 							</form>
 						</div>

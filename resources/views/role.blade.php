@@ -4,21 +4,27 @@
 	<main class="content">
 		<div class="container-fluid p-0">
 			@if (session()->has('successRole'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('successRole') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('successRole') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			@if (session()->has('updateRole'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('updateRole') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('updateRole') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
-			@if (session()->has('deletesRole'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('deletesRole') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			@if (session()->has('deleteRole'))
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('deleteRole') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
             <div class="d-flex align-items-center justify-content-between mb-3">
