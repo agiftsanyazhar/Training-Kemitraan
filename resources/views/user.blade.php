@@ -4,21 +4,27 @@
 	<main class="content">
 		<div class="container-fluid p-0">
 			@if (session()->has('successUser'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('successUser') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('successUser') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 			@if (session()->has('updateUser'))
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('updateUser') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('updateUser') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
-			@if (session()->has('deletesUser'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('deletesUser') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			@if (session()->has('deleteUser'))
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<div class="alert-message">
+                    	{{ session('deleteUser') }}
+                    	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
                 </div>
             @endif
 
@@ -54,7 +60,8 @@
 									<td class="d-none d-xl-table-cell">{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span></td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-user-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											{{-- <a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a> --}}
 											<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
