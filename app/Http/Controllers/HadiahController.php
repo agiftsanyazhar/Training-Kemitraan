@@ -15,7 +15,12 @@ class HadiahController extends Controller
      */
     public function index()
     {
-        //
+        {
+            return view('hadiah', [
+                "title" => "Hadiah",
+                'counter' => 1,
+            ]);
+        }
     }
 
     /**
