@@ -76,10 +76,12 @@ class GudangController extends Controller
      * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function edit(gudang $gudang)
+    public function edit($id)
     {
+        $data = gudang::find($id);
         return view('edit.gudang', [
-            "title" => "Edit Gudang"
+            "title" => "Edit Gudang",
+            'data' => $data
         ]);
     }
 
@@ -90,12 +92,12 @@ class GudangController extends Controller
      * @param  \App\Models\gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(gudang $request, $id)
     {
-        $data = gudang::find($id);
+        $data = gudang::find($request->id);
         
-        $data->nama_bar         = $request->input('nama_gudang');
-        $data->stock_barang     = $request->input('alamat_gudang');
+        $data->nama_gudang         = $request->input('nama_gudang');
+        $data->lokasi_gudang       = $request->input('alamat_gudang');
         $data->save();
         
         return redirect('/gudang')->with('updateGudang','Data Telah Berhasi Diubah');
