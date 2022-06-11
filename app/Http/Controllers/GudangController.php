@@ -94,13 +94,18 @@ class GudangController extends Controller
      */
     public function update(gudang $request, $id)
     {
-        $data = gudang::find($request->id);
+        echo $request->nama_gudang;
+        echo $request->alamat;
+        dd($request->all()); 
+        //code bawah e wes work, tinggal request e gk gelem ke panggil seng isian e form
+        // gudang::where("id", $id)->update(
+        //     [
+        //         "nama_gudang" => $request->nama_gudang, 
+        //         "lokasi_gudang" => $request->alamat
+        //     ]
+        // );
         
-        $data->nama_gudang         = $request->input('nama_gudang');
-        $data->lokasi_gudang       = $request->input('alamat_gudang');
-        $data->save();
-        
-        return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
+        // return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
     }
 
     /**
