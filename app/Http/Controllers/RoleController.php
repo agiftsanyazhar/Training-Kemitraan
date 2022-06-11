@@ -67,7 +67,7 @@ class RoleController extends Controller
         if($new_role!=$new_level){
             for($i=$new_role-1;$i>=$new_level;$i--)
             {
-                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
+                DB::table('roles')->where('level',$i)->whereNot('id',$new_role)->update([
                     'level'         =>$i+1
                 ]);
             }
@@ -157,6 +157,18 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
+        $del_role = Role::find($id);
+        $del_role = $del_role->level;
+
+        $jmlh_Role = Role::orderBy('level', 'desc')->first();
+        $jmlh_Role = $jmlh_Role->level;
+
+        for($i=$del_role+1;$i<=$jmlh_Role;$i++){
+            DB::table('roles')->where('level',$i)->update([
+                'level'     =>$i-1
+            ]);
+        }
+
         Role::find($id)->delete();
 
         return redirect('/role')->with('deleteRole','Data berhasil dihapus!');

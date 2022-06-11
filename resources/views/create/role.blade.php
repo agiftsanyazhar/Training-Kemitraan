@@ -28,7 +28,7 @@
 								</div>
                                 <div class="mb-3">
                                     <label class="form-label">Level Role</label>
-									<select class="form-select mb-3" required>
+									<select class="form-select mb-3" name="level" required>
 										<option value="" disabled selected hidden>Pilih level role</option>
                                         @for($i=0;$i<=$role;$i++)
 											{
