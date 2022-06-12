@@ -37,9 +37,9 @@ class BrandController extends Controller
      */
     public function create()
     {
-            return view('create.brand', [
-                "title" => "Tambah Brand"
-            ]);
+        return view('create.brand', [
+            "title" => "Tambah Brand"
+        ]);
     }
 
     /**

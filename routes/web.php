@@ -79,6 +79,13 @@ Route::get('/form-edit-kategori-{id}', [KategoriBarangController::class, 'edit']
 Route::put('/update-kategori-{id}', [KategoriBarangController::class, 'update'])->middleware('auth');
 Route::delete('/delete-kategori-{id}', [KategoriBarangController::class, 'destroy'])->middleware('auth');
 
+// Hadiah
+Route::get('/form-create-hadiah', [HadiahController::class, 'create'])->middleware('auth');
+Route::post('/create-hadiah', [HadiahController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-hadiah-{id}', [HadiahController::class, 'edit'])->middleware('auth');
+Route::put('/update-hadiah-{id}', [HadiahController::class, 'update'])->middleware('auth');
+Route::delete('/delete-hadiah-{id}', [HadiahController::class, 'destroy'])->middleware('auth');
+
 // Role
 Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('auth');
 Route::post('/create-role', [RoleController::class, 'store'])->middleware('auth');

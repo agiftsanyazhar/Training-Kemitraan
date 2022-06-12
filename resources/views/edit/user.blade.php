@@ -10,7 +10,7 @@
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="m-sm-4">
-                            <form action="/update-user-{{ $user->id }}" method="POST">
+                            <form action="update-user-{{ $user->id }}" method="POST">
                                 @method('put')
                                 @csrf
                                 <div class="mb-3">

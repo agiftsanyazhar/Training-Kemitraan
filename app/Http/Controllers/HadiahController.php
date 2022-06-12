@@ -35,7 +35,9 @@ class HadiahController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.hadiah', [
+            "title" => "Tambah Hadiah"
+        ]);
     }
 
     /**
@@ -46,7 +48,7 @@ class HadiahController extends Controller
      */
     public function store(StoreHadiahRequest $request)
     {
-        //
+        return redirect('/hadiah')->with('successHadiah','Data berhasil ditambah!');
     }
 
     /**
@@ -68,7 +70,9 @@ class HadiahController extends Controller
      */
     public function edit(Hadiah $hadiah)
     {
-        //
+        return view('edit.hadiah', [
+            "title" => "Edit Hadiah",
+        ]);
     }
 
     /**
@@ -80,7 +84,7 @@ class HadiahController extends Controller
      */
     public function update(UpdateHadiahRequest $request, Hadiah $hadiah)
     {
-        //
+        return redirect('/hadiah')->with('updateHadiah','Data berhasil diubah!');
     }
 
     /**
@@ -91,6 +95,6 @@ class HadiahController extends Controller
      */
     public function destroy(Hadiah $hadiah)
     {
-        //
+        return redirect('/hadiah')->with('deleteHadiah','Data berhasil dihapus!');
     }
 }

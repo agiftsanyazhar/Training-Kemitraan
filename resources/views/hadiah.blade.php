@@ -29,7 +29,7 @@
             @endif
 			<div class="d-flex align-items-center justify-content-between mb-3">
 				<h3>{{ $title }}</h3>
-				<a href="{{ url ('/form-create-gudang') }}" class="btn btn-light"><i class="align-middle" data-feather="plus"></i> Tambah {{ $title }}</a>
+				<a href="{{ url ('/form-create-hadiah') }}" class="btn btn-light"><i class="align-middle" data-feather="plus"></i> Tambah {{ $title }}</a>
 			</div>
 			<div class="row">
 				<div class="col-12 col-lg-12 col-xxl-12 d-flex">
@@ -46,7 +46,7 @@
 															No
 														</div>
 													</th>
-													<th>Nama Produk</th>
+													<th>Nama Hadiah</th>
 													<th>Harga</th>
 													<th>Deskripsi</th>
 													<th class="border-left">
