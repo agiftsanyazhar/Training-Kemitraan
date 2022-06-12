@@ -253,26 +253,46 @@
 
 							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
-
 						<div class="card-body">
-							<div class="row gx-2 gy-3">
-								<div class="col-12 col-md-11">
-									<input type="search" name="product_name" id="product_name" placeholder="Cari berdasarkan nama lengkap" class="form-control" value="">
+							<div class="row gy-3">
+								<div class="col-12 col-md-7">
+									<div class="input-group">
+										<div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">Nama Lengkap</option>
+												<option value="">Username</option>
+												<option value="">Tanggal Bergabung</option>
+												<option value="">Email</option>
+												<option value="">Alamat</option>
+											</select>
+										</div>
+										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="input-group">
+										<div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">Semua Role</option>
+												<option value="">Test</option>
+												<option value="">Test</option>
+												<option value="">Test</option>
+											</select>
+										</div>
+										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
+									</div>
 								</div>
 								<div class="col-12 col-md-1">
 									<button type="submit" class="btn btn-secondary">Cari</button>
 								</div>
-			
 								<div class="col-12">
-									<span class="mr-3">Nama produk:
-										<a href="" class="btn btn-secondary btn-sm">handuk&nbsp;&nbsp;<i data-feather="x-circle"></i></a>
-										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i data-feather="refresh-cw"></i></a>
+									<span class="mr-3">Nama Lengkap:
+										<a href="" class="btn btn-secondary btn-sm">Apollo 1&nbsp;&nbsp;<i class="align-middle" data-feather="x-circle"></i></a>
+										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i class="align-middle" data-feather="refresh-cw"></i></a>
 									</span>
 								</div>
-			
 							</div>
 						</div>
-
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
@@ -296,12 +316,12 @@
 									<td class="d-none d-xl-table-cell">Surabaya</td>
 									<td class="d-none d-xl-table-cell">Distributor <span class="badge bg-success">Aktif</span></td>
 									<td>
-										<a href="{{ url ('/') }}" class="text-info"><i data-feather="eye"></i></a>
-										<a href="{{ url ('/form-edit-mitra-') }}" class="text-dark"><i data-feather="edit"></i></a>
+										<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
+										<a href="{{ url ('/form-edit-mitra-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
 										<form action="{{ url ('/delete-mitra-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 											@method('delete')
 											@csrf
-											<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+											<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
 										</form>
 									</td>
 								</tr>
@@ -316,6 +336,32 @@
 						<div class="card-header">
 
 							<h5 class="card-title mb-0">Daftar Barang</h5>
+						</div>
+						<div class="card-body">
+							<div class="row gy-3">
+								<div class="col-12 col-md-11">
+									<div class="input-group">
+										<div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">ID</option>
+												<option value="">Nama Barang</option>
+												<option value="">Stok</option>
+												<option value="">Kategori</option>
+											</select>
+										</div>
+										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
+									</div>
+								</div>
+								<div class="col-12 col-md-1">
+									<button type="submit" class="btn btn-secondary">Cari</button>
+								</div>
+								<div class="col-12">
+									<span class="mr-3">ID:
+										<a href="" class="btn btn-secondary btn-sm">K8721&nbsp;&nbsp;<i class="align-middle" data-feather="x-circle"></i></a>
+										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i class="align-middle" data-feather="refresh-cw"></i></a>
+									</span>
+								</div>
+							</div>
 						</div>
 						<table class="table table-hover my-0">
 							<thead>
@@ -338,12 +384,12 @@
 									<td class="d-none d-xl-table-cell">49</td>
 									<td class="d-none d-xl-table-cell">Face Wash</td>
 									<td>
-										<a href="{{ url ('/') }}" class="text-info"><i data-feather="eye"></i></a>
-										<a href="{{ url ('/form-edit-barang-') }}" class="text-dark"><i data-feather="edit"></i></a>
+										<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
+										<a href="{{ url ('/form-edit-barang-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
 										<form action="{{ url ('/delete-barang-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 											@method('delete')
 											@csrf
-											<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+											<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
 										</form>
 									</td>
 								</tr>

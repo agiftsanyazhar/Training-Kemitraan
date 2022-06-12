@@ -35,6 +35,46 @@
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
+						<div class="card-body">
+							<div class="row gy-3">
+								<div class="col-12 col-md-7">
+									<div class="input-group">
+										<div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">Nama Lengkap</option>
+												<option value="">Username</option>
+												<option value="">Tanggal Bergabung</option>
+												<option value="">Email</option>
+												<option value="">Alamat</option>
+											</select>
+										</div>
+										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="input-group">
+										<div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">Semua Role</option>
+												<option value="">Test</option>
+												<option value="">Test</option>
+												<option value="">Test</option>
+											</select>
+										</div>
+										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
+									</div>
+								</div>
+								<div class="col-12 col-md-1">
+									<button type="submit" class="btn btn-secondary">Cari</button>
+								</div>
+								<div class="col-12">
+									<span class="mr-3">Nama Lengkap:
+										<a href="" class="btn btn-secondary btn-sm">Apollo 1&nbsp;&nbsp;<i class="align-middle" data-feather="x-circle"></i></a>
+										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i class="align-middle" data-feather="refresh-cw"></i></a>
+									</span>
+								</div>
+							</div>
+						</div>
 						<table class="table table-hover my-0">
 							<thead>
 								<tr>
@@ -60,11 +100,11 @@
 									<td class="d-none d-xl-table-cell">{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span></td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
 											<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
-												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
 											</form>
 										</div>
 									</td>

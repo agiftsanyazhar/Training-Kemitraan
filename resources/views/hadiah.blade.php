@@ -53,11 +53,11 @@
 									<td class="d-none d-xl-table-cell">Sabun</td>
 									<td>
 										<div class="d-inline">
-											<a href="{{ url ('/form-edit-hadiah-') }}" class="text-dark"><i data-feather="edit"></i></a>
+											<a href="{{ url ('/form-edit-hadiah-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
 											<form action="{{ url('/delete-hadiah-') }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
 												@method('delete')
 												@csrf
-												<button type="submit" class="button-solid btn-link text-danger no-padding"><i data-feather="trash"></i></button>
+												<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
 											</form>
 										</div>
 									</td>

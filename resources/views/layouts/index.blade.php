@@ -98,13 +98,13 @@
 							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
 						</a>
 					</li>
-					@can('exceptLastRole')
+					{{-- @can('exceptLastRole') --}}
 					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/user') }}">
               				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
             			</a>
 					</li>
-					@endcan
+					{{-- @endcan --}}
 					
 
 				
@@ -127,7 +127,7 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">{{ auth()->user()->nama_lengkap }}</span>
+                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">Halo, {{ auth()->user()->nama_lengkap }}</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="bell"></i> Notifikasi</a>

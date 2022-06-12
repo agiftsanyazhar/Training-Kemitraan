@@ -34,7 +34,7 @@ class SignInController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('/')->with('successSignin', 'Sign in berhasil!');;
+            return redirect()->intended('/')->with('successSignin', 'Sign in berhasil! Selamat datang');;
         };
         
         return back()->with('signinError', 'Sign in gagal!');
