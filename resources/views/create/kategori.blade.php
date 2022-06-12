@@ -7,10 +7,8 @@
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
-
 							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
-						
 						<div class="m-sm-4">
 							<form action="create-kategori" method="POST">
 								@csrf

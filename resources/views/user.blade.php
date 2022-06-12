@@ -27,7 +27,6 @@
 					</div>
                 </div>
             @endif
-
 			<div class="d-flex align-items-center justify-content-between mb-3">
 				<h3>{{ $title }}</h3>
 				<a href="{{ url ('/form-create-user') }}" class="btn btn-light"><i class="align-middle" data-feather="plus"></i> Tambah {{ $title }}</a>
@@ -75,43 +74,73 @@
 								</div>
 							</div>
 						</div>
-						<table class="table table-hover my-0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th class="d-none d-xl-table-cell">Nama Lengkap</th>
-									<th class="d-none d-xl-table-cell">Username</th>
-									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
-									<th class="d-none d-xl-table-cell">Email</th>
-									<th class="d-none d-xl-table-cell">Alamat</th>
-									<th class="d-none d-xl-table-cell">Role/Status</th>
-									<th>Aksi</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach($user as $data)
-								<tr>
-									<td>{{ $counter++ }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->nama_lengkap }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->username }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->join_date->format('d/m/Y') }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->email }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->alamat }}</td>
-									<td class="d-none d-xl-table-cell">{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span></td>
-									<td>
-										<div class="d-inline">
-											<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
-											<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-												@method('delete')
-												@csrf
-												<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
-											</form>
-										</div>
-									</td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
+						<div class="card-body">
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
+									<div class="table-responsive">
+										<table class="table bg-white table-found" id="orders_table">
+											<thead>
+												<tr>
+													<th class="border-right">
+														<div class="d-flex">No</div>
+													</th>
+													<th>Nama Lengkap</th>
+													<th>Username</th>
+													<th>Tanggal Bergabung</th>
+													<th>Email</th>
+													<th>Alamat</th>
+													<th>Role/Status</th>
+													<th class="border-left">
+														<div class="d-flex">Aksi</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody id="order_items" style="border-top: 0px">
+												@foreach($user as $data)
+												<tr>
+													<td class="align-top border-right">
+														<div class="d-flex">
+															{{ $counter++ }}
+														</div>
+													</td>
+													<td class="align-top">
+														{{ $data->nama_lengkap }}
+													</td>
+													<td class="align-top">
+														{{ $data->username }}
+													</td>
+													<td class="align-top">
+														{{ $data->join_date->format('d/m/Y') }}
+													</td>
+													<td class="align-top">
+														{{ $data->email }}
+													</td>
+													<td class="align-top">
+														{{ $data->alamat }}
+													</td>
+													<td class="align-top">
+														{{ $data->role->Role }} <span class="badge bg-{{ ($data->status === 1) ? 'success' : 'danger' }}">{{ ($data->status === 1) ? 'Aktif' : 'Tidak Aktif' }}</span>
+													</td>
+													<td class="align-top border-left">
+														<div class="d-flex">
+															<div class="d-inline">
+																<a href="{{ url ('/form-edit-user-') }}{{ $data->id }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
+																<form action="{{ url('/delete-user-') }}{{ $data->id }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+																	@method('delete')
+																	@csrf
+																	<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
+																</form>
+															</div>
+														</div>
+													</td>
+												</tr>
+												@endforeach
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -11,9 +11,7 @@
 					</div>
                 </div>
             @endif
-
 			<h1 class="h3 mb-3"><strong>Analisis</strong> Dashboard</h1>
-
 			<div class="row">
 				<div class="col-xl-6 col-xxl-5 d-flex">
 					<div class="w-100">
@@ -25,7 +23,6 @@
 											<div class="col mt-0">
 												<h5 class="card-title">Penjualan</h5>
 											</div>
-
 											<div class="col-auto">
 												<div class="stat text-primary">
 													<i class="align-middle" data-feather="truck"></i>
@@ -45,7 +42,6 @@
 											<div class="col mt-0">
 												<h5 class="card-title">Pengunjung</h5>
 											</div>
-
 											<div class="col-auto">
 												<div class="stat text-primary">
 													<i class="align-middle" data-feather="users"></i>
@@ -67,7 +63,6 @@
 											<div class="col mt-0">
 												<h5 class="card-title">Pendapatan</h5>
 											</div>
-
 											<div class="col-auto">
 												<div class="stat text-primary">
 													<div class="align-middle">Rp</div>
@@ -87,7 +82,6 @@
 											<div class="col mt-0">
 												<h5 class="card-title">Pesanan</h5>
 											</div>
-
 											<div class="col-auto">
 												<div class="stat text-primary">
 													<i class="align-middle" data-feather="shopping-cart"></i>
@@ -105,11 +99,9 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-xl-6 col-xxl-7">
 					<div class="card flex-fill w-100">
 						<div class="card-header">
-
 							<h5 class="card-title mb-0">Grafik Penjualan</h5>
 						</div>
 						<div class="card-body py-3">
@@ -120,16 +112,11 @@
 					</div>
 				</div>
 			</div>
-
-			
-
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
-
 							<h5 class="card-title mb-3">Top Product</h5>
-
 							<div class="row">
 								<div class="col-sm-3">
 									<div class="card">
@@ -228,7 +215,6 @@
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
-
 							<h5 class="card-title mb-0">{{ $title }}</h5>
 						</div>
 						<div class="card-body">
@@ -271,40 +257,72 @@
 								</div>
 							</div>
 						</div>
-						<table class="table table-hover my-0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th class="d-none d-xl-table-cell">Nama Lengkap</th>
-									<th class="d-none d-xl-table-cell">Username</th>
-									<th class="d-none d-xl-table-cell">Tanggal Bergabung</th>
-									<th class="d-none d-xl-table-cell">Email</th>
-									<th class="d-none d-xl-table-cell">Alamat</th>
-									<th class="d-none d-xl-table-cell">Role/Status</th>
-									<th>Aksi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="d-none d-xl-table-cell">Apollo 1</td>
-									<td class="d-none d-xl-table-cell">apollo1</td>
-									<td class="d-none d-xl-table-cell">01/01/2021</td>
-									<td class="d-none d-xl-table-cell">apollo1@gmail.com</td>
-									<td class="d-none d-xl-table-cell">Surabaya</td>
-									<td class="d-none d-xl-table-cell">Distributor <span class="badge bg-success">Aktif</span></td>
-									<td>
-										<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
-										<a href="{{ url ('/form-edit-mitra-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
-										<form action="{{ url ('/delete-mitra-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-											@method('delete')
-											@csrf
-											<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
-										</form>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="card-body">
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
+									<div class="table-responsive">
+										<table class="table bg-white table-found" id="orders_table">
+											<thead>
+												<tr>
+													<th class="border-right">
+														<div class="d-flex">No</div>
+													</th>
+													<th>Nama Lengkap</th>
+													<th>Username</th>
+													<th>Tanggal Bergabung</th>
+													<th>Email</th>
+													<th>Alamat</th>
+													<th>Role/Status</th>
+													<th class="border-left">
+														<div class="d-flex">Aksi</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody id="order_items" style="border-top: 0px">
+												<tr>
+													<td class="align-top border-right">
+														<div class="d-flex">
+															1
+														</div>
+													</td>
+													<td class="align-top">
+														Apollo 1
+													</td>
+													<td class="align-top">
+														apollo1
+													</td>
+													<td class="align-top">
+														01/01/2021
+													</td>
+													<td class="align-top">
+														apollo1@gmail.com
+													</td>
+													<td class="align-top">
+														Surabaya
+													</td>
+													<td class="align-top">
+														Distributor <span class="badge bg-success">Aktif</span>
+													</td>
+													<td class="align-top border-left">
+														<div class="d-flex">
+															<div class="d-inline">
+																<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
+																<a href="{{ url ('/form-edit-hadiah-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
+																<form action="{{ url('/delete-hadiah-') }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+																	@method('delete')
+																	@csrf
+																	<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
+																</form>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -312,7 +330,6 @@
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
-
 							<h5 class="card-title mb-0">Daftar Barang</h5>
 						</div>
 						<div class="card-body">
@@ -341,42 +358,71 @@
 								</div>
 							</div>
 						</div>
-						<table class="table table-hover my-0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th class="d-none d-xl-table-cell">ID</th>
-									<th class="d-none d-xl-table-cell">Nama Barang</th>
-									<th class="d-none d-xl-table-cell">Harga</th>
-									<th class="d-none d-xl-table-cell">Stok</th>
-									<th class="d-none d-xl-table-cell">Kategori</th>
-									<th>Aksi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td class="d-none d-xl-table-cell">K8721</td>
-									<td class="d-none d-xl-table-cell">Garnier Men</td>
-									<td class="d-none d-xl-table-cell">Rp50.000</td>
-									<td class="d-none d-xl-table-cell">49</td>
-									<td class="d-none d-xl-table-cell">Face Wash</td>
-									<td>
-										<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
-										<a href="{{ url ('/form-edit-barang-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
-										<form action="{{ url ('/delete-barang-') }}{" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-											@method('delete')
-											@csrf
-											<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
-										</form>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="card-body">
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
+									<div class="table-responsive">
+										<table class="table bg-white table-found" id="orders_table">
+											<thead>
+												<tr>
+													<th class="border-right">
+														<div class="d-flex">No</div>
+													</th>
+													<th>ID</th>
+													<th>Nama Barang</th>
+													<th>Harga</th>
+													<th>Stok</th>
+													<th>Kategori</th>
+													<th class="border-left">
+														<div class="d-flex">Aksi</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody id="order_items" style="border-top: 0px">
+												<tr>
+													<td class="align-top border-right">
+														<div class="d-flex">
+															1
+														</div>
+													</td>
+													<td class="align-top">
+														K8721
+													</td>
+													<td class="align-top">
+														Garnier Men
+													</td>
+													<td class="align-top">
+														Rp50.000
+													</td>
+													<td class="align-top">
+														49
+													</td>
+													<td class="align-top">
+														Face Wash
+													</td>
+													<td class="align-top border-left">
+														<div class="d-flex">
+															<div class="d-inline">
+																<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
+																<a href="{{ url ('/form-edit-hadiah-') }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
+																<form action="{{ url('/delete-hadiah-') }}" method="POST" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+																	@method('delete')
+																	@csrf
+																	<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
+																</form>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</main>
 @endsection

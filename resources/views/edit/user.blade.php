@@ -58,13 +58,12 @@
                                     <label class="form-label">Status</label>
                                     <select class="form-select" aria-label="Default select example" name="status" required>
                                         @if (old('status', $user->status) == "1")
-                                        <option value="1" selected>Aktif</option>
-                                        <option value="0">Tidak Aktif</option>
+                                            <option value="1" selected>Aktif</option>
+                                            <option value="0">Tidak Aktif</option>
                                         @else
-                                        <option value="1">Aktif</option>
-                                        <option value="0" selected>Tidak Aktif</option>  
+                                            <option value="1">Aktif</option>
+                                            <option value="0" selected>Tidak Aktif</option>  
                                         @endif
-                                        
                                     </select>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">

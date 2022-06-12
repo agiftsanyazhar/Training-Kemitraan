@@ -30,11 +30,9 @@
 					<div class="row vh-100">
 						<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
 							<div class="d-table-cell align-middle">
-		
 								<div class="text-center mt-4 mb-4">
 									<img src="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-logo.png" width="45%">
 								</div>
-		
 								<div class="card">
 									<div class="card-body">
 										<div class="m-sm-4">
@@ -46,7 +44,6 @@
 													</div>
 												</div>
 											@endif
-		
 											<form action="proses-sign-in" method="POST">
 												@csrf
 												<div class="mb-3">
@@ -60,7 +57,6 @@
 														<a href="{{ url ('/lupa-password') }}">Lupa password?</a>
 													</small>
 												</div>
-												
 												<div>
 													<label class="form-check">
 														<input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
@@ -76,13 +72,11 @@
 										</div>
 									</div>
 								</div>
-		
 							</div>
 						</div>
 					</div>
 				</div>
-			</main>	
-
+			</main>
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">

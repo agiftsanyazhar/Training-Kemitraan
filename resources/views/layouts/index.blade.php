@@ -27,26 +27,23 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="/">
-          <span class="align-middle">Sellerkit</span>
-        </a>
-
+					<span class="align-middle">Sellerkit</span>
+				</a>
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Daftar Mitra
 					</li>
-
 					<li class="sidebar-item {{ ($title === "Daftar Mitra") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url('/') }}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-            </a>
+							<i class="align-middle" data-feather="sliders"></i><span class="align-middle">Dashboard</span>
+						</a>
 					</li>
-
 					<li class="sidebar-item {{ ($title === "Profile") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/profile') }}">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profil</span>
-            </a>
-					</li>					
-
+							<i class="align-middle" data-feather="user"></i><span class="align-middle">Profil</span>
+						</a>
+					</li>
+								
 					<li class="sidebar-header">
 						Data Statistik
 					</li>
@@ -54,24 +51,21 @@
 					<li class="sidebar-header">
 						Produk
 					</li>
-
 					<li class="sidebar-item {{ ($title === "Brand" | $title === "Tambah Brand" | $title === "Edit Brand") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/brand') }}">
-              <i class="align-middle" data-feather="disc"></i> <span class="align-middle">Brand</span>
-            </a>
+							<i class="align-middle" data-feather="disc"></i><span class="align-middle">Brand</span>
+						</a>
 					</li>
 					<li class="sidebar-item {{ ($title === "Gudang" | $title === "Tambah Gudang" | $title === "Edit Gudang") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/gudang') }}">
-              <i class="align-middle" data-feather="database"></i> <span class="align-middle">Gudang</span>
-            </a>
+							<i class="align-middle" data-feather="database"></i> <span class="align-middle">Gudang</span>
+						</a>
 					</li>
 					<li class="sidebar-item {{ ($title === "Kategori" | $title === "Tambah Kategori" | $title === "Edit Kategori") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/kategori') }}">
-              <i class="align-middle" data-feather="hash"></i> <span class="align-middle">Kategori</span>
-            </a>
+							<i class="align-middle" data-feather="hash"></i> <span class="align-middle">Kategori</span>
+						</a>
 					</li>
-
-					
 
 					<li class="sidebar-header">
 						Manajemen
@@ -98,43 +92,36 @@
 							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
 						</a>
 					</li>
-					{{-- @can('exceptLastRole') --}}
-					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ url ('/user') }}">
-              				<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
-            			</a>
-					</li>
-					{{-- @endcan --}}
-					
-
-				
+					@can('exceptLastRole')
+						<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
+							<a class="sidebar-link" href="{{ url ('/user') }}">
+								<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
+							</a>
+						</li>
+					@endcan
+				</ul>
 			</div>
 		</nav>
 
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
-
+          			<i class="hamburger align-self-center"></i>
+        		</a>
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
-						
-						
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
-
+                				<i class="align-middle" data-feather="settings"></i>
+              				</a>
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">Halo, {{ auth()->user()->nama_lengkap }}</span>
-              </a>
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">Halo, {{ auth()->user()->nama_lengkap }}</span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="bell"></i> Notifikasi</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analitik</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="{{ url ('/pengaturan') }}"><i class="align-middle me-1" data-feather="settings"></i> Pengaturan</a>
-								
 								<div class="dropdown-divider"></div>
 								<form action="/logout" method="post">
 									@csrf

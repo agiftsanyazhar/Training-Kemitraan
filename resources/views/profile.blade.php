@@ -3,8 +3,6 @@
 @section('container')
 	<main class="content">
 		<div class="container-fluid p-0">
-
-			
 			<div class="row">
 				<div class="col-md-4 col-xl-3">
 					<div class="card mb-3">
@@ -16,10 +14,7 @@
 							<h5 class="card-title mb-0 text-capitalize">{{ auth()->user()->nama_lengkap }}</h5>
 							<div class="text-muted mb-2">{{ auth()->user()->role->Role }}</div>
 							<span data-feather="map-pin" class="feather-sm me-1"></span> {{ auth()->user()->alamat }}
-
-							
 						</div>
-						
 						<hr class="my-0" />
 						<div class="card-body">
 							<h5 class="h6 card-title">Tentang</h5>
@@ -29,16 +24,12 @@
 								<li class="mb-1"><span data-feather="phone" class="feather-sm me-1"></span> +62 812-3456-7890</li>
 							</ul>
 						</div>
-						
 					</div>
 				</div>
-
 				<div class="col-md-8 col-xl-9">
 					<div class="card">
 						<div class="card-header">
-
 							<h5 class="card-title mb-3">Aktivitas</h5>
-
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="card">
@@ -47,7 +38,6 @@
 												<div class="col mt-0">
 													<h5 class="card-title">Invoice <span class="badge bg-success">Bulan ini</span></h5>
 												</div>
-	
 												<div class="col-auto">
 													<div class="stat text-primary">
 														<div class="align-middle">Rp</div>
@@ -73,7 +63,6 @@
 												<div class="col mt-0">
 													<h5 class="card-title">Pcs <span class="badge bg-success">Bulan ini</span></h5>
 												</div>
-	
 												<div class="col-auto">
 													<div class="stat text-primary">
 														<div class="align-middle">PCS</div>
@@ -99,7 +88,6 @@
 												<div class="col mt-0">
 													<h5 class="card-title">Nominal <span class="badge bg-success">Bulan ini</span></h5>
 												</div>
-	
 												<div class="col-auto">
 													<div class="stat text-primary">
 														<div class="align-middle">Rp</div>
@@ -120,15 +108,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="card-body h-100">
-							
-						</div>
+						<div class="card-body h-100"></div>
 					</div>
 					<div class="card">
 						<div class="card-header">
-
 							<h5 class="card-title mb-3">Top Product</h5>
-
 							<div class="row">
 								<div class="col-sm-3">
 									<div class="card">
@@ -220,13 +204,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="card-body h-100">
-							
-						</div>
+						<div class="card-body h-100"></div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</main>
 @endsection
