@@ -133,10 +133,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -144,10 +144,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -155,10 +155,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -166,32 +166,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="card">
-										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
-											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="card">
-										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
-											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -199,10 +177,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -210,10 +188,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -221,10 +199,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>
@@ -232,10 +210,10 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<h1 class="mt-1 mb-3">Gambar</h1>
-											<span class="text-muted">Nama Barang</span>
+											<img src="img/avatars/avatar.jpg" width="150" />
+											<h5 class="mt-1 mb-0">Sabun</h5>
 											<div class="mb-0">
-												<h3 class="mt-1 mb-3">Rpxx.xxx</h1>
+												<span class="text-muted">Rp50.000</span>
 											</div>
 										</div>
 									</div>

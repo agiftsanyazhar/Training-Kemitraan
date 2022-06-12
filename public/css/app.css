@@ -26858,3 +26858,5 @@ body[data-theme="colored"] .simplebar-scrollbar:before {
 .no-padding{
 	padding:0!important;
 }
+
+#more {display: none;}
