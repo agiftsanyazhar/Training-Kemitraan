@@ -41,7 +41,7 @@
 										<div class="input-group-append">
 											<select name="search" id="search" class="form-select">
 												<option value="">Nama Role</option>
-												<option value="">Level role</option>
+												<option value="">Level Role</option>
 											</select>
 										</div>
 										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">

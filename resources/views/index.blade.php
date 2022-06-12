@@ -234,17 +234,12 @@
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
-									<div class="input-group">
-										<div class="input-group-append">
-											<select name="search" id="search" class="form-select">
-												<option value="">Semua Role</option>
-												<option value="">Test</option>
-												<option value="">Test</option>
-												<option value="">Test</option>
-											</select>
-										</div>
-										<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
-									</div>
+									<select name="search" id="search" class="form-select">
+										<option value="">Semua Role</option>
+										<option value="">Test</option>
+										<option value="">Test</option>
+										<option value="">Test</option>
+									</select>
 								</div>
 								<div class="col-12 col-md-1">
 									<button type="submit" class="btn btn-secondary">Cari</button>
