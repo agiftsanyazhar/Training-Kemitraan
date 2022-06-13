@@ -108,10 +108,10 @@
 														<p class="mb-1"><span class="badge bg-primary align-middle">HET</span> Rp50.000</p>
 													</td>
 													<td class="align-top text-wrap">
-														{{ Str::of($post)->words(20, ''); }}
-														@if (Str::of($post)->wordCount() > 20)
+														{{ Str::of($data->deskripshit_hadiah)->words(20, ''); }}
+														@if (Str::of($data->deskripshit_hadiah)->wordCount() > 20)
 															<span id="dots">...</span>
-															<span id="more">{{ Str::of($post)->after($after) }}</span>
+															<span id="more">{{ Str::of($data->deskripshit_hadiah)->after($after) }}</span>
 														@endif
 														<a href="#" onclick="myFunction()" id="myBtn">Selengkapnya</a>
 													</td>
