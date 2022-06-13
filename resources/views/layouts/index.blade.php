@@ -14,6 +14,8 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
+	<script src="/js/jquery-3.6.0.js"></script>
+
 	<title>Sellerkit</title>
 
 	<link href="css/app.css" rel="stylesheet">

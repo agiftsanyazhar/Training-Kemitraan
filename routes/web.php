@@ -5,6 +5,7 @@ use App\Http\Controllers\GudangController;
 use App\Http\Controllers\HadiahController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SignInController;
@@ -36,6 +37,7 @@ Route::get('/kategori', [KategoriBarangController::class, 'index']);
 Route::get('/hadiah', [HadiahController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index'])->name('role');
 Route::get('/user', [UserController::class, 'index']);
+Route::get('/produk', [ProdukController::class, 'index']);
 
 // ===================================================
 // ==================== Sign up ======================
