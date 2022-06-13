@@ -17,7 +17,8 @@ class GudangController extends Controller
      */
     public function index()
     {
-        $gudang = gudang::all();
+        $user = auth()->user()->id;
+        $gudang = gudang::where('id_user', $user)->get();
 
         {
             return view('gudang', [
@@ -53,9 +54,9 @@ class GudangController extends Controller
         $gudang = new Gudang;// table
         $user = auth()->user()->id;
         //value
-        $gudang->nama_gudang   = $data['nama_gudang'];
-        $gudang->lokasi_gudang      = $data['alamat_gudang'];
-        $gudang->id_user = $user;
+        $gudang->nama_gudang    = $data['nama_gudang'];
+        $gudang->lokasi_gudang  = $data['alamat_gudang'];
+        $gudang->id_user        = $user;
         $gudang->save();//tombol run sqlyog
 
         return redirect('/gudang')->with('successGudang','Data berhasil ditambah!');

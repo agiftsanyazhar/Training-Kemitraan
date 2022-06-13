@@ -83,6 +83,7 @@
 												</tr>
 											</thead>
 											<tbody id="order_items" style="border-top: 0px">
+												@foreach($hadiah as $data)
 												<tr>
 													<td class="align-top border-right">
 														<div class="d-flex">
@@ -95,9 +96,9 @@
 																<img class="me-2" src="img/avatars/avatar.jpg" width="75">
 															</div>
 															<div class="flex">
-																<h4 class="mb-0 text-lg">Sabun</h4>
+																<h4 class="mb-0 text-lg">{{ $data->nama_hadiah }}</h4>
 																<div class="mb-0">
-																	<span class="text-muted">Stok: 49</span>
+																	<span class="text-muted">{{ $data->stok_hadiah }}</span>
 																</div>
 															</div>
 														</div>
@@ -127,6 +128,7 @@
 														</div>
 													</td>
 												</tr>
+												@endforeach
 											</tbody>
 										</table>
 									</div>

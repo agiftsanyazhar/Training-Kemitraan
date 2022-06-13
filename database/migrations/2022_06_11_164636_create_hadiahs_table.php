@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('hadiahs', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_hadiah');
+            $table->string('stok_hadiah');
+            $table->string('hpp_hadiah');
+            $table->string('het_hadiah');
+            $table->string('deskripshit_hadiah');
+            $table->foreignId('id_user');
             $table->timestamps();
         });
     }
