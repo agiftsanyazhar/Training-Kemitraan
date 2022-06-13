@@ -35,6 +35,32 @@
 				<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-body">
+
+							<div class="row gy-3">
+								<div class="col-12 col-md-11">
+									<div class="input-group">
+										{{--  <div class="input-group-append">
+											<select name="search" id="search" class="form-select">
+												<option value="">Nama Hadiah</option>
+												<option value="">Alamat</option>
+											</select>
+										</div>  --}}
+										<input type="search" name="keyword" id="keyword" placeholder="Cari Berdasarkan Nama" class="form-control" value="">
+									</div>
+								</div>
+								<div class="col-12 col-md-1">
+									<button type="submit" class="btn btn-secondary">Cari</button>
+								</div>
+								<div class="col-12">
+									<span class="mr-3">Nama Produk:
+										<a href="" class="btn btn-secondary btn-sm">K8721&nbsp;&nbsp;<i class="align-middle" data-feather="x-circle"></i></a>
+										<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i class="align-middle" data-feather="refresh-cw"></i></a>
+									</span>
+								</div>
+							</div>
+
+
+
 							<div class="tab-content" id="pills-tabContent">
 								<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
 									<div class="table-responsive">
