@@ -20,7 +20,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brand = Brand::all();
+        $user = auth()->user()->id;
+        $brand = Brand::where('id_user', $user)->get();
         {
             return view('brand', [
                 "title"     => "Brand",
