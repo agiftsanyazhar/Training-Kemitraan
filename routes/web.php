@@ -10,6 +10,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\StockController;
+use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +40,8 @@ Route::get('/hadiah', [HadiahController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index'])->name('role');
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index']);
+Route::get('/stok', [StokController::class, 'index']);
+Route::get('/riwayatstok', [StokController::class, 'index2']);
 
 // ===================================================
 // ==================== Sign up ======================

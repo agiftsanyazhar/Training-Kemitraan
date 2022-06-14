@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Stock;
+use App\Models\Stok;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreStockRequest;
-use App\Http\Requests\UpdateStockRequest;
+use App\Http\Requests\StoreStokRequest;
+use App\Http\Requests\UpdateStokRequest;
 
-class StockController extends Controller
+class StokController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,15 @@ class StockController extends Controller
      */
     public function index()
     {
-        return view('stock', [
-            "title" => "stock"
+        return view('stok.stok', [
+            "title" => "stok"
+        ]);
+    }
+
+    public function index2()
+    {
+        return view('stok.riwayatstok', [
+            "title" => "riwstok"
         ]);
     }
 
@@ -34,10 +41,10 @@ class StockController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStockRequest  $request
+     * @param  \App\Http\Requests\StoreStokRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStockRequest $request)
+    public function store(StoreStokRequest $request)
     {
         //
     }
@@ -45,10 +52,10 @@ class StockController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\Stok  $stok
      * @return \Illuminate\Http\Response
      */
-    public function show(Stock $stock)
+    public function show(Stok $stok)
     {
         //
     }
@@ -56,10 +63,10 @@ class StockController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\Stok  $stok
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stock $stock)
+    public function edit(Stok $stok)
     {
         //
     }
@@ -67,11 +74,11 @@ class StockController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStockRequest  $request
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Http\Requests\UpdateStokRequest  $request
+     * @param  \App\Models\Stok  $stok
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStockRequest $request, Stock $stock)
+    public function update(UpdateStokRequest $request, Stok $stok)
     {
         //
     }
@@ -79,10 +86,10 @@ class StockController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Stock  $stock
+     * @param  \App\Models\Stok  $stok
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stock $stock)
+    public function destroy(Stok $stok)
     {
         //
     }
