@@ -98,8 +98,10 @@ class HadiahController extends Controller
      * @param  \App\Models\Hadiah  $hadiah
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hadiah $hadiah)
+    public function destroy($id)
     {
+        Hadiah::find($id)->delete();
+
         return redirect('/hadiah')->with('deleteHadiah','Data berhasil dihapus!');
     }
 }
