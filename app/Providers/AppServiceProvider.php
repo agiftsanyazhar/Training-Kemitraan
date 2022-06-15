@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
             return $user->id_role === 1;
         });
 
+        Gate::define('exceptAdmin', function(User $user){         
+            return $user->id_role !== 1;
+        });
+
         // Gate::defind('exceptLastRole', function(User $user){
         //     $role = Role::orderBy('level', 'desc')->first();
         //     return $user->id_role !== $role['level'];

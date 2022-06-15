@@ -47,7 +47,7 @@
 					</li>
 								
 					
-
+					@can('exceptAdmin')
 					<li class="sidebar-header">
 						Produk
 					</li>
@@ -66,17 +66,18 @@
 							<i class="align-middle" data-feather="hash"></i> <span class="align-middle">Kategori</span>
 						</a>
 					</li>
+					@endcan
 
-
+					@can('exceptAdmin')
 					<li class="sidebar-header">
 						Gudang
 					</li> 	
 
 					<li class="sidebar-item ">
 						<a data-bs-target="#warehouse2" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database align-middle"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> <span class="align-middle">Gudang 2</span>
+							<i class="align-middle" data-feather="database"></i> <span class="align-middle">Gudang</span>
 						</a>
-						<ul id="warehouse2" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar" style="">
+						<ul id="warehouse2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="">
 							<li class="sidebar-item ">
 								<a class="sidebar-link" href="{{ url ('/stok') }}">
 									<span class="align-middle">Lihat stok</span>
@@ -89,7 +90,7 @@
 							</li>
 						</ul>
 					</li>
-
+					@endcan
 					
 
 
@@ -97,6 +98,7 @@
 					<li class="sidebar-header">
 						Manajemen
 					</li>
+					@can('exceptAdmin')
 					<li class="sidebar-item  {{ ($title === "Hadiah" | $title === "Tambah Hadiah" | $title === "Edit Hadiah") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/hadiah') }}">
 							<i class="align-middle" data-feather="gift"></i> <span class="align-middle">Hadiah</span>
@@ -107,6 +109,12 @@
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Produk</span>
 						</a>
 					</li>
+					<li class="sidebar-item  {{ ($title === "Stok" | $title === "Tambah Stok" | $title === "Edit Stok") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/stok') }}">
+							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
+						</a>
+					</li>
+					@endcan
 					@can('Admin')
 						<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
 							<a class="sidebar-link" href="{{ url ('/role') }}">
@@ -114,18 +122,13 @@
 							</a>
 						</li>
 					@endcan
-					<li class="sidebar-item  {{ ($title === "Stok" | $title === "Tambah Stok" | $title === "Edit Stok") ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ url ('/stok') }}">
-							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
-						</a>
-					</li>
-					@can('exceptLastRole')
+					{{-- @can('exceptLastRole') --}}
 						<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
 							<a class="sidebar-link" href="{{ url ('/user') }}">
 								<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
 							</a>
 						</li>
-					@endcan
+					{{-- @endcan --}}
 				</ul>
 			</div>
 		</nav>
