@@ -53,6 +53,19 @@ class HadiahController extends Controller
      */
     public function store(StoreHadiahRequest $request)
     {
+        $data = $request->input();//insert into
+        
+        $hadiah = new Hadiah;// table
+        $user = auth()->user()->id;
+        //value
+        $hadiah->nama_hadiah   = $data['nama_hadiah'];
+        $hadiah->nama_hadiah   = $data['stok_hadiah'];
+        $hadiah->nama_hadiah   = $data['hpp_hadiah'];
+        $hadiah->nama_hadiah   = $data['het_hadiah'];
+        $hadiah->nama_hadiah   = $data['deskripshit_hadiah'];
+        $hadiah->id_user      = $user;
+        $hadiah->save();//tombol run sqlyog
+
         return redirect('/hadiah')->with('successHadiah','Data berhasil ditambah!');
     }
 
