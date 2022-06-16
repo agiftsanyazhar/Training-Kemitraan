@@ -113,7 +113,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
+				<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
 							<h5 class="card-title mb-3">Top Product</h5>
@@ -121,7 +121,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -132,7 +132,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -143,7 +143,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -154,7 +154,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -165,7 +165,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -176,7 +176,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -187,7 +187,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -198,7 +198,7 @@
 								<div class="col-sm-3">
 									<div class="card">
 										<div class="card-body">
-											<img src="img/avatars/avatar.jpg" width="220" />
+											<img src="img/avatars/avatar.jpg" class="img-fluid" width="220" />
 											<h4 class="mt-1 mb-0">Sabun</h4>
 											<div class="mb-0">
 												<span class="text-muted">Rp50.000</span>
@@ -212,7 +212,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
+				<div class="col-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
 							<h5 class="card-title mb-0">{{ $title }}</h5>
@@ -322,7 +322,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
+				<div class="col-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-header">
 							<h5 class="card-title mb-0">Daftar Barang</h5>
