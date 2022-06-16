@@ -105,3 +105,6 @@ Route::post('/create-user', [UserController::class, 'store'])->middleware('auth'
 Route::get('/form-edit-user-{id}', [UserController::class, 'edit'])->middleware('auth');
 Route::put('/update-user-{id}',[UserController::class, 'update'])->middleware('auth');
 Route::delete('/delete-user-{id}', [UserController::class, 'destroy'])->middleware('auth');
+
+// Gudang -> Lihat Stok, Riwayat Stok
+Route::get('/gudang-stok-{id}', [StokController::class, 'index']);

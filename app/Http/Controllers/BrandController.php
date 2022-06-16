@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
+use App\Models\gudang;
 use SebastianBergmann\LinesOfCode\Counter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -26,7 +27,8 @@ class BrandController extends Controller
             return view('brand', [
                 "title"     => "Brand",
                 'brand'     => $brand,
-                'counter'   => 1
+                'counter'   => 1,
+                'warehouse' => gudang::where('id_user', $user)->get()
             ]);
         }
     }
@@ -38,8 +40,10 @@ class BrandController extends Controller
      */
     public function create()
     {
+        $user = auth()->user()->id;
         return view('create.brand', [
-            "title" => "Tambah Brand"
+            "title" => "Tambah Brand",
+            'warehouse' => gudang::where('id_user', $user)->get()
         ]);
     }
 
@@ -82,9 +86,12 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
+        $user = auth()->user()->id;
         return view('edit.brand', [
             "title" => "Edit Brand",
-            "data"  => Brand::find($id)
+            "data"  => Brand::find($id),
+            'warehouse' => gudang::where('id_user', $user)->get()
+
         ]);
     }
 

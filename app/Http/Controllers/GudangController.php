@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class GudangController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -18,13 +19,11 @@ class GudangController extends Controller
     public function index()
     {
         $user = auth()->user()->id;
-        $gudang = gudang::where('id_user', $user)->get();
-
         {
             return view('gudang', [
                 "title" => "Gudang",
                 'counter' => 1,
-                'gudang' => $gudang
+                'warehouse' => Gudang::where('id_user', $user)->get()
             ]);
         }
     }
@@ -36,8 +35,10 @@ class GudangController extends Controller
      */
     public function create()
     {
+        $user = auth()->user()->id;
         return view('create.gudang', [
-            "title" => "Tambah Gudang"
+            "title" => "Tambah Gudang",
+            'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }
 
@@ -81,10 +82,11 @@ class GudangController extends Controller
      */
     public function edit($id)
     {
-        $data = gudang::find($id);
+        $user = auth()->user()->id;
         return view('edit.gudang', [
             "title" => "Edit Gudang",
-            'data' => Gudang::find($id)
+            'data' => Gudang::find($id),
+            'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }
 

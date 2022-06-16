@@ -76,7 +76,7 @@
 												</tr>
 											</thead>
 											<tbody id="order_items" style="border-top: 0px">
-												@foreach($gudang as $data)
+												@foreach($warehouse as $data)
 												<tr>
 													<td class="align-top border-right">
 														<div class="d-flex">

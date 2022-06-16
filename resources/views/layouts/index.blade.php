@@ -72,24 +72,25 @@
 					<li class="sidebar-header">
 						Gudang
 					</li> 	
-
-					<li class="sidebar-item ">
-						<a data-bs-target="#warehouse2" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<i class="align-middle" data-feather="database"></i> <span class="align-middle">Gudang</span>
+					@foreach ($warehouse as $warehouses)
+					<li class="sidebar-item {{ ($title === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
+						<a data-bs-target="#warehouse{{ $warehouses->id }}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
+							<i class="align-middle" data-feather="database"></i> <span class="align-middle text-capitalize">{{ $warehouses->nama_gudang }}</span>
 						</a>
-						<ul id="warehouse2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="">
-							<li class="sidebar-item ">
-								<a class="sidebar-link" href="{{ url ('/stok') }}">
+						<ul id="warehouse{{ $warehouses->id }}" class="sidebar-dropdown list-unstyled collapse {{ ($title === "Gudang Stok$warehouses->id") ? 'show' : '' }}" data-bs-parent="#sidebar" style="">
+							<li class="sidebar-item {{ ($title2 === "Lihat Stok$warehouses->id") ? 'active' : '' }}">
+								<a class="sidebar-link" href="{{ url ('/gudang-stok-') }}{{ $warehouses->id }}">
 									<span class="align-middle">Lihat stok</span>
 								</a>
 							</li>
 							<li class="sidebar-item ">
-								<a class="sidebar-link" href="{{ url ('/riwayatstok') }}">
+								<a class="sidebar-link" href="{{ url ('/gudang-riwayatstok-') }}{{ $warehouses->id }}">
 									<span class="align-middle">Riwayat stok</span>
 								</a>
 							</li>
 						</ul>
 					</li>
+					@endforeach
 					@endcan
 					
 
