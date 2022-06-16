@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignId('id_kategori');
             $table->string('kode_sku');
             $table->string('nama_brand');
-            $table->int('hpp_produk');
-            $table->int('het_produk');
+            $table->integer('hpp_produk');
+            $table->integer('het_produk');
             $table->timestamps();
         });
     }

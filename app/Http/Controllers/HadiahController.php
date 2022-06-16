@@ -41,8 +41,9 @@ class HadiahController extends Controller
     {
         return view('create.hadiah', [
             "title" => "Tambah Hadiah",
-            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
+            // 'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
+        // echo "halo";
     }
 
     /**
