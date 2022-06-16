@@ -17,12 +17,9 @@ class StokController extends Controller
      */
     public function index($id)
     {
-        $user = auth()->user()->id;
         return view('stok.stok', [
-            "title" => "Gudang Stok".$id,
-            "title2" => "Lihat Stok".$id,
-            'warehouse' => Gudang::where('id_user', $user)->get(),
-            'title3' => Gudang::find($id)->nama_gudang,
+            "title" => ["Gudang Stok".$id, "Lihat Stok".$id, Gudang::find($id)->nama_gudang],
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             'stok' => Stok::where('id_gudang',$id)->whereNotNull('id_produk')->with('produk'.'brand')->get(),
             'countstok' => Stok::where('id_gudang',$id)->whereNotNull('id_produk')->count(),
             'gift' => Stok::where('id_gudang',$id)->whereNotNull('id_hadiah')->get(),

@@ -9,6 +9,7 @@ use App\Models\barang;
 use App\Models\Kategori_Barang;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\gudang;
 
 class IndexController extends Controller
 {
@@ -31,7 +32,8 @@ class IndexController extends Controller
                 "title"         => "Daftar Mitra",
                 // 'barang' => $barang,
                 'counter1'       => 1,
-                'counter2'       => 1
+                'counter2'       => 1,
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             ]);
         }
     }
@@ -39,7 +41,8 @@ class IndexController extends Controller
     {
         {
             return view('pengaturan', [
-                "title" => "Pengaturan"
+                "title" => "Pengaturan",
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             ]);
         }
     }

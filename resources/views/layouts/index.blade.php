@@ -73,12 +73,12 @@
 						Gudang
 					</li> 	
 					@foreach ($warehouse as $warehouses)
-					<li class="sidebar-item {{ ($title === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
+					<li class="sidebar-item {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
 						<a data-bs-target="#warehouse{{ $warehouses->id }}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
 							<i class="align-middle" data-feather="database"></i> <span class="align-middle text-capitalize">{{ $warehouses->nama_gudang }}</span>
 						</a>
-						<ul id="warehouse{{ $warehouses->id }}" class="sidebar-dropdown list-unstyled collapse {{ ($title === "Gudang Stok$warehouses->id") ? 'show' : '' }}" data-bs-parent="#sidebar" style="">
-							<li class="sidebar-item {{ ($title2 === "Lihat Stok$warehouses->id") ? 'active' : '' }}">
+						<ul id="warehouse{{ $warehouses->id }}" class="sidebar-dropdown list-unstyled collapse {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'show' : '' }}" data-bs-parent="#sidebar" style="">
+							<li class="sidebar-item {{ ($title[1] === "Lihat Stok$warehouses->id") ? 'active' : '' }}">
 								<a class="sidebar-link" href="{{ url ('/gudang-stok-') }}{{ $warehouses->id }}">
 									<span class="align-middle">Lihat stok</span>
 								</a>

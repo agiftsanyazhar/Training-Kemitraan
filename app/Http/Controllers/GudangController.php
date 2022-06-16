@@ -18,12 +18,11 @@ class GudangController extends Controller
      */
     public function index()
     {
-        $user = auth()->user()->id;
         {
             return view('gudang', [
                 "title" => "Gudang",
                 'counter' => 1,
-                'warehouse' => Gudang::where('id_user', $user)->get()
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             ]);
         }
     }

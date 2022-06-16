@@ -5,7 +5,7 @@
 
 <main class="content">
     <div class="container-fluid p-0">
-        <h1 class="h3 mb-3 text-capitalize">Stok {{ $title3 }}</h1>
+        <h1 class="h3 mb-3 text-capitalize">Stok {{ $title[2] }}</h1>
     </div>
     <div class="row">
         <div class="col-12">

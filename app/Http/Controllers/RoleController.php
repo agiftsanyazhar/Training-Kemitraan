@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
-use App\Models\User;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
@@ -22,7 +22,8 @@ class RoleController extends Controller
         return view('role', [
             'title' => 'Role',
             'role' => Role::orderBy('level')->get(),
-            'counter' => 1
+            'counter' => 1,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
         ]);
     }
 

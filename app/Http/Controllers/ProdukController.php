@@ -19,7 +19,6 @@ class ProdukController extends Controller
         $user = auth()->user()->id;
         return view('Produk', [
             "title" => "Produk",
-            'title2' => '',
             'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }

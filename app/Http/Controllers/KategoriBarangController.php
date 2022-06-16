@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori_Barang;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKategori_BarangRequest;
 use App\Http\Requests\UpdateKategori_BarangRequest;
@@ -25,7 +26,8 @@ class KategoriBarangController extends Controller
             return view('kategori', [
                 "title"     => "Kategori",
                 'counter'   => 1,
-                'kategori'  => $kategori
+                'kategori'  => $kategori,
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             ]);
         }
     }

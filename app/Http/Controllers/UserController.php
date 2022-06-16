@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,8 @@ class UserController extends Controller
         return view('user', [
             'title' => 'User',
             'user'  => User::where('registered_by', auth()->user()->id )->get(),
-            'counter' => 1
+            'counter' => 1,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
         ]);
     }
 

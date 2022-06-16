@@ -86,12 +86,10 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        $user = auth()->user()->id;
         return view('edit.brand', [
             "title" => "Edit Brand",
             "data"  => Brand::find($id),
-            'warehouse' => gudang::where('id_user', $user)->get()
-
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
         ]);
     }
 
