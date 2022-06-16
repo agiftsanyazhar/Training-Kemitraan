@@ -35,7 +35,6 @@
 				<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
 						<div class="card-body">
-
 							<div class="row gy-3">
 								<div class="col-12 col-md-11">
 									<div class="input-group">
@@ -59,8 +58,8 @@
 								</div>
 							</div>
 
-
-
+						</div>
+						<div class="card-body">
 							<div class="tab-content" id="pills-tabContent">
 								<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
 									<div class="table-responsive">

@@ -21,14 +21,12 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $user = auth()->user()->id;
-        $brand = Brand::where('id_user', $user)->get();
         {
             return view('brand', [
                 "title"     => "Brand",
-                'brand'     => $brand,
+                'brand'     => Brand::where('id_user', auth()->user()->id)->get(),
                 'counter'   => 1,
-                'warehouse' => gudang::where('id_user', $user)->get()
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
             ]);
         }
     }
@@ -43,7 +41,7 @@ class BrandController extends Controller
         $user = auth()->user()->id;
         return view('create.brand', [
             "title" => "Tambah Brand",
-            'warehouse' => gudang::where('id_user', $user)->get()
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
         ]);
     }
 

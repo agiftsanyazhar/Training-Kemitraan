@@ -40,7 +40,7 @@ Route::get('/hadiah', [HadiahController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index'])->name('role');
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index']);
-Route::get('/stok', [StokController::class, 'index']);
+Route::get('/stok', [StokController::class, 'indexsum']);
 Route::get('/riwayatstok', [StokController::class, 'index2']);
 
 // ===================================================

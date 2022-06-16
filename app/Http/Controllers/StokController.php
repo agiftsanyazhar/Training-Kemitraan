@@ -27,6 +27,18 @@ class StokController extends Controller
         ]);
     }
 
+    public function indexsum()
+    {
+        return view('stok.stok', [
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+            "title" => ["Stok"," ", "Keseluruhan"],
+            'stok' => Stok::whereNotNull('id_produk')->with('produk'.'brand')->get(),
+            'countstok' => Stok::whereNotNull('id_produk')->count(),
+            'gift' => Stok::whereNotNull('id_hadiah')->get(),
+            'countgift' => Stok::whereNotNull('id_hadiah')->count(),
+        ]);
+    }
+
     public function index2()
     {
         return view('stok.riwayatstok', [

@@ -115,7 +115,7 @@
 
                     function showWarehouse() {
                         $.ajax({
-                            url: '',
+                            url: {{ }},
                             method: 'post',
                             data: {
                                 act: 'show'

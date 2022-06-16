@@ -40,7 +40,8 @@ class HadiahController extends Controller
     public function create()
     {
         return view('create.hadiah', [
-            "title" => "Tambah Hadiah"
+            "title" => "Tambah Hadiah",
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 
@@ -89,6 +90,7 @@ class HadiahController extends Controller
     {
         return view('edit.hadiah', [
             "title" => "Edit Hadiah",
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 

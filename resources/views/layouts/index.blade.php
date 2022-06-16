@@ -110,7 +110,7 @@
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Produk</span>
 						</a>
 					</li>
-					<li class="sidebar-item  {{ ($title === "Stok" | $title === "Tambah Stok" | $title === "Edit Stok") ? 'active' : '' }}">
+					<li class="sidebar-item  {{ ($title[0] === "Stok") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/stok') }}">
 							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
 						</a>

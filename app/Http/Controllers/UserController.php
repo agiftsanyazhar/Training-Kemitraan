@@ -32,7 +32,8 @@ class UserController extends Controller
         return view('create.user', [
             'title' => 'Tambah User',
             'roleid'=> Role::find($id)->id,
-            'role'  => Role::find($id)->Role  
+            'role'  => Role::find($id)->Role,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 
@@ -68,7 +69,8 @@ class UserController extends Controller
             'user'  => User::find($id),
             'title' => 'Edit User',
             'roleid'=> Role::find($id)->id,
-            'role'  => Role::find($id)->Role  
+            'role'  => Role::find($id)->Role,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 

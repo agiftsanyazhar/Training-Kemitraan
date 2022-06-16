@@ -38,7 +38,8 @@ class RoleController extends Controller
         $jmlh_Role = $jmlh_Role->level;
         return view('create.role', [
             'title' => 'Tambah Role',
-            'role'  => $jmlh_Role
+            'role'  => $jmlh_Role,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
         
     }
@@ -101,7 +102,8 @@ class RoleController extends Controller
         return view('edit.role', [
             'title' => 'Edit Role',
             'data'  => Role::find($id),
-            'role'  => $jmlh_Role
+            'role'  => $jmlh_Role,
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 
