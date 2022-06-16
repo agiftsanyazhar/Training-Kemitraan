@@ -90,8 +90,7 @@
                                 <div class="row gy-3">
                                     <div class="col-12">
                                         <select id="warehouse" name="warehouse" class="form-select">
-                                            <option>a</option>
-                                            <option>b</option>
+                                        
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -110,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <script>
+                <!-- <script>
                     var modalGudang = new bootstrap.Modal(document.getElementById('ModalGudang'));
 
                     function showWarehouse() {
@@ -156,7 +155,7 @@
                             }
                         });
                     }
-                </script>
+                </script> -->
             </div>
 		</div>
 	</main>
