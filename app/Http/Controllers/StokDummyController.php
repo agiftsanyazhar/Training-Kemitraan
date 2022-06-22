@@ -42,7 +42,7 @@ class StokDummyController extends Controller
         DB::table('stock__dummys')->insert([
             'id_user' => auth()->user()->id,
             'warehouse_id' => $request['warehouse'],
-            'stock_qty' => $Request['stock_qty'],
+            'stock_qty' => $Request['stock_qty']
         ])
     }
 

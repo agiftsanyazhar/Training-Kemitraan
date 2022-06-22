@@ -18,7 +18,7 @@ class UserController extends Controller
             'title' => 'User',
             'user'  => User::where('registered_by', auth()->user()->id )->get(),
             'counter' => 1,
-            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 

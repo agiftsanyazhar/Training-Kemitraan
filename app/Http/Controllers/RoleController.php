@@ -23,7 +23,7 @@ class RoleController extends Controller
             'title' => 'Role',
             'role' => Role::orderBy('level')->get(),
             'counter' => 1,
-            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 

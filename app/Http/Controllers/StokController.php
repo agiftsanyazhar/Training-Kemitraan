@@ -23,7 +23,7 @@ class StokController extends Controller
             'stok' => Stok::where('id_gudang',$id)->whereNotNull('id_produk')->with('produk'.'brand')->get(),
             'countstok' => Stok::where('id_gudang',$id)->whereNotNull('id_produk')->count(),
             'gift' => Stok::where('id_gudang',$id)->whereNotNull('id_hadiah')->get(),
-            'countgift' => Stok::where('id_gudang',$id)->whereNotNull('id_hadiah')->count(),
+            'countgift' => Stok::where('id_gudang',$id)->whereNotNull('id_hadiah')->count()
         ]);
     }
 
@@ -35,7 +35,7 @@ class StokController extends Controller
             'stok' => Stok::whereNotNull('id_produk')->with('produk'.'brand')->get(),
             'countstok' => Stok::whereNotNull('id_produk')->count(),
             'gift' => Stok::whereNotNull('id_hadiah')->get(),
-            'countgift' => Stok::whereNotNull('id_hadiah')->count(),
+            'countgift' => Stok::whereNotNull('id_hadiah')->count()
         ]);
     }
 

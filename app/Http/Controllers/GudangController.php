@@ -22,7 +22,7 @@ class GudangController extends Controller
             return view('gudang', [
                 "title" => "Gudang",
                 'counter' => 1,
-                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
             ]);
         }
     }

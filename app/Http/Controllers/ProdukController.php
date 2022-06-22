@@ -16,10 +16,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $user = auth()->user()->id;
         return view('Produk', [
             "title" => "Produk",
-            'warehouse' => Gudang::where('id_user', $user)->get()
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 

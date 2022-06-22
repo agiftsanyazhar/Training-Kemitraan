@@ -72,7 +72,7 @@
 					<li class="sidebar-header">
 						Gudang
 					</li> 	
-					<!-- @foreach ($warehouse as $warehouses)
+					@foreach ($warehouse as $warehouses)
 					<li class="sidebar-item {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
 						<a data-bs-target="#warehouse{{ $warehouses->id }}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
 							<i class="align-middle" data-feather="database"></i> <span class="align-middle text-capitalize">{{ $warehouses->nama_gudang }}</span>
@@ -90,7 +90,7 @@
 							</li>
 						</ul>
 					</li>
-					@endforeach -->
+					@endforeach
 					@endcan
 					
 

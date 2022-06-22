@@ -19,7 +19,7 @@ class ProfileController extends Controller
         {
             return view('profile', [
                 "title" => "Profile",
-                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
             ]);
         }
     }

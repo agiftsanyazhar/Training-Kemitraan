@@ -24,9 +24,9 @@ class BrandController extends Controller
         {
             return view('brand', [
                 "title"     => "Brand",
-                'brand'     => Brand::where('id_user', auth()->user()->id)->get(),
+                'brand'     => Brand::where('id_user', auth()->user()->id)->get(), //select*from table brand
                 'counter'   => 1,
-                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
             ]);
         }
     }
@@ -41,7 +41,7 @@ class BrandController extends Controller
         $user = auth()->user()->id;
         return view('create.brand', [
             "title" => "Tambah Brand",
-            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 
@@ -54,7 +54,7 @@ class BrandController extends Controller
     public function store(StoreBrandRequest $request)
     {
         $data = $request->input();//insert into
-        
+        // $data['gudang'];
         $brand = new Brand;// table
         $user = auth()->user()->id;
         //value
@@ -87,7 +87,7 @@ class BrandController extends Controller
         return view('edit.brand', [
             "title" => "Edit Brand",
             "data"  => Brand::find($id),
-            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+            'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
     }
 

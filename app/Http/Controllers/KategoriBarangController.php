@@ -27,7 +27,7 @@ class KategoriBarangController extends Controller
                 "title"     => "Kategori",
                 'counter'   => 1,
                 'kategori'  => $kategori,
-                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get(),
+                'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
             ]);
         }
     }
