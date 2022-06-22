@@ -20,7 +20,7 @@
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="https://unpkg.com/@adminkit/core@latest/dist/css/app.css">
 </head>
 
@@ -45,9 +45,9 @@
 							<i class="align-middle" data-feather="user"></i><span class="align-middle">Profil</span>
 						</a>
 					</li>
-								
-					
 
+
+					@can('exceptAdmin')
 					<li class="sidebar-header">
 						Produk
 					</li>
@@ -66,37 +66,40 @@
 							<i class="align-middle" data-feather="hash"></i> <span class="align-middle">Kategori</span>
 						</a>
 					</li>
+					@endcan
 
-
+					@can('exceptAdmin')
 					<li class="sidebar-header">
 						Gudang
-					</li> 	
-
-					<li class="sidebar-item ">
-						<a data-bs-target="#warehouse2" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database align-middle"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> <span class="align-middle">Gudang 2</span>
+					</li>
+					@foreach ($warehouse as $warehouses)
+					<li class="sidebar-item {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
+						<a data-bs-target="#warehouse{{ $warehouses->id }}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
+							<i class="align-middle" data-feather="database"></i> <span class="align-middle text-capitalize">{{ $warehouses->nama_gudang }}</span>
 						</a>
-						<ul id="warehouse2" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar" style="">
-							<li class="sidebar-item ">
-								<a class="sidebar-link" href="{{ url ('/stok') }}">
+						<ul id="warehouse{{ $warehouses->id }}" class="sidebar-dropdown list-unstyled collapse {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'show' : '' }}" data-bs-parent="#sidebar" style="">
+							<li class="sidebar-item {{ ($title[1] === "Lihat Stok$warehouses->id") ? 'active' : '' }}">
+								<a class="sidebar-link" href="{{ url ('/gudang-stok-') }}{{ $warehouses->id }}">
 									<span class="align-middle">Lihat stok</span>
 								</a>
 							</li>
 							<li class="sidebar-item ">
-								<a class="sidebar-link" href="{{ url ('/riwayatstok') }}">
+								<a class="sidebar-link" href="{{ url ('/gudang-riwayatstok-') }}{{ $warehouses->id }}">
 									<span class="align-middle">Riwayat stok</span>
 								</a>
 							</li>
 						</ul>
 					</li>
+					@endforeach
+					@endcan
 
-					
 
 
 
 					<li class="sidebar-header">
 						Manajemen
 					</li>
+					@can('exceptAdmin')
 					<li class="sidebar-item  {{ ($title === "Hadiah" | $title === "Tambah Hadiah" | $title === "Edit Hadiah") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/hadiah') }}">
 							<i class="align-middle" data-feather="gift"></i> <span class="align-middle">Hadiah</span>
@@ -107,25 +110,26 @@
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Produk</span>
 						</a>
 					</li>
-					@can('Admin')
-						<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
-							<a class="sidebar-link" href="{{ url ('/role') }}">
-								<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
-							</a>
-						</li>
-					@endcan
-					<li class="sidebar-item  {{ ($title === "Stok" | $title === "Tambah Stok" | $title === "Edit Stok") ? 'active' : '' }}">
+					<li class="sidebar-item  {{ ($title[0] === "Stok") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/stok') }}">
 							<i class="align-middle" data-feather="layers"></i> <span class="align-middle">Stok</span>
 						</a>
 					</li>
-					@can('exceptLastRole')
-						<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
-							<a class="sidebar-link" href="{{ url ('/user') }}">
-								<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
-							</a>
-						</li>
 					@endcan
+					@can('Admin')
+					<li class="sidebar-item  {{ ($title === "Role" | $title === "Tambah Role" | $title === "Edit Role") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/role') }}">
+							<i class="align-middle" data-feather="tool"></i> <span class="align-middle">Role</span>
+						</a>
+					</li>
+					@endcan
+					{{-- @can('exceptLastRole') --}}
+					<li class="sidebar-item  {{ ($title === "User") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/user') }}">
+							<i class="align-middle" data-feather="users"></i> <span class="align-middle">User</span>
+						</a>
+					</li>
+					{{-- @endcan --}}
 				</ul>
 			</div>
 		</nav>
@@ -133,14 +137,14 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          			<i class="hamburger align-self-center"></i>
-        		</a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                				<i class="align-middle" data-feather="settings"></i>
-              				</a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
 								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark text-capitalize">Halo, {{ auth()->user()->nama_lengkap }}</span>
 							</a>
@@ -152,28 +156,28 @@
 								<div class="dropdown-divider"></div>
 								<form action="/logout" method="post">
 									@csrf
-									<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
-								</form>
-							</div>
-						</li>
-					</ul>
+						<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
+						</form>
 				</div>
-			</nav>
+				</li>
+				</ul>
+		</div>
+		</nav>
 
-			@yield('container')
+		@yield('container')
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="{{ url('/') }}"><img src="img/sellerkit-logo.png" width="80 px"></a>
-							</p>
-						</div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row text-muted">
+					<div class="col-6 text-start">
+						<p class="mb-0">
+							<a class="text-muted" href="{{ url('/') }}"><img src="img/sellerkit-logo.png" width="80 px"></a>
+						</p>
 					</div>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
+	</div>
 	</div>
 
 	<script src="js/app.js"></script>
@@ -400,6 +404,7 @@
 			});
 		});
 	</script>
+	@yield('script')
 </body>
 
 </html>

@@ -9,6 +9,7 @@ use App\Models\barang;
 use App\Models\Kategori_Barang;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\gudang;
 
 class IndexController extends Controller
 {
@@ -25,21 +26,22 @@ class IndexController extends Controller
         // $user = User::where('id_role', $role)->pluck('id');
         // $id_kategori = Kategori_Barang::where('id_user', $user)->pluck('id');
         // $barang = barang::where('id_kategori',$id_kategori)->get();
-        
+
         {
             return view('index', [
                 "title"         => "Daftar Mitra",
                 // 'barang' => $barang,
                 'counter1'       => 1,
-                'counter2'       => 1
+                'counter2'       => 1,
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get(),
             ]);
         }
     }
     public function pengaturan()
-    {
-        {
+    { {
             return view('pengaturan', [
-                "title" => "Pengaturan"
+                "title" => "Pengaturan",
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get(),
             ]);
         }
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use App\Models\gudang;
 use App\Http\Requests\StoreProfileRequest;
 use App\Http\Requests\UpdateProfileRequest;
 
@@ -14,10 +15,10 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        {
+    { {
             return view('profile', [
-                "title" => "Profile"
+                "title" => "Profile",
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }
     }

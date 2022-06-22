@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori_Barang;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKategori_BarangRequest;
 use App\Http\Requests\UpdateKategori_BarangRequest;
@@ -19,13 +20,13 @@ class KategoriBarangController extends Controller
      */
     public function index()
     {
-            $kategori = Kategori_Barang::all();
-        {
+        $kategori = Kategori_Barang::all(); {
 
             return view('kategori', [
                 "title"     => "Kategori",
                 'counter'   => 1,
-                'kategori'  => $kategori
+                'kategori'  => $kategori,
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }
     }
@@ -38,7 +39,8 @@ class KategoriBarangController extends Controller
     public function create()
     {
         return view('create.kategori', [
-            "title" => "Tambah Kategori"
+            "title" => "Tambah Kategori",
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 
@@ -50,14 +52,14 @@ class KategoriBarangController extends Controller
      */
     public function store(StoreKategori_BarangRequest $request)
     {
-        $data = $request->input();//insert into
-        
-        $kategori = new Kategori_Barang;// table
+        $data = $request->input(); //insert into
+
+        $kategori = new Kategori_Barang; // table
         //value
         $kategori->nama_kategori   = $data['nama_kategori'];
-        $kategori->save();//tombol run sqlyog
+        $kategori->save(); //tombol run sqlyog
 
-        return redirect('/kategori')->with('successKategori','Data berhasil ditambah!');
+        return redirect('/kategori')->with('successKategori', 'Data berhasil ditambah!');
     }
 
     /**
@@ -81,7 +83,8 @@ class KategoriBarangController extends Controller
     {
         return view('edit.kategori', [
             "title" => "Edit Kategori",
-            "data" => Kategori_Barang::find($id)
+            "data" => Kategori_Barang::find($id),
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 
@@ -98,7 +101,7 @@ class KategoriBarangController extends Controller
             'nama_kategori'   => $request['nama_kategori']
         ]);
 
-        return redirect('/kategori')->with('updateKategori','Data berhasil diubah!');
+        return redirect('/kategori')->with('updateKategori', 'Data berhasil diubah!');
     }
 
     /**
@@ -111,6 +114,6 @@ class KategoriBarangController extends Controller
     {
         Kategori_Barang::find($id)->delete();
 
-        return redirect('/kategori')->with('deleteKategori','Data berhasil dihapus!');
+        return redirect('/kategori')->with('deleteKategori', 'Data berhasil dihapus!');
     }
 }

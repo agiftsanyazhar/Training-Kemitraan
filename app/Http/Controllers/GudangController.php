@@ -10,21 +10,18 @@ use Illuminate\Http\Request;
 
 class GudangController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $user = auth()->user()->id;
-        $gudang = gudang::where('id_user', $user)->get();
-
-        {
+    { {
             return view('gudang', [
                 "title" => "Gudang",
                 'counter' => 1,
-                'gudang' => $gudang
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }
     }
@@ -36,8 +33,10 @@ class GudangController extends Controller
      */
     public function create()
     {
+        $user = auth()->user()->id;
         return view('create.gudang', [
-            "title" => "Tambah Gudang"
+            "title" => "Tambah Gudang",
+            'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }
 
@@ -49,17 +48,17 @@ class GudangController extends Controller
      */
     public function store(StoregudangRequest $request)
     {
-        $data = $request->input();//insert into
-        
-        $gudang = new Gudang;// table
+        $data = $request->input(); //insert into
+
+        $gudang = new Gudang; // table
         $user = auth()->user()->id;
         //value
         $gudang->nama_gudang    = $data['nama_gudang'];
         $gudang->lokasi_gudang  = $data['alamat_gudang'];
         $gudang->id_user        = $user;
-        $gudang->save();//tombol run sqlyog
+        $gudang->save(); //tombol run sqlyog
 
-        return redirect('/gudang')->with('successGudang','Data berhasil ditambah!');
+        return redirect('/gudang')->with('successGudang', 'Data berhasil ditambah!');
     }
 
     /**
@@ -81,10 +80,11 @@ class GudangController extends Controller
      */
     public function edit($id)
     {
-        $data = gudang::find($id);
+        $user = auth()->user()->id;
         return view('edit.gudang', [
             "title" => "Edit Gudang",
-            'data' => Gudang::find($id)
+            'data' => Gudang::find($id),
+            'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }
 
@@ -101,8 +101,8 @@ class GudangController extends Controller
             'nama_gudang'   => $request['nama_gudang'],
             'lokasi_gudang' => $request['alamat']
         ]);
-        
-        return redirect('/gudang')->with('updateGudang','Data berhasil diubah!');
+
+        return redirect('/gudang')->with('updateGudang', 'Data berhasil diubah!');
     }
 
     /**
@@ -115,6 +115,6 @@ class GudangController extends Controller
     {
         gudang::find($id)->delete();
 
-        return redirect('/gudang')->with('deleteGudang','Data berhasi dihapus!');
+        return redirect('/gudang')->with('deleteGudang', 'Data berhasi dihapus!');
     }
 }

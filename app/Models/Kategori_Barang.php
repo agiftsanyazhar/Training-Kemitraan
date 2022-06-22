@@ -11,11 +11,11 @@ class Kategori_Barang extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id_user','id');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 
-    public function barang()
+    public function produk()
     {
-        return $this->hasMany(barang::class,'id_kategori','id');
+        return $this->hasMany(Produk::class, 'id_kategori', 'id');
     }
 }

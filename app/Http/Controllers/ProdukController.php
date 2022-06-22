@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Gudang;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ProdukController extends Controller
     public function index()
     {
         return view('Produk', [
-            "title" => "Produk"
+            "title" => "Produk",
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 

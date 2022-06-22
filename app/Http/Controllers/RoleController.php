@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
-use App\Models\User;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
@@ -22,7 +22,8 @@ class RoleController extends Controller
         return view('role', [
             'title' => 'Role',
             'role' => Role::orderBy('level')->get(),
-            'counter' => 1
+            'counter' => 1,
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 
@@ -37,9 +38,9 @@ class RoleController extends Controller
         $jmlh_Role = $jmlh_Role->level;
         return view('create.role', [
             'title' => 'Tambah Role',
-            'role'  => $jmlh_Role
+            'role'  => $jmlh_Role,
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
-        
     }
 
     /**
@@ -56,24 +57,23 @@ class RoleController extends Controller
         ]);
 
         DB::table('roles')->insert([
-            'Role'          =>$validatedData['Role'],
-            'level'         =>$validatedData['level']
+            'Role'          => $validatedData['Role'],
+            'level'         => $validatedData['level']
         ]);
 
         $new_role = Role::all()->last()->id;
         $new_level = Role::all()->last()->level;
         $new = Role::find($request['id']);
-        
-        if($new_role!=$new_level){
-            for($i=$new_role-1;$i>=$new_level;$i--)
-            {
-                DB::table('roles')->where('level',$i)->whereNot('id',$new_role)->update([
-                    'level'         =>$i+1
+
+        if ($new_role != $new_level) {
+            for ($i = $new_role - 1; $i >= $new_level; $i--) {
+                DB::table('roles')->where('level', $i)->whereNot('id', $new_role)->update([
+                    'level'         => $i + 1
                 ]);
             }
         }
-        
-        return redirect('/role')->with('successRole','Data berhasil ditambah!');
+
+        return redirect('/role')->with('successRole', 'Data berhasil ditambah!');
     }
 
     /**
@@ -100,7 +100,8 @@ class RoleController extends Controller
         return view('edit.role', [
             'title' => 'Edit Role',
             'data'  => Role::find($id),
-            'role'  => $jmlh_Role
+            'role'  => $jmlh_Role,
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 
@@ -122,31 +123,27 @@ class RoleController extends Controller
 
         $new = Role::find($request['id']);
 
-        if($old['level']>$new['level']){
+        if ($old['level'] > $new['level']) {
             $level_old = $old->level;
-            $level_edit= $level_old-1;
+            $level_edit = $level_old - 1;
 
-            for($i=$level_edit;$i>=$new['level'];$i--)
-            {
-                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
-                    'level'     =>$i+1
+            for ($i = $level_edit; $i >= $new['level']; $i--) {
+                DB::table('roles')->where('level', $i)->whereNot('id', $new['id'])->update([
+                    'level'     => $i + 1
                 ]);
             }
-        }
-
-        else{
+        } else {
             $level_old = $old->level;
             $level_new = $new->level;
 
-            for($i=$level_old+1;$i<=$level_new;$i++)
-            {
-                DB::table('roles')->where('level',$i)->whereNot('id',$new['id'])->update([
-                    'level'     =>$i-1
+            for ($i = $level_old + 1; $i <= $level_new; $i++) {
+                DB::table('roles')->where('level', $i)->whereNot('id', $new['id'])->update([
+                    'level'     => $i - 1
                 ]);
             }
         }
 
-        return redirect('/role')->with('updateRole','Data berhasil diubah!');
+        return redirect('/role')->with('updateRole', 'Data berhasil diubah!');
     }
 
     /**
@@ -163,14 +160,14 @@ class RoleController extends Controller
         $jmlh_Role = Role::orderBy('level', 'desc')->first();
         $jmlh_Role = $jmlh_Role->level;
 
-        for($i=$del_role+1;$i<=$jmlh_Role;$i++){
-            DB::table('roles')->where('level',$i)->update([
-                'level'     =>$i-1
+        for ($i = $del_role + 1; $i <= $jmlh_Role; $i++) {
+            DB::table('roles')->where('level', $i)->update([
+                'level'     => $i - 1
             ]);
         }
 
         Role::find($id)->delete();
 
-        return redirect('/role')->with('deleteRole','Data berhasil dihapus!');
+        return redirect('/role')->with('deleteRole', 'Data berhasil dihapus!');
     }
 }

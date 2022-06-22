@@ -26,8 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Gate::define('Admin', function(User $user){         
+        Gate::define('Admin', function (User $user) {
             return $user->id_role === 1;
+        });
+
+        Gate::define('exceptAdmin', function (User $user) {
+            return $user->id_role !== 1;
         });
 
         // Gate::defind('exceptLastRole', function(User $user){

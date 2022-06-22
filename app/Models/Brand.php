@@ -9,8 +9,8 @@ class Brand extends Model
 {
     use HasFactory;
 
-    public function brand_barang()
+    public function produk()
     {
-        return $this->belongsTo(Kategori_Barang::class,'id_brand','id');
+        return $this->hasMany(Produk::class, 'id_brand', 'id');
     }
 }
