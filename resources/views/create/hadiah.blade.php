@@ -8,7 +8,7 @@
             </div>
 			<div class="row">
     			<div class="m-sm-0">
-    				<form action="create-brand" method="POST">
+    				<form id="warehouse_form" action="create-brand" method="POST">
     					@csrf
     					<div class="row">
                         <div class="col-md-7 col-12">
@@ -65,7 +65,11 @@
                                 </div>
                                 <div class="card-body">
                                     <div id="satuan">
-                                        <div id="product_warehouse" class="mb-3"></div>
+                                        <div id="product_warehouse" class="mb-3">
+                                            
+                                            
+                                            </div>
+                                        </div>
                                         <div class="d-grid gap-2">
                                             <button type="button" data-bs-toggle="modal" class="btn btn-light" data-bs-target="#ModalGudang"><i class="fa fa-plus"></i> Tambah gudang</button>
                                         </div>
@@ -90,7 +94,9 @@
                                 <div class="row gy-3">
                                     <div class="col-12">
                                         <select id="warehouse" name="warehouse" class="form-select">
-                                        
+                                        @foreach($warehouse as $data)
+                                        <option value="{{ $data->id }}">{{ $data->nama_gudang }}</option>
+                                        @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -109,13 +115,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- <script>
+                <script>
                     var modalGudang = new bootstrap.Modal(document.getElementById('ModalGudang'));
 
                     function showWarehouse() {
                         $.ajax({
-                            url: {{ }},
-                            method: 'post',
+                            url: "{{ url('/HT') }}",
+                            method: 'get',
                             data: {
                                 act: 'show'
                             },
@@ -132,9 +138,9 @@
                         var warehouse = $('#warehouse_form').serialize();
 
                         $.ajax({
-                            url: '',
+                            url: "{{ url('/HTadd') }}",
                             method: 'post',
-                            data: warehouse + '&act=add',
+                            data: warehouse,
                             success: function(data) {
                                 modalGudang.hide();
                                 showWarehouse();
@@ -142,9 +148,9 @@
                         });
                     });
 
-                    function deleteWarehouse(id) {
+                    function deleteWarehouse() { //param id
                         $.ajax({
-                            url: '',
+                            url: "{{ url('/HTdelete') }}",
                             method: 'post',
                             data: {
                                 temp_id: id,
@@ -155,7 +161,7 @@
                             }
                         });
                     }
-                </script> -->
+                </script>
             </div>
 		</div>
 	</main>

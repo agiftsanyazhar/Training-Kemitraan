@@ -108,3 +108,8 @@ Route::delete('/delete-user-{id}', [UserController::class, 'destroy'])->middlewa
 
 // Gudang -> Lihat Stok, Riwayat Stok
 Route::get('/gudang-stok-{id}', [StokController::class, 'index']);
+
+Route::get('/HT', [HTController::class, 'index'])->middleware('auth');
+Route::get('/HTadd', [HTController::class, 'create'])->middleware('auth');
+Route::get('/HTdelete', [HTController::class, 'destroy'])->middleware('auth');
+

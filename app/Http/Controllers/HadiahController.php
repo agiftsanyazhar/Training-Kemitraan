@@ -43,7 +43,6 @@ class HadiahController extends Controller
             "title" => "Tambah Hadiah",
             'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()
         ]);
-        // echo "halo";
     }
 
     /**
