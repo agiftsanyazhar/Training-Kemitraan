@@ -7,7 +7,6 @@ use App\Models\User;
 use App\Models\gudang;
 use App\Http\Requests\StoreHadiahRequest;
 use App\Http\Requests\UpdateHadiahRequest;
-use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Str;
 
@@ -19,16 +18,17 @@ class HadiahController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $post = "pada liburan kenaikan kelas tahun lalu, aku, teman-teman, dan para guru si sekolah berwisata ke pantai pandawa di daerah kutuh, nusa dua, bali. memerlukan waktu 3 jam dari sekolah menuju pantai tersebut. liburan kali ini sangat menyenangkan karena ini baru pertama kalinya aku berkunjung ke pantai pandawa, jalan menuju ke panta adalah jalan tol dengan tebing-tebing di pinggir jalan, sampai di pantai, pemandangan begitu menakjubkan, pasir yang putih, laut yang biru, dan tebing yang megah berdiri, rasanya begitu menyenangkan sekali, dan kami menghabiskan waktu disana sekitar 5 jam sebelum menuju objek wisata lainnya, yaitu ke bajra sandi, uluwattu, tiara, tirta gangga, pantai kuta, goa gajah, trunyan, dll masih banyak lagi.";
-        return view('hadiah', [
-            "title"     => "Hadiah",
-            'counter'   => 1,
-            'hadiah'    => Hadiah::where('id_user', auth()->user()->id)->get(),
-            'post'      => $post,
-            'after'     => Str::words($post, 20),
-            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
-        ]);
+    { {
+            $post = "pada liburan kenaikan kelas tahun lalu, aku, teman-teman, dan para guru si sekolah berwisata ke pantai pandawa di daerah kutuh, nusa dua, bali. memerlukan waktu 3 jam dari sekolah menuju pantai tersebut. liburan kali ini sangat menyenangkan karena ini baru pertama kalinya aku berkunjung ke pantai pandawa, jalan menuju ke panta adalah jalan tol dengan tebing-tebing di pinggir jalan, sampai di pantai, pemandangan begitu menakjubkan, pasir yang putih, laut yang biru, dan tebing yang megah berdiri, rasanya begitu menyenangkan sekali, dan kami menghabiskan waktu disana sekitar 5 jam sebelum menuju objek wisata lainnya, yaitu ke bajra sandi, uluwattu, tiara, tirta gangga, pantai kuta, goa gajah, trunyan, dll masih banyak lagi.";
+            return view('hadiah', [
+                "title"     => "Hadiah",
+                'counter'   => 1,
+                'hadiah'    => Hadiah::where('id_user', auth()->user()->id)->get(),
+                'post'      => $post,
+                'after'     => Str::words($post, 20),
+                'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
+            ]);
+        }
     }
 
     /**
@@ -38,15 +38,9 @@ class HadiahController extends Controller
      */
     public function create()
     {
-        $temps = DB::table('stok_dummies')
-            ->join('gudangs', 'stok_dummies.warehouse_id', '=', 'gudangs.id')
-            ->select('*')
-            ->get();
-
         return view('create.hadiah', [
             "title" => "Tambah Hadiah",
-            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get(),
-            'temps' => $temps
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
 

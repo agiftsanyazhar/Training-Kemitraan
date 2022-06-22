@@ -8,15 +8,13 @@
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="https://dashboard.sellerkit.id/assets/img/icons/sellerkit-icon.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
 	<script src="/js/jquery-3.6.0.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/button.js"></script>
 
 	<title>Sellerkit</title>
 
@@ -181,6 +179,9 @@
 		</footer>
 	</div>
 	</div>
+
+	<script src="js/app.js"></script>
+	<script src="js/button.js"></script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

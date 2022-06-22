@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stok_dummies', function (Blueprint $table) {
+        Schema::create('h__t_s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user');
             $table->foreignId('warehouse_id');
-            $table->integer('stock_qty');
+            $table->int('stock_qty');
+            $table->foreignId('id_user');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stok_dummies');
+        Schema::dropIfExists('h__t_s');
     }
 };
