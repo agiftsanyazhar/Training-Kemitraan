@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('stok_dummies', function (Blueprint $table) {
-            $table->id();
+            $table->id('stock_id');
             $table->foreignId('id_user');
             $table->foreignId('warehouse_id');
             $table->integer('stock_qty');

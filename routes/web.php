@@ -12,6 +12,7 @@ use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\HTController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -91,6 +92,10 @@ Route::post('/create-hadiah', [HadiahController::class, 'store'])->middleware('a
 Route::get('/form-edit-hadiah-{id}', [HadiahController::class, 'edit'])->middleware('auth');
 Route::put('/update-hadiah-{id}', [HadiahController::class, 'update'])->middleware('auth');
 Route::delete('/delete-hadiah-{id}', [HadiahController::class, 'destroy'])->middleware('auth');
+
+Route::get('/show-gift-temp', [HTController::class, 'show_gift_temp']); // AJAX request
+Route::post('/add-gift-temp', [HTController::class, 'add_gift_temp']); // AJAX request
+Route::post('/delete-gift-temp', [HTController::class, 'delete_gift_temp']); // AJAX request
 
 // Role
 Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('auth');
