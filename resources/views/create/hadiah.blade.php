@@ -64,17 +64,19 @@
                                     <h5 class="card-title"><i data-feather="box"></i> Stok Awal</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div id="satuan">
-                                        <div id="product_warehouse" class="mb-3">
-                                        <div class="field_wrapper">
-                                            <select name=name="field_name1[]">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-append">
+                                            <select class="form-select" name="field_name1[]">
                                                 @foreach($warehouse as $data)
                                                 <option>{{ $data->nama_gudang }}</option>
                                                 @endforeach
                                             </select>
-                                            <input type="text" name="field_name[]" value=""/>
-                                            
                                         </div>
+                                        <input type="text" class="form-control" name="field_name[]" value="" aria-describedby="basic-addon2">
+                                        <span class="input-group-text" id="basic-addon1">pcs</span>
+                                    </div>
+                                    <div id="satuan">
+                                        <div class="field_wrapper">
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2">
@@ -173,8 +175,8 @@
             $(document).ready(function(){
                 var maxField = 100; //Input fields increment limitation
                 var addButton = $('.add_button'); //Add button selector
-                var wrapper = $('.field_wrapper'); //Input field wrapper
-                var fieldHTML = '<div> <select name=name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select> <input type="text" name="field_name[]" value=""/> <a href="javascript:void(0);" class="remove_button"><button>remove</button></a></div>'; //New input field html 
+                var wrapper = $('.field_wrapper'); //Input field wrapper 
+                var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="text" class="form-control" aria-describedby="basic-addon2" name="field_name[]" value=""/><span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">remove</a></div>'; //New input field html 
                 var x = 1; //Initial field counter is 1
                 
                 //Once add button is clicked
