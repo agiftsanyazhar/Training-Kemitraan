@@ -66,8 +66,15 @@
                                 <div class="card-body">
                                     <div id="satuan">
                                         <div id="product_warehouse" class="mb-3">
-
-
+                                        <div class="field_wrapper">
+                                            <select name=name="field_name1[]">
+                                                @foreach($warehouse as $data)
+                                                <option>{{ $data->nama_gudang }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input type="text" name="field_name[]" value=""/>
+                                            <a href="javascript:void(0);" class="add_button" title="Add field">add</a>
+                                        </div>
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2">
@@ -161,6 +168,31 @@
                         }
                     });
                 }
+            </script>
+            <script type="text/javascript">
+            $(document).ready(function(){
+                var maxField = 100; //Input fields increment limitation
+                var addButton = $('.add_button'); //Add button selector
+                var wrapper = $('.field_wrapper'); //Input field wrapper
+                var fieldHTML = '<div> <select name=name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select> <input type="text" name="field_name[]" value=""/> <a href="javascript:void(0);" class="remove_button"><button>remove</button></a></div>'; //New input field html 
+                var x = 1; //Initial field counter is 1
+                
+                //Once add button is clicked
+                $(addButton).click(function(){
+                    //Check maximum number of input fields
+                    if(x < maxField){ 
+                        x++; //Increment field counter
+                        $(wrapper).append(fieldHTML); //Add field html
+                    }
+                });
+                
+                //Once remove button is clicked
+                $(wrapper).on('click', '.remove_button', function(e){
+                    e.preventDefault();
+                    $(this).parent('div').remove(); //Remove field html
+                    x--; //Decrement field counter
+                });
+            });
             </script>
         </div>
     </div>
