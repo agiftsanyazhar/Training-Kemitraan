@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\DaftarpesananController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\HadiahController;
 use App\Http\Controllers\IndexController;
@@ -42,6 +43,9 @@ Route::get('/user', [UserController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index']);
 Route::get('/stok', [StokController::class, 'indexsum']);
 Route::get('/riwayatstok', [StokController::class, 'index2']);
+Route::get('/daftarpesanan', [DaftarpesananController::class, 'index']);
+
+
 
 // ===================================================
 // ==================== Sign up ======================

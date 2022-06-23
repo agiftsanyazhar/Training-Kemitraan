@@ -45,6 +45,11 @@
 							<i class="align-middle" data-feather="user"></i><span class="align-middle">Profil</span>
 						</a>
 					</li>
+					<li class="sidebar-item {{ ($title === "daftarpesanan") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/daftarpesanan') }}">
+							<i class="align-middle" data-feather="shopping-bag"></i><span class="align-middle">Daftar Pesanan</span>
+						</a>
+					</li>
 
 
 					@can('exceptAdmin')

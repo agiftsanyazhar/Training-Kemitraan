@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('h__t_s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('warehouse_id');
-            $table->int('stock_qty');
+            $table->integer('stock_qty');
             $table->foreignId('id_user');
             $table->timestamps();
         });
