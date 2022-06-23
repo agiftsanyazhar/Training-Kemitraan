@@ -73,12 +73,12 @@
                                                 @endforeach
                                             </select>
                                             <input type="text" name="field_name[]" value=""/>
-                                            <a href="javascript:void(0);" class="add_button" title="Add field">add</a>
+                                            
                                         </div>
                                         </div>
                                     </div>
                                     <div class="d-grid gap-2">
-                                        <button type="button" data-bs-toggle="modal" class="btn btn-light" data-bs-target="#ModalGudang"><i class="fa fa-plus"></i> Tambah gudang</button>
+                                        <a href="javascript:void(0);"  class="add_button btn btn-light" title="Add field">Tambah Gudang</a>
                                     </div>
                                 </div>
 
