@@ -20,32 +20,43 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Gambar Produk</label>
-                                        <input class="form-control form-control-lg" type="file" name="pic" value="" required />
-                                        <div class="invalid-feedback">
-                                            <!-- fail massage -->
-                                        </div>
+                                        <input class="form-control form-control-lg @error('pic') is-invalid @enderror" type="file" name="pic" value="{{ old('pic') }}" required />
+                                        @error('pic')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Nama Produk</label>
-                                        <input class="form-control form-control-lg " type="text" name="gift_name" value="" required />
-                                        <div class="invalid-feedback">
-                                        </div>
+                                        <input class="form-control form-control-lg @error('gift_name') is-invalid @enderror" type="text" name="gift_name" placeholder="Masukkan nama produk" value="{{ old('gift_name') }}" required />
+                                        @error('gift_name')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                     <div class="row no-gutters mb-3">
                                         <div class="col-6">
-                                            <label class="form-label">Harga produk</label>
-                                            <input class="form-control form-control-lg" type="number" name="gift_price" value="" min="1" required />
-                                            <div class="invalid-feedback">
-                                            </div>
+                                            <label class="form-label">Harga Produk</label>
+                                            <input class="form-control form-control-lg @error('gift_price') is-invalid @enderror" type="number" name="gift_price" placeholder="Masukkan harga produk" value="{{ old('gift_price') }}" min="1" required />
+                                            @error('gift_price')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
 
                                         <div class="col-6">
-                                            <label class="form-label">Harga jual produk</label>
-                                            <input class="form-control form-control-lg" type="number" name="sale_price" min="1" value="" required />
-                                            <div class="invalid-feedback">
-                                            </div>
+                                            <label class="form-label">Harga Jual Produk</label>
+                                            <input class="form-control form-control-lg @error('sale_price') is-invalid @enderror" type="number" name="sale_price" placeholder="Masukkan harga jual produk" value="{{ old('sale_price') }}" min="1" required />
+                                            @error('sale_price')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 

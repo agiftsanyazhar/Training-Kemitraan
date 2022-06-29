@@ -29,7 +29,10 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.produk', [
+            "title" => "Tambah Produk",
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
+        ]);
     }
 
     /**

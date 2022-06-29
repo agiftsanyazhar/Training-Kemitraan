@@ -96,6 +96,13 @@ Route::get('/form-edit-hadiah-{id}', [HadiahController::class, 'edit'])->middlew
 Route::put('/update-hadiah-{id}', [HadiahController::class, 'update'])->middleware('auth');
 Route::delete('/delete-hadiah-{id}', [HadiahController::class, 'destroy'])->middleware('auth');
 
+// Produk
+Route::get('/form-create-produk', [ProdukController::class, 'create'])->middleware('auth');
+Route::post('/create-produk', [ProdukController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-produk-{id}', [ProdukController::class, 'edit'])->middleware('auth');
+Route::put('/update-produk-{id}', [ProdukController::class, 'update'])->middleware('auth');
+Route::delete('/delete-produk-{id}', [ProdukController::class, 'destroy'])->middleware('auth');
+
 // Role
 Route::get('/form-create-role', [RoleController::class, 'create'])->middleware('auth');
 Route::post('/create-role', [RoleController::class, 'store'])->middleware('auth');
@@ -112,7 +119,6 @@ Route::delete('/delete-user-{id}', [UserController::class, 'destroy'])->middlewa
 
 // Gudang -> Lihat Stok, Riwayat Stok
 Route::get('/gudang-stok-{id}', [StokController::class, 'index']);
-
 Route::get('/HT', [HTController::class, 'index'])->middleware('auth');
 Route::get('/HTadd', [HTController::class, 'create'])->middleware('auth');
 Route::get('/HTdelete', [HTController::class, 'destroy'])->middleware('auth');
