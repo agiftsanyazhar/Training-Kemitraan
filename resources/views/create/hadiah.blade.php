@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="m-sm-0">
-                <form id="warehouse_form" action="create-brand" method="POST">
+                <form id="warehouse_form" action="create-hadiah" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-7 col-12">
@@ -62,9 +62,12 @@
 
                                     <div class="mb-3">
                                         <label class="form-label">Deskripsi Produk</label>
-                                        <textarea class="form-control form-control-lg" type="text" rows="5" name="gift_desc"></textarea>
-                                        <div class="invalid-feedback">
-                                        </div>
+                                        <textarea class="form-control form-control-lg @error('gift_desc') is-invalid @enderror" type="text" rows="5" value="{{ old('gift_desc') }}" name="gift_desc" required></textarea>
+                                        @error('gift_desc')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +86,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <input type="text" class="form-control" name="field_name[]" value="" aria-describedby="basic-addon2">
+                                        <input type="number" class="form-control" name="field_name[]" value="" aria-describedby="basic-addon2">
                                         <span class="input-group-text" id="basic-addon1">pcs</span>
                                     </div>
                                     <div id="satuan">

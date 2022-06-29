@@ -23,8 +23,8 @@
 								</div>
 								<div class="mb-3">
 									<label class="form-label">Alamat</label>
-									<input class="form-control form-control-lg @error('alamat') is-invalid @enderror" type="text" name="alamat_gudang" placeholder="Masukkan alamat" value="{{ old('alamat') }}" required/>
-									@error('alamat')
+									<input class="form-control form-control-lg @error('alamat_gudang') is-invalid @enderror" type="text" name="alamat_gudang" placeholder="Masukkan alamat" value="{{ old('alamat_gudang') }}" required/>
+									@error('alamat_gudang')
 										<div class="invalid-feedback">
 											{{ $message }}
 										</div>
