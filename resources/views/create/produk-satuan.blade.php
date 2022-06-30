@@ -5,7 +5,7 @@
 		<div class="container-fluid p-0">
 			<div class="row">
 				<div class="m-sm-0">
-                    <form id="warehouse_form" action="create-hadiah" method="POST">
+                    <form id="warehouse_form" action="create-produk" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-md-7 col-12">
@@ -141,10 +141,82 @@
                         </div>
                     </form>
                 </div>
+                <script>
+                    var modalGudang = new bootstrap.Modal(document.getElementById('ModalGudang'));
+    
+                    function showWarehouse() {
+                        $.ajax({
+                            url: "{{ url('/HT') }}",
+                            method: 'get',
+                            data: {
+                                act: 'show'
+                            },
+                            success: function(data) {
+                                $('#product_warehouse').html(data);
+                                // modalGudang.hide();
+                            }
+                        });
+                    }
+    
+                    showWarehouse();
+    
+                    $('#warehouse_add').click(function() {
+                        var warehouse = $('#warehouse_form').serialize();
+    
+                        $.ajax({
+                            url: "{{ url('/HTadd') }}",
+                            method: 'post',
+                            data: warehouse,
+                            success: function(data) {
+                                modalGudang.hide();
+                                showWarehouse();
+                            }
+                        });
+                    });
+    
+                    function deleteWarehouse() { //param id
+                        $.ajax({
+                            url: "{{ url('/HTdelete') }}",
+                            method: 'post',
+                            data: {
+                                temp_id: id,
+                                act: 'delete'
+                            },
+                            success: function(data) {
+                                showWarehouse();
+                            }
+                        });
+                    }
+                </script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    var maxField = 100; //Input fields increment limitation
+                    var addButton = $('.add_button'); //Add button selector
+                    var wrapper = $('.field_wrapper'); //Input field wrapper 
+                    var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="number" class="form-control @error('field_name[]') is-invalid @enderror" aria-describedby="basic-addon2" name="field_name[]" value="{{ old('field_name[]') }}" required/>@error('field_name[]')<div class="invalid-feedback">{{ $message }}</div>@enderror<span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">Hapus</a></div>'; //New input field html 
+                    var x = 1; //Initial field counter is 1
+                    
+                    //Once add button is clicked
+                    $(addButton).click(function(){
+                        //Check maximum number of input fields
+                        if(x < maxField){ 
+                            x++; //Increment field counter
+                            $(wrapper).append(fieldHTML); //Add field html
+                        }
+                    });
+                    
+                    //Once remove button is clicked
+                    $(wrapper).on('click', '.remove_button', function(e){
+                        e.preventDefault();
+                        $(this).parent('div').remove(); //Remove field html
+                        x--; //Decrement field counter
+                    });
+                });
+                </script>
 			</div>
-			<div class="row">
+			{{-- <div class="row">
 				<div class="m-sm-0">
-                    <form id="warehouse_form" action="create-hadiah" method="POST">
+                    <form id="warehouse_form" action="create-produk" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-md-7 col-12">
@@ -280,7 +352,79 @@
                         </div>
                     </form>
                 </div>
-			</div>
+                <script>
+                    var modalGudang = new bootstrap.Modal(document.getElementById('ModalGudang'));
+    
+                    function showWarehouse() {
+                        $.ajax({
+                            url: "{{ url('/HT') }}",
+                            method: 'get',
+                            data: {
+                                act: 'show'
+                            },
+                            success: function(data) {
+                                $('#product_warehouse').html(data);
+                                // modalGudang.hide();
+                            }
+                        });
+                    }
+    
+                    showWarehouse();
+    
+                    $('#warehouse_add').click(function() {
+                        var warehouse = $('#warehouse_form').serialize();
+    
+                        $.ajax({
+                            url: "{{ url('/HTadd') }}",
+                            method: 'post',
+                            data: warehouse,
+                            success: function(data) {
+                                modalGudang.hide();
+                                showWarehouse();
+                            }
+                        });
+                    });
+    
+                    function deleteWarehouse() { //param id
+                        $.ajax({
+                            url: "{{ url('/HTdelete') }}",
+                            method: 'post',
+                            data: {
+                                temp_id: id,
+                                act: 'delete'
+                            },
+                            success: function(data) {
+                                showWarehouse();
+                            }
+                        });
+                    }
+                </script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                    var maxField = 100; //Input fields increment limitation
+                    var addButton = $('.add_button'); //Add button selector
+                    var wrapper = $('.field_wrapper'); //Input field wrapper 
+                    var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="number" class="form-control @error('field_name[]') is-invalid @enderror" aria-describedby="basic-addon2" name="field_name[]" value="{{ old('field_name[]') }}" required/>@error('field_name[]')<div class="invalid-feedback">{{ $message }}</div>@enderror<span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">Hapus</a></div>'; //New input field html 
+                    var x = 1; //Initial field counter is 1
+                    
+                    //Once add button is clicked
+                    $(addButton).click(function(){
+                        //Check maximum number of input fields
+                        if(x < maxField){ 
+                            x++; //Increment field counter
+                            $(wrapper).append(fieldHTML); //Add field html
+                        }
+                    });
+                    
+                    //Once remove button is clicked
+                    $(wrapper).on('click', '.remove_button', function(e){
+                        e.preventDefault();
+                        $(this).parent('div').remove(); //Remove field html
+                        x--; //Decrement field counter
+                    });
+                });
+                </script>
+			</div> --}}
 		</div>
 	</main>
 @endsection

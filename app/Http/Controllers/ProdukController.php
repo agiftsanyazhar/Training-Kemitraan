@@ -34,6 +34,20 @@ class ProdukController extends Controller
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
+    public function satuan()
+    {
+        return view('create.produk-satuan', [
+            "title" => "Produk (Satuan)",
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
+        ]);
+    }
+    public function paket()
+    {
+        return view('create.produk-paket', [
+            "title" => "Produk (Paket)",
+            'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.

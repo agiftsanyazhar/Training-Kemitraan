@@ -98,6 +98,8 @@ Route::delete('/delete-hadiah-{id}', [HadiahController::class, 'destroy'])->midd
 
 // Produk
 Route::get('/form-create-produk', [ProdukController::class, 'create'])->middleware('auth');
+Route::get('/form-create-produk-satuan', [ProdukController::class, 'satuan'])->middleware('auth');
+Route::get('/form-create-produk-paket', [ProdukController::class, 'paket'])->middleware('auth');
 Route::post('/create-produk', [ProdukController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-produk-{id}', [ProdukController::class, 'edit'])->middleware('auth');
 Route::put('/update-produk-{id}', [ProdukController::class, 'update'])->middleware('auth');
