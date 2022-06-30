@@ -74,7 +74,7 @@
 					@endcan
 
 					@can('exceptAdmin')
-					@if ($warehouse === 0)
+					@if ($count === 0)
 						
 					@else
 						<li class="sidebar-header">

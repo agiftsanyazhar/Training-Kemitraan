@@ -18,6 +18,7 @@ class ProfileController extends Controller
     { {
             return view('profile', [
                 "title" => "Profile",
+                'count'       => gudang::count('id_user', auth()->user()->id),
                 'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }

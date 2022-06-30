@@ -23,6 +23,7 @@ class HadiahController extends Controller
             return view('hadiah', [
                 "title"     => "Hadiah",
                 'counter'   => 1,
+                'count'       => gudang::count('id_user', auth()->user()->id),
                 'hadiah'    => Hadiah::where('id_user', auth()->user()->id)->get(),
                 'post'      => $post,
                 'after'     => Str::words($post, 20),

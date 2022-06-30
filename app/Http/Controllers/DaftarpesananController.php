@@ -13,8 +13,8 @@ class DaftarpesananController extends Controller
     {
         return view('daftarpesanan', [
             "title" => "daftarpesanan",
+            'count'       => gudang::count('id_user', auth()->user()->id),
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
-
         ]);
     }
 }

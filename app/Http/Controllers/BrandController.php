@@ -25,6 +25,7 @@ class BrandController extends Controller
                 "title"     => "Brand",
                 'brand'     => Brand::where('id_user', auth()->user()->id)->get(), //select*from table brand
                 'counter'   => 1,
+                'count'       => gudang::count('id_user', auth()->user()->id),
                 'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }

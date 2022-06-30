@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Keranjang;
+use App\Models\gudang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKeranjangRequest;
 use App\Http\Requests\UpdateKeranjangRequest;
@@ -17,6 +18,7 @@ class KeranjangController extends Controller
     public function index()
     {
         return view('charts', [
+            'count'       => gudang::count('id_user', auth()->user()->id),
             "title" => "charts"
         ]);
     }

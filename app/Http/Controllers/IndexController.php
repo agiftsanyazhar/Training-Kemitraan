@@ -33,6 +33,7 @@ class IndexController extends Controller
                 // 'barang' => $barang,
                 'counter1'       => 1,
                 'counter2'       => 1,
+                'count'       => gudang::count('id_user', auth()->user()->id),
                 'warehouse' => Gudang::where('id_user', auth()->user()->id)->get(),
             ]);
         }

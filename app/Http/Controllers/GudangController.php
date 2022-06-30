@@ -21,6 +21,7 @@ class GudangController extends Controller
             return view('gudang', [
                 "title" => "Gudang",
                 'counter' => 1,
+                'count'       => gudang::count('id_user', auth()->user()->id),
                 'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
             ]);
         }

@@ -40,6 +40,7 @@ class KategoriBarangController extends Controller
     {
         return view('create.kategori', [
             "title" => "Kategori",
+            'count'       => gudang::count('id_user', auth()->user()->id),
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
