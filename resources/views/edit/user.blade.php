@@ -3,12 +3,12 @@
 @section('container')
 	<main class="content">
 		<div class="container-fluid p-0">
-            <div>
-                <h3>{{ $title }}</h3>
-            </div>
 			<div class="row">
 				<div class="col-12 col-lg-8 col-xxl-12 d-flex">
 					<div class="card flex-fill">
+                        <div class="card-header">
+							<h5 class="card-title mb-0"><i data-feather="info"></i> {{ $title }}</h5>
+						</div>
 						<div class="m-sm-4">
                             <form action="update-user-{{ $user->id }}" method="POST">
                                 @method('put')

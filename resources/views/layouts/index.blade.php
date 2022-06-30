@@ -74,9 +74,14 @@
 					@endcan
 
 					@can('exceptAdmin')
-					<li class="sidebar-header">
-						Gudang
-					</li>
+					@if ($warehouse === 0)
+						
+					@else
+						<li class="sidebar-header">
+							Gudang
+						</li>
+					@endif
+					
 					@foreach ($warehouse as $warehouses)
 					<li class="sidebar-item {{ ($title[0] === "Gudang Stok$warehouses->id") ? 'active' : '' }}">
 						<a data-bs-target="#warehouse{{ $warehouses->id }}" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
@@ -97,10 +102,6 @@
 					</li>
 					@endforeach
 					@endcan
-
-
-
-
 					<li class="sidebar-header">
 						Manajemen
 					</li>
@@ -161,13 +162,13 @@
 								<div class="dropdown-divider"></div>
 								<form action="/logout" method="post">
 									@csrf
-						<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
-						</form>
+									<li><button class="dropdown-item" type="submit"><i class="align-middle me-1" data-feather="log-out"></i>Logout</button></li>
+								</form>
+							</div>
+						</li>
+					</ul>
 				</div>
-				</li>
-				</ul>
-		</div>
-		</nav>
+			</nav>
 
 		@yield('container')
 

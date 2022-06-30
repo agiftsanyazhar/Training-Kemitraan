@@ -35,7 +35,7 @@ class GudangController extends Controller
     {
         $user = auth()->user()->id;
         return view('create.gudang', [
-            "title" => "Tambah Gudang",
+            "title" => "Gudang",
             'warehouse' => Gudang::where('id_user', $user)->get()
         ]);
     }

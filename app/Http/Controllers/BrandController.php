@@ -39,7 +39,7 @@ class BrandController extends Controller
     {
         $user = auth()->user()->id;
         return view('create.brand', [
-            "title" => "Tambah Brand",
+            "title" => "Brand",
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }

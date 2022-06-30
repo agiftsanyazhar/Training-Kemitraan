@@ -30,7 +30,7 @@ class UserController extends Controller
         $id = $roleid[0];
         // dd($id);
         return view('create.user', [
-            'title' => 'Tambah User',
+            'title' => 'User',
             'roleid'=> Role::find($id)->id,
             'role'  => Role::find($id)->Role,
             'warehouse' => Gudang::where('id_user',auth()->user()->id)->get()

@@ -39,7 +39,7 @@ class KategoriBarangController extends Controller
     public function create()
     {
         return view('create.kategori', [
-            "title" => "Tambah Kategori",
+            "title" => "Kategori",
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }

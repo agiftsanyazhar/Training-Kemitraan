@@ -3,9 +3,6 @@
 @section('container')
 <main class="content">
     <div class="container-fluid p-0">
-        <div class="d-flex align-items-center justify-content-between mb-3">
-            <h1 class="h3">Tambah Hadiah</h1>
-        </div>
         <div class="row">
             <div class="m-sm-0">
                 <form id="warehouse_form" action="create-hadiah" method="POST">
@@ -14,14 +11,14 @@
                         <div class="col-md-7 col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title"><i data-feather="info"></i> Informasi Produk</h5>
+                                    <h5 class="card-title mb-0"><i data-feather="info"></i> Informasi {{ $title }}</h5>
                                 </div>
                                 <div class="card-body">
 
                                     <div class="mb-3">
-                                        <label class="form-label">Gambar Produk</label>
-                                        <input class="form-control form-control-lg @error('pic') is-invalid @enderror" type="file" name="pic" value="{{ old('pic') }}" required />
-                                        @error('pic')
+                                        <label class="form-label">Gambar Hadiah</label>
+                                        <input class="form-control form-control-lg @error('gambar_hadiah') is-invalid @enderror" type="file" name="gambar_hadiah" value="{{ old('gambar_hadiah') }}" required />
+                                        @error('gambar_hadiah')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -29,9 +26,9 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Nama Produk</label>
-                                        <input class="form-control form-control-lg @error('gift_name') is-invalid @enderror" type="text" name="gift_name" placeholder="Masukkan nama produk" value="{{ old('gift_name') }}" required />
-                                        @error('gift_name')
+                                        <label class="form-label">Nama Hadiah</label>
+                                        <input class="form-control form-control-lg @error('nama_hadiah') is-invalid @enderror" type="text" name="nama_hadiah" placeholder="Masukkan nama hadiah" value="{{ old('nama_hadiah') }}" required />
+                                        @error('nama_hadiah')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -40,9 +37,9 @@
 
                                     <div class="row no-gutters mb-3">
                                         <div class="col-6">
-                                            <label class="form-label">Harga Produk</label>
-                                            <input class="form-control form-control-lg @error('gift_price') is-invalid @enderror" type="number" name="gift_price" placeholder="Masukkan harga produk" value="{{ old('gift_price') }}" min="1" required />
-                                            @error('gift_price')
+                                            <label class="form-label">HPP Hadiah</label>
+                                            <input class="form-control form-control-lg @error('hpp_hadiah') is-invalid @enderror" type="number" name="hpp_hadiah" placeholder="Masukkan HPP hadiah" value="{{ old('hpp_hadiah') }}" min="1" required />
+                                            @error('hpp_hadiah')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -50,9 +47,9 @@
                                         </div>
 
                                         <div class="col-6">
-                                            <label class="form-label">Harga Jual Produk</label>
-                                            <input class="form-control form-control-lg @error('sale_price') is-invalid @enderror" type="number" name="sale_price" placeholder="Masukkan harga jual produk" value="{{ old('sale_price') }}" min="1" required />
-                                            @error('sale_price')
+                                            <label class="form-label">HET Hadiah</label>
+                                            <input class="form-control form-control-lg @error('het_hadiah') is-invalid @enderror" type="number" name="het_hadiah" placeholder="Masukkan HET hadiah" value="{{ old('het_hadiah') }}" min="1" required />
+                                            @error('het_hadiah')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -61,9 +58,9 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Deskripsi Produk</label>
-                                        <textarea class="form-control form-control-lg @error('gift_desc') is-invalid @enderror" type="text" rows="5" value="{{ old('gift_desc') }}" name="gift_desc" required></textarea>
-                                        @error('gift_desc')
+                                        <label class="form-label">Deskripsi Hadiah</label>
+                                        <textarea class="form-control form-control-lg @error('deskripsi_hadiah') is-invalid @enderror" type="text" rows="5" value="{{ old('deskripsi_hadiah') }}" name="deskripsi_hadiah" required></textarea>
+                                        @error('deskripsi_hadiah')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -86,7 +83,12 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <input type="number" class="form-control" name="field_name[]" value="" aria-describedby="basic-addon2">
+                                        <input type="number" class="form-control @error('field_name[]') is-invalid @enderror" name="field_name[]" value="{{ old('field_name[]') }}" aria-describedby="basic-addon2" required>
+                                            @error('field_name[]')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         <span class="input-group-text" id="basic-addon1">pcs</span>
                                     </div>
                                     <div id="satuan">
@@ -96,10 +98,9 @@
                                     <div class="d-grid gap-2">
                                         <a href="javascript:void(0);"  class="add_button btn btn-light" title="Add field">Tambah Gudang</a>
                                     </div>
-                                </div>
-
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                                    <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                                        <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +191,7 @@
                 var maxField = 100; //Input fields increment limitation
                 var addButton = $('.add_button'); //Add button selector
                 var wrapper = $('.field_wrapper'); //Input field wrapper 
-                var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="text" class="form-control" aria-describedby="basic-addon2" name="field_name[]" value=""/><span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">remove</a></div>'; //New input field html 
+                var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="number" class="form-control @error('field_name[]') is-invalid @enderror" aria-describedby="basic-addon2" name="field_name[]" value="{{ old('field_name[]') }}" required/>@error('field_name[]')<div class="invalid-feedback">{{ $message }}</div>@enderror<span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">Hapus</a></div>'; //New input field html 
                 var x = 1; //Initial field counter is 1
                 
                 //Once add button is clicked

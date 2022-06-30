@@ -38,12 +38,6 @@
 						<div class="row gy-3">
 							<div class="col-12 col-md-11">
 								<div class="input-group">
-									{{-- <div class="input-group-append">
-											<select name="search" id="search" class="form-select ">
-												<option value="">Nama Hadiah</option>
-												<option value="">Alamat</option>
-											</select>
-										</div>  --}}
 									<input type="search" name="keyword" id="keyword" placeholder="Cari Berdasarkan Nama" class="form-control" value="">
 								</div>
 							</div>
