@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('hadiahs', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar_hadiah');
+            $table->string('gambar_hadiah')->nullable();
             $table->string('nama_hadiah');
             $table->string('hpp_hadiah');
             $table->string('het_hadiah');

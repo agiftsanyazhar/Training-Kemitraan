@@ -74,12 +74,12 @@
 					@endcan
 
 					@can('exceptAdmin')
-					@if ($count === 0)
-						
-					@else
+					@if (!$warehouse->isEmpty())
 						<li class="sidebar-header">
 							Gudang
 						</li>
+					@else
+					
 					@endif
 					
 					@foreach ($warehouse as $warehouses)

@@ -70,7 +70,7 @@
                             <tr>
                                 <td width="10%"><img src="https://dashboard.sellerkit.id/assets/img/products/SK_PRODUCT_5HDJpqMO.jpg" alt="Beard Serum" class="img-thumbnail" width="50px"></td>
                                 <td class="align-top">
-                                    <p class="mb-0">{{ $data->produk->nama_produk }}</p>
+                                    <p class="mb-0">{{ $data->hadiah->nama_hadiah }}</p>
                                 </td>
                                 <td>{{ $data->stok }}</td>
                             </tr>

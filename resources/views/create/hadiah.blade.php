@@ -15,7 +15,7 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label class="form-label">Gambar Hadiah</label>
                                         <input class="form-control form-control-lg @error('gambar_hadiah') is-invalid @enderror" type="file" name="gambar_hadiah" value="{{ old('gambar_hadiah') }}" required />
                                         @error('gambar_hadiah')
@@ -23,7 +23,7 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
 
                                     <div class="mb-3">
                                         <label class="form-label">Nama Hadiah</label>
@@ -77,13 +77,13 @@
                                 <div class="card-body">
                                     <div class="input-group mb-3">
                                         <div class="input-group-append">
-                                            <select class="form-select" name="field_name1[]">
+                                            <select class="form-select" name="id_gudang[]">
                                                 @foreach($warehouse as $data)
-                                                <option>{{ $data->nama_gudang }}</option>
+                                                <option value="{{  $data->id }}">{{ $data->nama_gudang }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <input type="number" class="form-control @error('field_name[]') is-invalid @enderror" name="field_name[]" value="{{ old('field_name[]') }}" aria-describedby="basic-addon2" required>
+                                        <input type="number" class="form-control @error('field_name[]') is-invalid @enderror" name="pcs[]" value="{{ old('field_name[]') }}" aria-describedby="basic-addon2" required>
                                             @error('field_name[]')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -191,7 +191,7 @@
                 var maxField = 100; //Input fields increment limitation
                 var addButton = $('.add_button'); //Add button selector
                 var wrapper = $('.field_wrapper'); //Input field wrapper 
-                var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="field_name1[]">@foreach($warehouse as $data)<option>{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="number" class="form-control @error('field_name[]') is-invalid @enderror" aria-describedby="basic-addon2" name="field_name[]" value="{{ old('field_name[]') }}" required/>@error('field_name[]')<div class="invalid-feedback">{{ $message }}</div>@enderror<span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">Hapus</a></div>'; //New input field html 
+                var fieldHTML = '<div class="input-group mb-3"><div class="input-group-append"><select class="form-select" name="id_gudang[]">@foreach($warehouse as $data)<option value="{{ $data->id }}">{{ $data->nama_gudang }}</option>@endforeach</select></div><input type="number" class="form-control @error('id_gudang[]') is-invalid @enderror" aria-describedby="basic-addon2" name="pcs[]" value="{{ old('pcs[]') }}" required/>@error('pcs[]')<div class="invalid-feedback">{{ $message }}</div>@enderror<span class="input-group-text" id="basic-addon1">pcs</span>&nbsp &nbsp &nbsp<a href="javascript:void(0);" class="remove_button btn btn-danger">Hapus</a></div>'; //New input field html 
                 var x = 1; //Initial field counter is 1
                 
                 //Once add button is clicked
