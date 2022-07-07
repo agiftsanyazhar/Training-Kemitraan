@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hadiah;
+use App\Models\Stok;
 use App\Models\User;
 use App\Models\gudang;
 use App\Http\Requests\StoreHadiahRequest;
 use App\Http\Requests\UpdateHadiahRequest;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 class HadiahController extends Controller
 {
@@ -51,20 +54,44 @@ class HadiahController extends Controller
      * @param  \App\Http\Requests\StoreHadiahRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreHadiahRequest $request)
+    public function store(Request $request)
     {
         $data = $request->input(); //insert into
 
         $hadiah = new Hadiah; // table
         $user = auth()->user()->id;
         //value
-        $hadiah->nama_hadiah   = $data['nama_hadiah'];
-        $hadiah->nama_hadiah   = $data['hpp_hadiah'];
-        $hadiah->nama_hadiah   = $data['het_hadiah'];
-        $hadiah->nama_hadiah   = $data['deskripshit_hadiah'];
-        $hadiah->id_user      = $user;
+        $hadiah->nama_hadiah        = $data['nama_hadiah'];
+        $hadiah->hpp_hadiah         = $data['hpp_hadiah'];
+        $hadiah->het_hadiah         = $data['het_hadiah'];
+        $hadiah->deskripsi_hadiah    = $data['deskripsi_hadiah'];
+        $hadiah->id_user            = $user;
         $hadiah->save(); //tombol run sqlyog
 
+        $count = count($request['id_gudang']);
+        $id_gudang = $request['id_gudang'];
+        $stok = $request['pcs'];
+        $id_hadiah = Hadiah::where('id_user', $user)->latest()->pluck('id');
+        $id_hadiah = $id_hadiah[0];
+
+        for($i=0;$i<$count;$i++){
+            if(Stok::where('id_gudang',$id_gudang[$i])->where('id_hadiah',$id_hadiah)->exists()){
+                $id = Stok::where('id_gudang',$id_gudang[$i])->where('id_hadiah',$id_hadiah)->pluck('id');
+                $old_stok = Stok::where('id_gudang',$id_gudang[$i])->where('id_hadiah',$id_hadiah)->pluck('stok');
+                $new_stok = $old_stok[0] +(integer) $stok[$i];
+                DB::table('stoks')->where('id',$id[0])->update([
+                    'stok'         => $new_stok
+                ]);
+            }
+            else{
+                DB::table('stoks')->insert([
+                    'id_gudang'    => $id_gudang[$i],
+                    'id_hadiah'    => $id_hadiah,
+                    'stok'         => $stok[$i]
+                ]);
+            }
+            
+        }
         return redirect('/hadiah')->with('successHadiah', 'Data berhasil ditambah!');
     }
 
