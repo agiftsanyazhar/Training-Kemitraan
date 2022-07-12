@@ -31,6 +31,31 @@
 				<h3>{{ $title }}</h3>
 				<a href="{{ url ('/form-create-brand') }}" class="btn btn-light"><i class="align-middle" data-feather="plus"></i> Tambah {{ $title }}</a>
 			</div>
+			@foreach($brand as $data)
+				@for ($i = 1; $i <= $counter; $i++)
+					<div class="modal fade" id="staticBackdrop{{ $i }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				@endfor
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body text-center">
+							<i class="align-middle text-warning mb-3" data-feather="alert-triangle" style="width:100px;height:100px;"></i>
+							<div class="mb-4">
+								<h3>Apakah Anda yakin ingin menghapus data ini?</h3>
+							</div>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+							<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="POST" class="d-inline" class="text-danger d-inline">
+								@method('delete')
+								@csrf
+								<button type="submit" class="btn btn-danger">Hapus</button>
+							</form>
+						</div>
+					</div>
+					</div>
+				</div>
+			@endforeach
 			<div class="row">
 				<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 					<div class="card flex-fill">
@@ -88,11 +113,7 @@
 														<div class="d-flex">
 															<div class="d-inline">
 																<a href="{{ url ('/form-edit-brand-') }}{{ $data->id }}" class="text-dark"><i class="align-middle" data-feather="edit"></i></a>
-																<form action="{{ url('/delete-brand-') }}{{ $data->id }}" method="POST" class="d-inline" class="text-danger d-inline" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-																	@method('delete')
-																	@csrf
-																	<button type="submit" class="button-solid btn-link text-danger no-padding"><i class="align-middle" data-feather="trash"></i></button>
-																</form>
+																<a href="#staticBackdrop{{ $staticBackdrop++ }}" data-bs-toggle="modal" class="text-danger"><i class="align-middle" data-feather="trash"></i></a>
 															</div>
 														</div>
 													</td>

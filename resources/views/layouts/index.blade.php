@@ -111,7 +111,7 @@
 							<i class="align-middle" data-feather="gift"></i> <span class="align-middle">Hadiah</span>
 						</a>
 					</li>
-					<li class="sidebar-item  {{ ($title === "Produk" | $title === "Tambah Produk" | $title === "Edit Produk") ? 'active' : '' }}">
+					<li class="sidebar-item  {{ ($title === "Produk" | $title === "Produk (Satuan)" | $title === "Produk (Paket)" | $title === "Edit Produk") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/produk') }}">
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Produk</span>
 						</a>
