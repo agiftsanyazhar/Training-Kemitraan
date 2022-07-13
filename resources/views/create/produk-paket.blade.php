@@ -109,29 +109,92 @@
                                         <h5 class="card-title"><i data-feather="box"></i> Stok Awal</h5>
                                     </div>
                                     <div class="card-body">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-append">
-                                                <select class="form-select" name="field_name1[]">
-                                                    @foreach($warehouse as $data)
-                                                    <option>{{ $data->nama_gudang }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <input type="number" class="form-control @error('field_name[]') is-invalid @enderror" name="field_name[]" value="{{ old('field_name[]') }}" aria-describedby="basic-addon2" required>
-                                                @error('field_name[]')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
+                                        <div id="paket" style="">
+                    
+                                            <table class="table table-borderless">
+                                                <tbody id="package_item"><tr>
+                                                <td><img src="https://dashboard.sellerkit.id/assets/img/products/SK_PRODUCT_kNgRQeAT.jpg" style="width: 60px"></td>
+                                                <td>
+                                                    <h6><b>Shampoo</b></h6>
+                                                    
+                                                    <input type="hidden" name="product_id[]" value="21">
+                        
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control item-qty" name="product_qty[]" min="1" value="1">
+                                                        <div class="input-group-text">
+                                                            pcs
+                                                        </div> &nbsp &nbsp 
+                                                        <a href="#" class="remove_button btn btn-danger">Hapus</a>
                                                     </div>
-                                                @enderror
-                                            <span class="input-group-text" id="basic-addon1">pcs</span>
+                                                </td>
+                                                
+                                              </tr></tbody>
+                                                {{--  <tfoot>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#ModalPaket">
+                                                                <div class="box text-secondary">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus align-middle"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        <td colspan="3">
+                                                            <h5><b>PRODUK</b></h5>
+                                                            Pilih produk yang akan dijadikan paket
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>  --}}
+                                            </table>
                                         </div>
                                         <div id="satuan">
                                             <div class="field_wrapper">
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2">
-                                            <a href="javascript:void(0);"  class="add_button btn btn-light" title="Add field">Tambah Produk</a>
+                                            <a href="#staticBackdrop" data-bs-toggle="modal" class=" btn btn-light">Tambah Produk</a>
                                         </div>
+
+                                        
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Jenis Produk</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                   
+                                            <table class="table table-borderless">
+
+                                                <tbody><tr>
+                                                            <td><img src="https://dashboard.sellerkit.id/assets/img/products/SK_PRODUCT_kNgRQeAT.jpg" class="img-thumbnail" width="60px"></td>
+                                                            <td>
+                                                                <span>Shampoo</span>
+                                                            </td>
+                                                            <td><a href="javascript:void(0)" onclick="addItem(21)" class="btn btn-light btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></td>
+                                                        </tr><tr>
+                                                            <td><img src="https://dashboard.sellerkit.id/assets/img/products/SK_PRODUCT_5HDJpqMO.jpg" class="img-thumbnail" width="60px"></td>
+                                                            <td>
+                                                                <span>Beard Serum</span>
+                                                            </td>
+                                                            <td><a href="javascript:void(0)" onclick="addItem(24)" class="btn btn-light btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></td>
+                                                        </tr><tr>
+                                                            <td><img src="https://dashboard.sellerkit.id/assets/img/products/SK_PRODUCT_QVs5XUHC.png" class="img-thumbnail" width="60px"></td>
+                                                            <td>
+                                                                <span>Test002</span>
+                                                            </td>
+                                                            <td><a href="javascript:void(0)" onclick="addItem(121)" class="btn btn-light btn-add"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                                             <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
                                         </div>
