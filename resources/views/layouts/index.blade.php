@@ -33,7 +33,7 @@
 				</a>
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
-						Daftar Mitra
+						Daftar Halaman
 					</li>
 					<li class="sidebar-item {{ ($title === "Daftar Mitra") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url('/') }}">

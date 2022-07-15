@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Produk;
 use App\Models\Gudang;
 use App\Http\Controllers\Controller;
+use App\Models\Kategori_Barang;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -39,6 +41,8 @@ class ProdukController extends Controller
     {
         return view('create.produk-satuan', [
             "title" => "Produk (Satuan)",
+            'brand' => Brand::where('id_user', auth()->user()->id)->get(),
+            'kategori' => Kategori_Barang::all(),
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }
@@ -46,6 +50,8 @@ class ProdukController extends Controller
     {
         return view('create.produk-paket', [
             "title" => "Produk (Paket)",
+            'brand' => Brand::where('id_user', auth()->user()->id)->get(),
+            'kategori' => Kategori_Barang::all(),
             'warehouse' => Gudang::where('id_user', auth()->user()->id)->get()
         ]);
     }

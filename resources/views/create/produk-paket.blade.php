@@ -48,7 +48,9 @@
                                             <div class="col-6">
                                                 <label class="form-label">Brand Produk</label>
                                                 <select class="form-select @error('nama_brand') is-invalid @enderror" name="nama_brand" required>
-                                                    <option value="" disabled selected hidden>Pilih brand</option>
+                                                    @foreach ($brand as $data)
+                                                    <option value="{{ $data->id }}">{{ $data->nama_brand }}</option>
+                                                    @endforeach
                                                 </select>
                                                 @error('nama_brand')
                                                     <div class="invalid-feedback">
@@ -60,7 +62,9 @@
                                             <div class="col-6">
                                                 <label class="form-label">Kategori Produk</label>
                                                 <select class="form-select @error('id_kategori') is-invalid @enderror" name="id_kategori" required>
-                                                    <option value="" disabled selected hidden>Pilih kategori</option>
+                                                    @foreach ($kategori as $data)
+                                                    <option value="{{ $data->id }}">{{ $data->nama_kategori }}</option>
+                                                    @endforeach
                                                 </select>
                                                 @error('id_kategori')
                                                     <div class="invalid-feedback">

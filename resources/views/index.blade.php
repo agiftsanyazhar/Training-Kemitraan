@@ -215,43 +215,16 @@
 			<div class="col-12 col-xxl-12 d-flex">
 				<div class="card flex-fill">
 					<div class="card-header">
-						<h5 class="card-title mb-0">{{ $title }}</h5>
-					</div>
-					<div class="card-body">
-						<div class="row gy-3">
-							<div class="col-12 col-md-7">
-								<div class="input-group">
-									<div class="input-group-append">
-										<select name="search" id="search" class="form-select">
-											<option value="">Nama Lengkap</option>
-											<option value="">Username</option>
-											<option value="">Tanggal Bergabung</option>
-											<option value="">Email</option>
-											<option value="">Alamat</option>
-										</select>
-									</div>
-									<input type="search" name="keyword" id="keyword" placeholder="Cari" class="form-control" value="">
-								</div>
-							</div>
-							<div class="col-12 col-md-4">
-								<select name="search" id="search" class="form-select">
-									<option value="">Semua Role</option>
-									<option value="">Test</option>
-									<option value="">Test</option>
-									<option value="">Test</option>
-								</select>
-							</div>
-							<div class="col-12 col-md-1">
-								<button type="submit" class="btn btn-secondary">Cari</button>
-							</div>
-							<div class="col-12">
-								<span class="mr-3">Nama Lengkap:
-									<a href="" class="btn btn-secondary btn-sm">Apollo 1&nbsp;&nbsp;<i class="align-middle" data-feather="x-circle"></i></a>
-									<a href="" class="btn btn-light btn-sm">Reset&nbsp;&nbsp;<i class="align-middle" data-feather="refresh-cw"></i></a>
-								</span>
-							</div>
+						<div class="d-flex align-items-center justify-content-between ">
+							<h5 class="card-title mb-0">Daftar Mitra</h5>
+						
+							<a href="" class="btn btn-light"><i class="align-middle" data-feather="eye"></i> Lihat Sak Kabehe</a>
+
 						</div>
+						
+						
 					</div>
+	
 					<div class="card-body">
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
@@ -268,9 +241,7 @@
 												<th>Email</th>
 												<th>Alamat</th>
 												<th>Role/Status</th>
-												<th class="border-left">
-													<div class="d-flex">Aksi</div>
-												</th>
+												
 											</tr>
 										</thead>
 										<tbody id="order_items" style="border-top: 0px">
@@ -298,7 +269,7 @@
 												<td class="align-top">
 													Distributor <span class="badge bg-success">Aktif</span>
 												</td>
-												<td class="align-top border-left">
+												{{--  <td class="align-top border-left">
 													<div class="d-flex">
 														<div class="d-inline">
 															<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
@@ -310,7 +281,7 @@
 															</form>
 														</div>
 													</div>
-												</td>
+												</td>  --}}
 											</tr>
 										</tbody>
 									</table>
