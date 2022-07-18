@@ -218,7 +218,7 @@
 						<div class="d-flex align-items-center justify-content-between ">
 							<h5 class="card-title mb-0">Daftar Mitra</h5>
 						
-							<a href="" class="btn btn-light"><i class="align-middle" data-feather="eye"></i> Lihat Sak Kabehe</a>
+							<a href="/daftarmitra" class="btn btn-light"><i class="align-middle" data-feather="eye"></i> Lihat Selengkapnya</a>
 
 						</div>
 						
@@ -296,9 +296,16 @@
 			<div class="col-12 col-xxl-12 d-flex">
 				<div class="card flex-fill">
 					<div class="card-header">
-						<h5 class="card-title mb-0">Daftar Barang</h5>
+
+						  <div class="d-flex align-items-center justify-content-between ">
+                    <h5 class="card-title mb-0">Daftar Barang</h5>
+                
+                    <a href="/daftarbarang" class="btn btn-light"><i class="align-middle" data-feather="eye"></i> Lihat Selengkapnya</a>
+
+                </div>
+
 					</div>
-					<div class="card-body">
+					{{--  <div class="card-body">
 						<div class="row gy-3">
 							<div class="col-12 col-md-11">
 								<div class="input-group">
@@ -323,7 +330,7 @@
 								</span>
 							</div>
 						</div>
-					</div>
+					</div>  --}}
 					<div class="card-body">
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade active show" id="pills-all-orders" role="tabpanel" aria-labelledby="pills-all-orders-tab">
@@ -339,9 +346,9 @@
 												<th>Harga</th>
 												<th>Stok</th>
 												<th>Kategori</th>
-												<th class="border-left">
+												{{--  <th class="border-left">
 													<div class="d-flex">Aksi</div>
-												</th>
+												</th>  --}}
 											</tr>
 										</thead>
 										<tbody id="order_items" style="border-top: 0px">
@@ -366,7 +373,7 @@
 												<td class="align-top">
 													Face Wash
 												</td>
-												<td class="align-top border-left">
+												{{--  <td class="align-top border-left">
 													<div class="d-flex">
 														<div class="d-inline">
 															<a href="{{ url ('/') }}" class="text-info"><i class="align-middle" data-feather="eye"></i></a>
@@ -378,7 +385,7 @@
 															</form>
 														</div>
 													</div>
-												</td>
+												</td>  --}}
 											</tr>
 										</tbody>
 									</table>

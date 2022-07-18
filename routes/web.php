@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\DaftarbarangController;
+use App\Http\Controllers\DaftarmitraController;
 use App\Http\Controllers\DaftarpesananController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\HadiahController;
@@ -44,6 +46,8 @@ Route::get('/produk', [ProdukController::class, 'index']);
 Route::get('/stok', [StokController::class, 'indexsum']);
 Route::get('/riwayatstok', [StokController::class, 'index2']);
 Route::get('/daftarpesanan', [DaftarpesananController::class, 'index']);
+Route::get('/daftarmitra', [DaftarmitraController::class, 'index']);
+Route::get('/daftarbarang', [DaftarbarangController::class, 'index']);
 
 
 

@@ -45,9 +45,23 @@
 							<i class="align-middle" data-feather="user"></i><span class="align-middle">Profil</span>
 						</a>
 					</li>
+
+					<li class="sidebar-item {{ ($title === "daftarmitra") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/daftarmitra') }}">
+							<i class="align-middle" data-feather="users"></i><span class="align-middle">Daftar Mitra</span>
+						</a>
+					</li>
+
 					<li class="sidebar-item {{ ($title === "daftarpesanan") ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ url ('/daftarpesanan') }}">
 							<i class="align-middle" data-feather="shopping-bag"></i><span class="align-middle">Daftar Pesanan</span>
+						</a>
+					</li>
+
+
+					<li class="sidebar-item {{ ($title === "daftarbarang") ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ url ('/daftarbarang') }}">
+							<i class="align-middle" data-feather="archive"></i><span class="align-middle">Daftar Barang</span>
 						</a>
 					</li>
 
